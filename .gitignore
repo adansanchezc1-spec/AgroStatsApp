@@ -1,0 +1,43 @@
+# ==============================================================================
+# AGROSTATS APP — GITIGNORE OFICIAL
+# ==============================================================================
+
+# Entornos Virtuales y Dependencias Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+
+# Datos Voluminosos y Archivos Binarios Estadísticos
+data/RAW/
+data/interim/
+*.sav
+*.dta
+*.sas7bdat
+
+# Archivos de Sistema y Editor
+.DS_Store
+Thumbs.db
+desktop.ini
+*.bak
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# Scratch y Temporales
+scratch/
+tmp/
+*.tmp

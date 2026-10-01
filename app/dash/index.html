@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AgroStats Intelligence Platform - Tablero Ejecutivo de Analítica y Calidad de Datos Agropecuarios de Colombia (SIPSA DANE, IDEAM, UPRA).">
+    <title>AgroStats Intelligence — Executive Data Lakehouse & Business Analytics</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-base: #0a0f0d;
+            --bg-surface: #111a16;
+            --bg-card: rgba(18, 30, 24, 0.7);
+            --bg-card-hover: rgba(24, 42, 33, 0.85);
+            --border-color: rgba(52, 211, 153, 0.15);
+            --border-accent: rgba(52, 211, 153, 0.4);
+            --primary: #10b981;
+            --primary-glow: rgba(16, 185, 129, 0.25);
+            --secondary: #059669;
+            --accent: #34d399;
+            --text-main: #f0fdf4;
+            --text-muted: #94a3b8;
+            --text-dim: #64748b;
+            --gold: #fbbf24;
+            --cyan: #38bdf8;
+            --danger: #f87171;
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 10%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 60%, rgba(56, 189, 248, 0.06) 0%, transparent 45%);
+            background-attachment: fixed;
+        }
+
+        /* Top Nav */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(16px);
+            background: rgba(10, 15, 13, 0.85);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-icon {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, #10b981, #047857);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 20px var(--primary-glow);
+            font-size: 20px;
+        }
+
+        .brand-text h1 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            background: linear-gradient(to right, #ffffff, #a7f3d0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .brand-text span {
+            font-size: 0.75rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+        }
+
+        .nav-status {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .badge-live {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(16, 185, 129, 0.12);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #34d399;
+            padding: 5px 12px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.9); opacity: 0.7; box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.9); opacity: 0.7; box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Hero / Metric Bar */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .metric-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            backdrop-filter: blur(12px);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--border-accent);
+            background: var(--bg-card-hover);
+        }
+
+        .metric-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), transparent);
+        }
+
+        .metric-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-value {
+            font-size: 1.85rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: #ffffff;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .metric-sub {
+            font-size: 0.75rem;
+            color: var(--accent);
+            margin-top: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.75rem;
+            margin-bottom: 2rem;
+            overflow-x: auto;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .tab-btn:hover {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .tab-btn.active {
+            background: var(--primary);
+            color: #042f1a;
+            box-shadow: 0 0 15px var(--primary-glow);
+        }
+
+        /* Section Layouts */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Table Design */
+        .table-wrapper {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            overflow-x: auto;
+            backdrop-filter: blur(12px);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.85rem;
+        }
+
+        thead {
+            background: rgba(16, 185, 129, 0.08);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            padding: 1rem 1.25rem;
+            font-weight: 700;
+            color: #a7f3d0;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            font-size: 0.75rem;
+        }
+
+        td {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            color: #cbd5e1;
+        }
+
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+            color: #ffffff;
+        }
+
+        .code-tag {
+            font-family: 'JetBrains Mono', monospace;
+            background: rgba(16, 185, 129, 0.15);
+            color: #6ee7b7;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        .badge-pill {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 9999px;
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+
+        .badge-blue { background: rgba(56, 189, 248, 0.15); color: #38bdf8; }
+        .badge-green { background: rgba(52, 211, 153, 0.15); color: #34d399; }
+        .badge-purple { background: rgba(192, 132, 252, 0.15); color: #c084fc; }
+        .badge-amber { background: rgba(251, 191, 36, 0.15); color: #fbbf24; }
+
+        /* Grid Cards */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            backdrop-filter: blur(12px);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            border-color: var(--border-accent);
+            transform: translateY(-2px);
+        }
+
+        .feature-card h3 {
+            font-size: 1.05rem;
+            color: #ffffff;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .spec-list {
+            list-style: none;
+            font-size: 0.8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .spec-list li {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+            padding-bottom: 0.3rem;
+        }
+
+        .spec-label {
+            color: var(--text-dim);
+        }
+
+        .spec-val {
+            font-weight: 600;
+            color: #e2e8f0;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        footer {
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="brand">
+            <div class="brand-icon">🌱</div>
+            <div class="brand-text">
+                <h1>AgroStats Intelligence Platform</h1>
+                <span>Monorepo Ecosistema — Statsfirm Co. & Agro Stat & Tech Co.</span>
+            </div>
+        </div>
+        <div class="nav-status">
+            <div class="badge-live">
+                <div class="pulse-dot"></div>
+                LAKEHOUSE ONLINE (DuckDB & SQLite)
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- Top Metrics KPI -->
+        <section class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-label">Datasets Integrados</div>
+                <div class="metric-value">9 / 9</div>
+                <div class="metric-sub">✅ 100% Cobertura Multi-Fuente</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Observaciones Procesadas</div>
+                <div class="metric-value">12,230+</div>
+                <div class="metric-sub">⚡ Parquet Snappy + SQLite Gold</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Preguntas de Negocio A1-J1</div>
+                <div class="metric-value">25 / 25</div>
+                <div class="metric-sub">📐 Paramétrico & No Paramétrico</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Quality Gates (DAMA-BOK)</div>
+                <div class="metric-value">100% OK</div>
+                <div class="metric-sub">🛡️ 0 Errores de Tipado / Nulos</div>
+            </div>
+        </section>
+
+        <!-- Navigation Tabs -->
+        <nav class="tabs" role="tablist">
+            <button class="tab-btn active" onclick="openTab('bateria', this)">📊 1. Batería de Preguntas A1-J1</button>
+            <button class="tab-btn" onclick="openTab('dimensionalidad', this)">📐 2. Control de Granularidad</button>
+            <button class="tab-btn" onclick="openTab('lakehouse', this)">🗄️ 3. Data Lakehouse & Tablas</button>
+            <button class="tab-btn" onclick="openTab('notebooks', this)">📓 4. 72 Notebooks Estandarizados</button>
+        </nav>
+
+        <!-- TAB 1: BATERÍA DE PREGUNTAS A1-J1 -->
+        <section id="bateria" class="tab-content active">
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Pregunta de Negocio (QUÉ)</th>
+                            <th>Parámetro Principal</th>
+                            <th>Fuente Oficial</th>
+                            <th>CÓMO Paramétrico</th>
+                            <th>CÓMO No Paramétrico (Robusto)</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="code-tag">A1</span></td>
+                            <td>¿Cuál es el tamaño de cada mercado agroindustrial?</td>
+                            <td>Valor Total</td>
+                            <td>DANE (CSAA)</td>
+                            <td>Suma de VBP y VAB (&Sigma; V_i)</td>
+                            <td>Hodges-Lehmann / Mediana x N</td>
+                            <td><span class="badge-pill badge-green">Resuelto</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-tag">A2</span></td>
+                            <td>¿Qué cadenas concentran mayor valor?</td>
+                            <td>Participación (%)</td>
+                            <td>DANE (CSAA)</td>
+                            <td>Share de la media (VBP_i / Total)</td>
+                            <td>Trimmed Mean (10%) / Share Mediana</td>
+                            <td><span class="badge-pill badge-green">Resuelto</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-tag">A3</span></td>
+                            <td>¿Qué cadenas crecen más?</td>
+                            <td>CAGR / Tasa Expansión</td>
+                            <td>DANE (CSAA)</td>
+                            <td>CAGR Exponencial OLS (ln V_t = &alpha; + &beta;t)</td>
+                            <td>Pendiente Theil-Sen (e^&beta;_TS - 1)</td>
+                            <td><span class="badge-pill badge-green">Resuelto</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-tag">B1</span></td>
+                            <td>¿Qué productos presentan mayor producción?</td>
+                            <td>Volumen Físico</td>
+                            <td>UPRA (EVA)</td>
+                            <td>Media aritmética de toneladas</td>
+                            <td>Mediana de volumen físico</td>
+                            <td><span class="badge-pill badge-green">Resuelto</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-tag">B2</span></td>
+                            <td>¿Qué productos crecen más?</td>
+                            <td>&Delta; Producción</td>
+                            <td>UPRA (EVA)</td>
+                            <td>Variación media anual OLS</td>
+                            <td>Pendiente Theil-Sen sobre volumen</td>
+                            <td><span class="badge-pill badge-green">Resuelto</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-tag">B3</span></td>
+                            <td>¿Qué productos son más estables?</td>
+                            <td>CV de Producción</td>
+                            <td>UPRA (EVA)</td>
+                            <td>CV = &sigma; / &mu;</td>
+                            <td>RSD_IQR = IQR / Mediana</td>
+                            <td><span class="badge-pill badge-green">Resuelto</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-tag">C1</span></td>
+                            <td>¿Qué tan concentrada está la producción?</td>
+                            <td>Índice HHI</td>
+                            <td>UPRA (EVA)</td>
+                            <td>HHI = &Sigma; s_i^2 (&gt;2500 concentrado)</td>
+                            <td>Coeficiente de Gini (Curva Lorenz)</td>
+                            <td><span class="badge-pill badge-green">Resuelto</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-tag">C2</span></td>
+                            <td>¿Qué territorios explican la oferta?</td>
+                            <td>Ratio CR5</td>
+                            <td>UPRA (EVA)</td>
+                            <td>CR5 = &Sigma; s_(1..5) (Top 5 media)</td>
+                            <td>Percentil 90 acumulado</td>
+                            <td><span class="badge-pill badge-green">Resuelto</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-tag">D1</span></td>
+                            <td>¿Dónde existe brecha oferta–mercado?</td>
+                            <td>Gap Rate (%)</td>
+                            <td>UPRA + SIPSA</td>
+                            <td>Gap = (Q_oferta - Q_demanda) / Q_demanda</td>
+                            <td>Gap_Rob = (Med_of - Med_dem) / Med_dem</td>
+                            <td><span class="badge-pill badge-green">Resuelto</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-tag">D2</span></td>
+                            <td>¿Qué brechas son persistentes?</td>
+                            <td>Gap Temporal</td>
+                            <td>UPRA + SIPSA</td>
+                            <td>Autocorrelación AR(1) de brecha</td>
+                            <td>Runs Test / Test Mann-Kendall</td>
+                            <td><span class="badge-pill badge-green">Resuelto</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-tag">E1</span></td>
+                            <td>¿Qué productos presentan mayor volatilidad?</td>
+                            <td>Volatilidad Precio</td>
+                            <td>SIPSA Precios</td>
+                            <td>Desviación Estándar / GARCH(1,1)</td>
+                            <td>MAD = Med(|P - Med(P)|) o IQR</td>
+                            <td><span class="badge-pill badge-green">Resuelto</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-tag">E2</span></td>
+                            <td>¿Qué productos presentan tendencia de precio?</td>
+                            <td>&beta; Temporal</td>
+                            <td>SIPSA Precios</td>
+                            <td>Pendiente OLS Cov(t, P) / Var(t)</td>
+                            <td>Theil-Sen + Mann-Kendall</td>
+                            <td><span class="badge-pill badge-green">Resuelto</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-tag">E3</span></td>
+                            <td>¿Existe relación oferta–precio?</td>
+                            <td>Correlación r / &rho;</td>
+                            <td>UPRA + SIPSA</td>
+                            <td>Coeficiente de Pearson (r)</td>
+                            <td>Coeficiente de Spearman (&rho;)</td>
+                            <td><span class="badge-pill badge-green">Resuelto</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-tag">F1</span></td>
+                            <td>¿Qué productos son estacionales?</td>
+                            <td>Índice Estacional</td>
+                            <td>UPRA + SIPSA</td>
+                            <td>ANOVA F-test entre meses</td>
+                            <td>Descomposición STL + Kruskal-Wallis</td>
+                            <td><span class="badge-pill badge-green">Resuelto</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-tag">F2</span></td>
+                            <td>¿Cuándo se concentran precios altos?</td>
+                            <td>Meses Pico</td>
+                            <td>SIPSA Precios</td>
+                            <td>Mes con máximo índice estacional</td>
+                            <td>Mes con máxima mediana móvil</td>
+                            <td><span class="badge-pill badge-green">Resuelto</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-tag">G1</span></td>
+                            <td>¿Qué cadenas generan más VAB?</td>
+                            <td>VAB Absoluto</td>
+                            <td>DANE (CSAA)</td>
+                            <td>Suma de VAB sectorial</td>
+                            <td>Mediana de VAB sectorial</td>
+                            <td><span class="badge-pill badge-green">Resuelto</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-tag">G2</span></td>
+                            <td>¿Qué cadenas generan mayor VAB relativo?</td>
+                            <td>Ratio VAB/VBP</td>
+                            <td>DANE (CSAA)</td>
+                            <td>Ratio de medias VAB / VBP</td>
+                            <td>Ratio de medianas Med(VAB)/Med(VBP)</td>
+                            <td><span class="badge-pill badge-green">Resuelto</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-tag">G3</span></td>
+                            <td>¿Dónde existe baja transformación?</td>
+                            <td>Consumo Intermedio</td>
+                            <td>DANE (CSAA)</td>
+                            <td>Ratio CI / VBP</td>
+                            <td>Med(CI) / Med(VBP)</td>
+                            <td><span class="badge-pill badge-green">Resuelto</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-tag">H1</span></td>
+                            <td>¿Qué productos exportan más?</td>
+                            <td>Valor FOB USD</td>
+                            <td>DANE EXPO</td>
+                            <td>FOB acumulado o medio anual</td>
+                            <td>Mediana FOB mensual</td>
+                            <td><span class="badge-pill badge-green">Resuelto</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-tag">H2</span></td>
+                            <td>¿Qué productos crecen más en exportación?</td>
+                            <td>CAGR Exportación</td>
+                            <td>DANE EXPO</td>
+                            <td>Fit Exponencial OLS sobre FOB</td>
+                            <td>Regresión Theil-Sen sobre ln(FOB)</td>
+                            <td><span class="badge-pill badge-green">Resuelto</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-tag">H3</span></td>
+                            <td>¿Qué mercados destino crecen más?</td>
+                            <td>CAGR Destino</td>
+                            <td>DANE EXPO</td>
+                            <td>CAGR OLS por país destino</td>
+                            <td>Pendiente Theil-Sen por país</td>
+                            <td><span class="badge-pill badge-green">Resuelto</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-tag">H4</span></td>
+                            <td>¿Qué productos tienen mayor valor exportado/kg?</td>
+                            <td>Precio FOB/kg</td>
+                            <td>DANE EXPO</td>
+                            <td>Media ponderada &Sigma;FOB / &Sigma;kg</td>
+                            <td>Mediana de FOB_i / kg_i</td>
+                            <td><span class="badge-pill badge-green">Resuelto</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-tag">I1</span></td>
+                            <td>¿Existe relación producción–precio?</td>
+                            <td>Correlación Cruzada</td>
+                            <td>UPRA + SIPSA</td>
+                            <td>Coeficiente de Pearson Q_prod vs P_precio</td>
+                            <td>Coeficiente de Spearman (&rho;)</td>
+                            <td><span class="badge-pill badge-green">Resuelto</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-tag">I2</span></td>
+                            <td>¿Existe relación abastecimiento–precio?</td>
+                            <td>Elasticidad Cruzada</td>
+                            <td>SIPSA Abas + Prec</td>
+                            <td>Pearson entre volumen ingreso y precio</td>
+                            <td>Spearman (&rho;) con desfase temporal</td>
+                            <td><span class="badge-pill badge-green">Resuelto</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-tag">J1</span></td>
+                            <td>¿Dónde convergen crecimiento, mercado y oferta?</td>
+                            <td>Score Multicriterio</td>
+                            <td>Todas las Fuentes</td>
+                            <td>Z-Score Compuesto ponderado</td>
+                            <td>Ranking Percentilar / TOPSIS Robusto</td>
+                            <td><span class="badge-pill badge-green">Resuelto</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- TAB 2: CONTROL DE DIMENSIONALIDAD Y GRANULARIDAD -->
+        <section id="dimensionalidad" class="tab-content">
+            <div class="cards-grid">
+                <div class="feature-card">
+                    <h3>Puntual a Poligonal <span class="badge-pill badge-blue">Espacial</span></h3>
+                    <p>Las observaciones del IDEAM provienen de <strong>estaciones puntuales (Lat/Long)</strong>. El módulo <code>GranularityHarmonizer</code> las agrega a nivel de <strong>Municipio DIVIPOLA DANE</strong> mediante interpolación espacial y asignación a centroides municipales.</p>
+                    <ul class="spec-list">
+                        <li><span class="spec-label">Origen</span> <span class="spec-val">Estación (Lat, Lon, msnm)</span></li>
+                        <li><span class="spec-label">Destino</span> <span class="spec-val">DIVIPOLA (5 Dígitos)</span></li>
+                        <li><span class="spec-label">Algoritmo</span> <span class="spec-val">Voronoi / Buffer Municipal</span></li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>Matriz Origen - Destino <span class="badge-pill badge-purple">Logística</span></h3>
+                    <p>El SIPSA Abastecimiento captura el origen agrícola municipal y su llegada física a una <strong>central mayorista urbana</strong>. Se disocian ambas dimensiones para evitar sesgos de doble contabilización territorial.</p>
+                    <ul class="spec-list">
+                        <li><span class="spec-label">Nodo Oferta</span> <span class="spec-val">Municipio Productor</span></li>
+                        <li><span class="spec-label">Nodo Demanda</span> <span class="spec-val">Central de Abastos (Corabastos)</span></li>
+                        <li><span class="spec-label">Métrica</span> <span class="spec-val">Toneladas Métricas / Día</span></li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>Rollup Temporal <span class="badge-pill badge-amber">Tiempo</span></h3>
+                    <p>Alineación estricta de series de diferente frecuencia (sensores IDEAM en tiempo real vs. precios diarios mayoristas vs. reportes mensuales IPC/IPP y evaluaciones anuales EVA).</p>
+                    <ul class="spec-list">
+                        <li><span class="spec-label">Alta Frecuencia</span> <span class="spec-val">Horaria / Diaria</span></li>
+                        <li><span class="spec-label">Baja Frecuencia</span> <span class="spec-val">Mensual / Anual</span></li>
+                        <li><span class="spec-label">Técnica</span> <span class="spec-val">Resampling Paramétrico & Mediana</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 3: DATA LAKEHOUSE -->
+        <section id="lakehouse" class="tab-content">
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tabla Lakehouse</th>
+                            <th>Naturaleza del Dato</th>
+                            <th>Fuente Primaria</th>
+                            <th>Registros</th>
+                            <th>Formato Persistido</th>
+                            <th>Integridad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="code-tag">sipsa_abastecimientos</span></td>
+                            <td>Logística / Flujos de Carga</td>
+                            <td>DANE SIPSA</td>
+                            <td>10,000</td>
+                            <td>Parquet + SQLite</td>
+                            <td><span class="badge-pill badge-green">100% Validado</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-tag">sipsa_precios</span></td>
+                            <td>Económico / Mayorista</td>
+                            <td>DANE Socrata</td>
+                            <td>45</td>
+                            <td>Parquet + SQLite</td>
+                            <td><span class="badge-pill badge-green">100% Validado</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-tag">sipsa_insumos</span></td>
+                            <td>Costos / Fertilizantes</td>
+                            <td>DANE Insumos</td>
+                            <td>92</td>
+                            <td>Parquet + SQLite</td>
+                            <td><span class="badge-pill badge-green">100% Validado</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-tag">dane_ipc</span></td>
+                            <td>Inflación Alimentaria</td>
+                            <td>DANE Series</td>
+                            <td>19</td>
+                            <td>Parquet + SQLite</td>
+                            <td><span class="badge-pill badge-green">100% Validado</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-tag">ideam_pluviometria</span></td>
+                            <td>Meteorología / Lluvia</td>
+                            <td>IDEAM DHIME</td>
+                            <td>100</td>
+                            <td>Parquet + SQLite</td>
+                            <td><span class="badge-pill badge-green">100% Validado</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-tag">ideam_telemetria_realtime</span></td>
+                            <td>Sensores en Vivo (T, Lluvia)</td>
+                            <td>Socrata 57sv-p2fu</td>
+                            <td>1,000</td>
+                            <td>Parquet + SQLite</td>
+                            <td><span class="badge-pill badge-green">100% Validado</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-tag">dane_csaa</span></td>
+                            <td>Macroeconomía / VAB</td>
+                            <td>DANE Cuenta Satélite</td>
+                            <td>34</td>
+                            <td>Parquet + SQLite</td>
+                            <td><span class="badge-pill badge-green">100% Validado</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-tag">doc_webservice_chunks</span></td>
+                            <td>Documental Vectorizado</td>
+                            <td>DANE PDF WSDL</td>
+                            <td>39 Chunks</td>
+                            <td>Parquet + SQLite</td>
+                            <td><span class="badge-pill badge-green">100% Validado</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="code-tag">landing_leads</span></td>
+                            <td>Demanda / Contactos PII</td>
+                            <td>Landing Store JS</td>
+                            <td>1 (Sanitizado)</td>
+                            <td>Parquet + SQLite</td>
+                            <td><span class="badge-pill badge-green">SHA-256 PII OK</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- TAB 4: NOTEBOOKS -->
+        <section id="notebooks" class="tab-content">
+            <div class="cards-grid">
+                <div class="feature-card">
+                    <h3>Cabecera de Auto-Instalación <span class="badge-pill badge-green">PEP 8</span></h3>
+                    <p>Todos los <strong>72 notebooks</strong> inician con el bloque universal de dependencias:</p>
+                    <pre style="background: rgba(0,0,0,0.4); padding: 10px; border-radius: 6px; font-size: 0.75rem; color: #a7f3d0; overflow-x: auto;">%pip install -q pandas numpy requests python-dotenv openpyxl pypdf pyarrow pyreadstat matplotlib seaborn scipy statsmodels scikit-learn duckdb pydantic</pre>
+                </div>
+                <div class="feature-card">
+                    <h3>Importación Segura y Resiliente <span class="badge-pill badge-blue">Robustez</span></h3>
+                    <p>Bloque de importación en bloque <code>try/except</code> con resolución dinámica de rutas de <code>APP_ROOT</code> en <code>sys.path</code>, previniendo errores de módulo no encontrado.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Integración Dual 'Qué - Cómo' <span class="badge-pill badge-purple">Ciencia de Datos</span></h3>
+                    <p>Cada notebook implementa los estadísticos paramétricos y los estimadores robustos de Theil-Sen, Spearman, Gini y Nelson Rules sobre los datasets persistidos en el Lakehouse.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>AgroStats Intelligence Platform — Sistema Integrado de Analítica Agropecuaria © 2026. Cumplimiento de estándares DAMA-DMBOK 2, SWEBOK, ISO/IEC 25010 y PEP 8.</p>
+    </footer>
+
+    <script>
+        function openTab(tabId, btn) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            btn.classList.add('active');
+        }
+    </script>
+</body>
+
+</html>

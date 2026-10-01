@@ -1,0 +1,74 @@
+[
+  {
+    "dataset": "01_sipsa_abastecimientos",
+    "table": "sipsa_abastecimientos",
+    "raw_rows": 10000,
+    "cleaned_rows": 10000,
+    "parquet_saved": "data\\processed\\sipsa_abastecimientos.parquet",
+    "status": "COMPLETED"
+  },
+  {
+    "dataset": "02_sipsa_precios",
+    "table": "sipsa_precios",
+    "raw_rows": 45,
+    "cleaned_rows": 45,
+    "parquet_saved": "data\\processed\\sipsa_precios.parquet",
+    "status": "COMPLETED"
+  },
+  {
+    "dataset": "03_sipsa_insumos",
+    "table": "sipsa_insumos",
+    "raw_rows": 92,
+    "cleaned_rows": 92,
+    "parquet_saved": "data\\processed\\sipsa_insumos.parquet",
+    "status": "COMPLETED"
+  },
+  {
+    "dataset": "04_dane_ipc_ipp",
+    "table": "dane_ipc",
+    "raw_rows": 19,
+    "cleaned_rows": 19,
+    "parquet_saved": "data\\processed\\dane_ipc.parquet",
+    "status": "COMPLETED"
+  },
+  {
+    "dataset": "05_ideam_climatologia",
+    "table": "ideam_pluviometria",
+    "raw_rows": 100,
+    "cleaned_rows": 100,
+    "parquet_saved": "data\\processed\\ideam_pluviometria.parquet",
+    "status": "COMPLETED"
+  },
+  {
+    "dataset": "06_ideam_telemetria_57sv",
+    "table": "ideam_telemetria_realtime",
+    "raw_rows": 1000,
+    "cleaned_rows": 1000,
+    "parquet_saved": "data\\processed\\ideam_telemetria_realtime.parquet",
+    "status": "COMPLETED"
+  },
+  {
+    "dataset": "07_dane_satelite_csaa",
+    "table": "dane_csaa",
+    "raw_rows": 38,
+    "cleaned_rows": 34,
+    "parquet_saved": "data\\processed\\dane_csaa.parquet",
+    "status": "COMPLETED"
+  },
+  {
+    "dataset": "08_boletin_pdf_webservice",
+    "table": "doc_webservice_chunks",
+    "raw_rows": 39,
+    "cleaned_rows": 39,
+    "parquet_saved": "data\\processed\\doc_webservice_chunks.parquet",
+    "status": "COMPLETED"
+  },
+  {
+    "dataset": "09_landing_leads_store",
+    "table": "landing_leads",
+    "raw_rows": 1,
+    "cleaned_rows": 1,
+    "parquet_saved": "data\\processed\\landing_leads.parquet",
+    "status": "COMPLETED"
+  }
+]

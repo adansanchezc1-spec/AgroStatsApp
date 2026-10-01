@@ -1,0 +1,64 @@
+# Datasets Configuration - AgroStats Intelligence Platform
+# Fase PDCO: PLAN -> DEVELOPMENT
+
+project_name: AgroStatsApp
+version: 1.0.0
+
+datasets:
+  sipsa_abastecimientos:
+    resource_id: "sipsa_abastecimiento"
+    format: "tabular"
+    raw_path: "data/raw/sipsa_abastecimientos.csv"
+    processed_path: "data/processed/sipsa_abastecimientos.parquet"
+    target_table: "fact_sipsa_abastecimiento"
+    
+  sipsa_precios:
+    resource_id: "gwbi-fnzs"
+    format: "api"
+    raw_path: "data/raw/sipsa_precios.csv"
+    processed_path: "data/processed/sipsa_precios.parquet"
+    target_table: "fact_sipsa_precios"
+    
+  sipsa_insumos:
+    resource_id: "sipsa_insumos"
+    format: "tabular"
+    raw_path: "data/raw/sipsa_insumos.csv"
+    processed_path: "data/processed/sipsa_insumos.parquet"
+    target_table: "fact_sipsa_insumos"
+
+  dane_ipc_ipp:
+    format: "tabular"
+    raw_path: "data/raw/dane_ipc.csv"
+    processed_path: "data/processed/dane_ipc_ipp.parquet"
+    target_table: "dim_macro_ipc_ipp"
+
+  ideam_climatologia:
+    format: "tabular"
+    raw_path: "data/raw/ideam_pluvio.csv"
+    processed_path: "data/processed/ideam_climatologia.parquet"
+    target_table: "fact_ideam_climatologia"
+
+  ideam_telemetria_57sv:
+    resource_id: "57sv-p2fu"
+    format: "api"
+    raw_path: "data/raw/ideam_telemetria_57sv.csv"
+    processed_path: "data/processed/ideam_telemetria_57sv.parquet"
+    target_table: "fact_ideam_telemetria_realtime"
+
+  dane_satelite_csaa:
+    format: "tabular"
+    raw_path: "data/RAW/datosagro/satelite/anex-CSAA-2024.xlsx"
+    processed_path: "data/processed/dane_satelite_csaa.parquet"
+    target_table: "dim_dane_csaa"
+
+  boletin_pdf_webservice:
+    format: "pdf"
+    raw_path: "data/RAW/datosagro/DANE-webservice-SIPSA.pdf"
+    processed_path: "data/processed/boletin_pdf_webservice_chunks.parquet"
+    target_table: "doc_vector_webservice"
+
+  landing_leads_store:
+    format: "js_object"
+    raw_path: "../landing_page/data/leadsStore.js"
+    processed_path: "data/processed/landing_leads_sanitized.parquet"
+    target_table: "dim_leads_store"
