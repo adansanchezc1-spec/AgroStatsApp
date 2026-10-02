@@ -71,10 +71,10 @@ DATASETS_INFO = {
         "questions": ["A1: Variación del Índice Macroeconómico", "G1: Margen Bruto Comercial", "G3: Transmisión Vertical de Precios"],
         "table": "dane_ipc",
         "parquet": "data/processed/dane_ipc.parquet",
-        "primary_col": "unnamed_1",
-        "group_col": "concepto",
+        "primary_col": "ipc_alimentos",
+        "group_col": "anio",
         "granularity_spatial": "Nacional / 23 Ciudades Capitales",
-        "granularity_temporal": "Mensual",
+        "granularity_temporal": "Mensual (2003 - 2026)",
         "crisp_business_goal": "Evaluar la transmisión vertical de precios desde el productor agropecuario (IPP) hasta la canasta básica familiar urbana (IPC Alimentos).",
         "theoretical_context": "La teoría de transmisión de precios analiza la asimetría en el traspaso de costos a lo largo de la cadena. Un descalce prolongado entre IPP e IPC evidencia concentración o ineficiencias en la intermediación comercial.",
         "kpis": ["Inflación anualizada de alimentos", "Spread IPP vs. IPC", "Elasticidad de transmisión vertical"]
@@ -116,8 +116,8 @@ DATASETS_INFO = {
         "questions": ["A2: Concentración de Valor por Cadena", "A3: Crecimiento CAGR de la Agroindustria", "G2: VAB Relativo (VAB / VBP)"],
         "table": "dane_csaa",
         "parquet": "data/processed/dane_csaa.parquet",
-        "primary_col": "unnamed_1",
-        "group_col": "cadena",
+        "primary_col": "codigo_cuadro",
+        "group_col": "fase_cadena",
         "granularity_spatial": "Nacional / Cadena de Valor Agroindustrial",
         "granularity_temporal": "Anual",
         "crisp_business_goal": "Dimensionar el aporte macroeconómico de las cadenas agroindustriales al Producto Interno Bruto (PIB) e identificar sectores líderes en generación de valor agregado.",
@@ -131,8 +131,8 @@ DATASETS_INFO = {
         "questions": ["H1: Minería Textual y Tokenización de Parámetros", "H2: Indexación de Métodos de Consumo WSDL"],
         "table": "doc_webservice_chunks",
         "parquet": "data/processed/doc_webservice_chunks.parquet",
-        "primary_col": "char_length",
-        "group_col": "source_file",
+        "primary_col": "chunk_id",
+        "group_col": "source_pdf",
         "granularity_spatial": "No Estructurado: Nivel Documento y Párrafo",
         "granularity_temporal": "Versión Documental",
         "crisp_business_goal": "Transformar la documentación no estructurada de manuales técnicos institucionales en esquemas legibles por máquina para la integración continua de servicios de datos.",
@@ -146,8 +146,8 @@ DATASETS_INFO = {
         "questions": ["I1: Conversión de Demanda Agroempresarial", "I2: Cumplimiento de Privacidad y PII (Ley 1581)", "J1: Síntesis Multicriterio"],
         "table": "landing_leads",
         "parquet": "data/processed/landing_leads.parquet",
-        "primary_col": "raw_content",
-        "group_col": "id",
+        "primary_col": "datavolumetb",
+        "group_col": "priority",
         "granularity_spatial": "Contacto / Finca Georreferenciada",
         "granularity_temporal": "Registro transaccional en tiempo de evento",
         "crisp_business_goal": "Gestionar las solicitudes comerciales y el flujo de clientes agroempresariales, garantizando anonimización total de datos sensibles conforme a la legislación vigente.",
@@ -160,7 +160,7 @@ CELL_PIP = """# ================================================================
 # [DEPENDENCIAS DE ENTORNO — JUPYTER / COLAB / DATABRICKS]
 # Este bloque garantiza la disponibilidad de librerías en cualquier entorno cloud.
 # ==============================================================================
-%pip install -q pandas numpy requests python-dotenv openpyxl pypdf pyarrow pyreadstat matplotlib seaborn scipy statsmodels scikit-learn duckdb pydantic
+%pip install -q pandas numpy requests python-dotenv openpyxl pypdf pyarrow pyreadstat matplotlib seaborn scipy statsmodels scikit-learn duckdb pydantic missingno
 """
 
 CELL_SETUP = """# ==============================================================================
@@ -419,8 +419,10 @@ Examinamos la estructura tabular, el footprint en memoria RAM y el porcentaje de
 """
 
     code_profiling = f"""# ==============================================================================
-# [FASE 3: PERFILAMIENTO INFORMÁTICO Y CONSUMO DE MEMORIA]
+# [FASE 3: PERFILAMIENTO INFORMÁTICO, COMPLETITUD Y MATRIZ MISSINGNO]
 # ==============================================================================
+import matplotlib.pyplot as plt
+import missingno as msno
 from src.database.db_manager import DatabaseManager
 
 parquet_file = APP_ROOT / "{meta['parquet']}"
@@ -441,43 +443,58 @@ missing_df = pd.DataFrame({{
     "valores_unicos": df.nunique()
 }})
 display(missing_df)
+
+# Perfil de Ausencias con Missingno
+if len(df) >= 2 and len(df.columns) > 1:
+    fig, ax = plt.subplots(figsize=(14, 5))
+    sample_df = df.head(500) if len(df) > 500 else df
+    msno.matrix(sample_df, ax=ax, sparkline=False, color=(0.18, 0.38, 0.58), fontsize=10)
+    ax.set_title(f"Perfil de Ausencias (Missingno Matrix): {meta['title']}", fontsize=12, fontweight="bold", pad=15)
+    plt.tight_layout()
+    plt.show()
 """
 
-    md_stats_explanation = """### 3. Estimación de Momentos Estadísticos y Regla 1 de Nelson
+    md_stats_explanation = """### 3. Estimación de Momentos Duales, Ajuste MLE de Distribuciones y Regla 1 de Nelson
 Para la variable cuantitativa principal, calculamos:
-1. **Media Aritmética ($\\\\mu$)** y **Desviación Estándar ($\\\\sigma$)**:
-   $$\\\\mu = \\\\frac{1}{N} \\\\sum_{i=1}^N X_i, \\quad \\\\sigma = \\\\sqrt{\\\\frac{1}{N-1} \\\\sum_{i=1}^N (X_i - \\\\mu)^2}$$
-2. **Asimetría ($S$) y Curtosis ($K$)**:
-   $$S = \\\\frac{\\\\frac{1}{N} \\\\sum (X_i - \\\\mu)^3}{\\\\sigma^3}, \\quad K = \\\\frac{\\\\frac{1}{N} \\\\sum (X_i - \\\\mu)^4}{\\\\sigma^4} - 3$$
-3. **Test de Normalidad Jarque-Bera**:
-   $$JB = \\\\frac{N}{6} \\\\left( S^2 + \\\\frac{K^2}{4} \\\\right)$$
-4. **Control Estadístico de Procesos (SPC - Regla 1 de Nelson)**: Identifica observaciones a más de tres desviaciones estándar de la media ($|z| > 3$).
+1. **Momentos Paramétricos vs. Robustos**:
+   * Paramétricos: Media ($\\\\mu$), Desviación Estándar ($\\\\sigma$), Asimetría de Fisher-Pearson ($S$), Curtosis ($K$).
+   * No Paramétricos: Mediana ($Med$), Rango Intercuartílico ($IQR$), Desviación Absoluta de la Mediana ($MAD$), Media Recortada al 10%.
+2. **Ajuste de Distribuciones Teóricas (MLE)**:
+   * Ajustamos las distribuciones Normal, Lognormal, Gamma, Exponencial y Weibull.
+   * Realizamos el test de bondad de ajuste de **Kolmogorov-Smirnov** y seleccionamos el mejor modelo mediante el Criterio de Información de Akaike (**AIC**).
+3. **Control Estadístico de Procesos (SPC - Regla 1 de Nelson)**: Identifica observaciones a más de tres desviaciones estándar de la media ($|z| > 3$).
 """
 
     code_stats = f"""# ==============================================================================
-# [FASE 3: DIAGNÓSTICO ESTADÍSTICO DE DISTRIBUCIONES Y CONTROL SPC]
+# [FASE 3: DIAGNÓSTICO ESTADÍSTICO DE DISTRIBUCIONES (MLE), MOMENTOS DUALES Y SPC]
 # ==============================================================================
 from scipy import stats
 from src.modeling.sarimax_model import AgroModeler
+from src.modeling.statistical_profiler import StatisticalProfiler
 
 target_col = "{meta['primary_col']}"
 if target_col in df.columns and pd.api.types.is_numeric_dtype(df[target_col]):
     s = df[target_col].dropna()
     
-    mean_val = float(s.mean())
-    std_val = float(s.std())
-    skew_val = float(stats.skew(s))
-    kurt_val = float(stats.kurtosis(s))
-    jb_stat, jb_pval = stats.jarque_bera(s)
+    # 1. Momentos Estadísticos Duales
+    moments = StatisticalProfiler.compute_dual_moments(s)
+    print("--- 1. MOMENTOS ESTADÍSTICOS DUALES (PARAMÉTRICOS VS ROBUSTOS) ---")
+    print(f"• Media Paramétrica (μ): {{moments['media_mu']:,.4f}} | Mediana Robusta (Med): {{moments['mediana']:,.4f}}")
+    print(f"• Desviación Estándar (σ): {{moments['desviacion_sigma']:,.4f}} | MAD Robusta: {{moments['mad']:,.4f}}")
+    print(f"• Rango Intercuartílico (IQR): {{moments['iqr']:,.4f}} | Media Recortada 10%: {{moments['media_recortada_10']:,.4f}}")
+    print(f"• Coeficiente de Asimetría (Skewness): {{moments['asimetria_skewness']:.4f}}")
+    print(f"• Curtosis: {{moments['curtosis']:.4f}}")
+    print(f"• Coeficiente de Variación (CV): {{moments['coef_variacion_cv']:.2%}} | RSD Robusto (MAD/Med): {{moments['rsd_mad_robusto']:.2%}}")
     
-    print("--- 1. MOMENTOS ESTADÍSTICOS DE PEARSON ---")
-    print(f"• Media Aritmética (Media): {{mean_val:,.4f}}")
-    print(f"• Desviación Estándar (Sigma): {{std_val:,.4f}}")
-    print(f"• Coeficiente de Asimetría (Skewness): {{skew_val:.4f}} ({{'Asimetría Positiva' if skew_val > 0 else 'Asimetría Negativa'}})")
-    print(f"• Curtosis: {{kurt_val:.4f}} ({{'Leptocúrtica (Colas Pesadas)' if kurt_val > 0 else 'Platicúrtica'}})")
-    print(f"• Test Jarque-Bera: p-value = {{jb_pval:.4e}} ({{'Rechaza normalidad estricta' if jb_pval < 0.05 else 'Compatible con distribución normal'}})")
+    # 2. Ajuste de Distribuciones Teóricas MLE
+    fits = StatisticalProfiler.fit_probability_distributions(s)
+    print("\\n--- 2. AJUSTE DE DISTRIBUCIONES TEÓRICAS (MAXIMUM LIKELIHOOD ESTIMATION) ---")
+    print(f"• Distribución Óptima Seleccionada (Mínimo AIC): {{fits['mejor_distribucion']}}")
+    for dist_name, res in fits.get('comparativa_completa', {{}}).items():
+        print(f"  - {{dist_name.capitalize()}}: KS Stat={{res['ks_stat']:.4f}}, p-val={{res['ks_pvalue']:.4e}}, AIC={{res['aic']:,.2f}}")
     
-    print("\\n--- 2. DETECCIÓN DE ANOMALÍAS (SPC REGLA 1 DE NELSON) ---")
+    # 3. Control Estadístico de Procesos (SPC)
+    print("\\n--- 3. DETECCIÓN DE ANOMALÍAS (SPC REGLA 1 DE NELSON) ---")
     anomalies = AgroModeler.detect_nelson_anomalies(s)
     print(f"• Observaciones fuera de control (|z| > 3): {{anomalies.sum()}} de {{len(s)}} ({{(anomalies.sum()/len(s)):.2%}})")
 else:
@@ -486,30 +503,41 @@ else:
 """
 
     md_plots_explanation = """### 4. Visualización Diagnóstica de Distribución y Vallas de Tukey
-Construimos un panel dual con un histograma con ajuste de densidad kernel (KDE) y un diagrama de caja (Boxplot) señalando los cuartiles $Q_1$, $Q_2$ (mediana) y $Q_3$, junto con los límites de Tukey ($1.5 \\\\times IQR$).
+Construimos un panel de alta resolución con tres representaciones simultáneas:
+1. **Histograma Empírico con Densidad Kernel (KDE)** contrastando Media y Mediana.
+2. **Q-Q Plot Normal** para inspección visual de curtosis y colas pesadas.
+3. **Diagrama de Caja y Violín (Boxplot)** señalando cuartiles $Q_1, Q_2, Q_3$ y vallas de Tukey ($1.5 \\\\times IQR$).
 """
 
     code_plots = f"""# ==============================================================================
-# [FASE 3: VISUALIZACIONES DIAGNÓSTICAS EDA]
+# [FASE 3: PANEL VISUAL DE RIGOR ESTADÍSTICO Y DISTRIBUCIONES]
 # ==============================================================================
 import matplotlib.pyplot as plt
 import seaborn as sns
 
 target_col = "{meta['primary_col']}"
 if target_col in df.columns and pd.api.types.is_numeric_dtype(df[target_col]):
-    fig, axes = plt.subplots(1, 2, figsize=(14, 5))
+    fig, axes = plt.subplots(1, 3, figsize=(18, 5))
     s = df[target_col].dropna()
     
     # Subplot 1: Histograma y KDE
-    sns.histplot(s, kde=True, ax=axes[0], color="#2b5c8f", bins=30)
+    sns.histplot(s, kde=True, ax=axes[0], color="#2b5c8f", bins=30, stat="density")
     axes[0].axvline(s.mean(), color="red", linestyle="--", label=f"Media: {{s.mean():,.2f}}")
     axes[0].axvline(s.median(), color="green", linestyle="-", label=f"Mediana: {{s.median():,.2f}}")
-    axes[0].set_title("Distribución empírica de {meta['primary_col']}")
+    axes[0].set_title("Distribución Empírica y KDE", fontweight="bold")
     axes[0].legend()
     
-    # Subplot 2: Boxplot con límites IQR
-    sns.boxplot(x=s, ax=axes[1], color="#52b788")
-    axes[1].set_title("Boxplot y Detección de Outliers (Vallas de Tukey)")
+    # Subplot 2: Q-Q Plot
+    stats.probplot(s, dist="norm", plot=axes[1])
+    axes[1].get_lines()[0].set_markerfacecolor('#e74c3c')
+    axes[1].get_lines()[0].set_markeredgecolor('#c0392b')
+    axes[1].get_lines()[1].set_color('#2c3e50')
+    axes[1].set_title("Q-Q Plot vs. Normal Teórica", fontweight="bold")
+    
+    # Subplot 3: Boxplot y Violín
+    sns.violinplot(y=s, ax=axes[2], color="#ecf0f1", inner=None)
+    sns.boxplot(y=s, ax=axes[2], width=0.3, color="#3498db", fliersize=3)
+    axes[2].set_title("Dispersión, Boxplot y Violín", fontweight="bold")
     
     plt.tight_layout()
     plt.show()
@@ -848,9 +876,10 @@ Utilizamos `GranularityHarmonizer` para elevar las coordenadas geográficas a id
 """
 
     code_harmonization = f"""# ==============================================================================
-# [FASE 7: ARMONIZACIÓN DE DIMENSIONALIDAD Y GRANULARIDAD]
+# [FASE 7: ARMONIZACIÓN DE DIMENSIONALIDAD, DIVIPOLA Y DISTANCIAS GEODÉSICAS]
 # ==============================================================================
 from src.modeling.business_questions_engine import GranularityHarmonizer, BusinessQuestionsEngine
+from src.modeling.geospatial_engine import GeospatialEngine
 
 parquet_file = APP_ROOT / "{meta['parquet']}"
 df = pd.read_parquet(parquet_file)
@@ -858,9 +887,15 @@ df = pd.read_parquet(parquet_file)
 print("📐 Granularidad Espacial Original:", "{meta['granularity_spatial']}")
 print("⏱️ Granularidad Temporal Original:", "{meta['granularity_temporal']}")
 
-# Armonización espacial a código DIVIPOLA DANE oficial
-df_harmonized = GranularityHarmonizer.station_to_divipola(df)
-print(f"✅ Espacio armonizado: {{df_harmonized['codigo_divipola'].nunique()}} municipios DIVIPOLA identificados.")
+# 1. Armonización espacial DIVIPOLA DANE oficial a 5 dígitos
+mun_col = "municipio_origen" if "municipio_origen" in df.columns else ("municipio" if "municipio" in df.columns else None)
+df_harmonized = GeospatialEngine.enrich_with_divipola(df, municipio_col=mun_col)
+print(f"✅ Cobertura DIVIPOLA enriquecida: {{len(df_harmonized):,}} filas procesadas.")
+
+# 2. Análisis Geodésico Haversine hacia Centrales Mayoristas (si aplican coordenadas)
+if "latitud" in df_harmonized.columns and "longitud" in df_harmonized.columns:
+    df_harmonized = GeospatialEngine.compute_distance_to_terminals(df_harmonized, lat_col="latitud", lon_col="longitud")
+    print("📍 Distancias geodésicas en kilómetros (Haversine) vinculadas.")
 """
 
     md_modeling_explanation = """### 3. Inferencia Estadística Dual y Resolución de Preguntas A1-J1

@@ -1,132 +1,158 @@
 {
   "dataset_name": "sipsa_abastecimientos",
-  "timestamp": "2026-10-01T19:22:36.481083",
-  "total_records": 10000,
-  "total_columns": 9,
-  "overall_score": 0.968,
-  "status": "WARNING",
+  "timestamp": "2026-10-01T20:01:49.229732",
+  "total_records": 59500,
+  "total_columns": 11,
+  "overall_score": 0.7736,
+  "status": "FAILED",
   "dimension_scores": {
     "Completeness": 1.0,
-    "Uniqueness": 0.8684,
-    "Validity": 0.98,
+    "Uniqueness": 0.3753,
+    "Validity": 0.5,
     "Consistency": 1.0,
     "Timeliness": 1.0,
-    "Accuracy": 0.9834
+    "Accuracy": 0.9858
   },
   "checks": [
     {
-      "check_name": "null_rate_fuente",
+      "check_name": "null_rate_anio",
       "dimension": "Completeness",
-      "column": "fuente",
+      "column": "anio",
       "status": "PASSED",
       "severity": "MEDIUM",
       "metric_value": 0.0,
       "threshold": 0.4,
-      "message": "Tasa de nulos en 'fuente': 0.00%",
+      "message": "Tasa de nulos en 'anio': 0.00%",
       "details": {
         "null_count": 0
       }
     },
     {
-      "check_name": "null_rate_fechaencuesta",
+      "check_name": "null_rate_periodo",
       "dimension": "Completeness",
-      "column": "fechaencuesta",
+      "column": "periodo",
       "status": "PASSED",
       "severity": "MEDIUM",
       "metric_value": 0.0,
       "threshold": 0.4,
-      "message": "Tasa de nulos en 'fechaencuesta': 0.00%",
+      "message": "Tasa de nulos en 'periodo': 0.00%",
       "details": {
         "null_count": 0
       }
     },
     {
-      "check_name": "null_rate_cod_depto_proc",
+      "check_name": "null_rate_fecha",
       "dimension": "Completeness",
-      "column": "cod_depto_proc",
+      "column": "fecha",
       "status": "PASSED",
       "severity": "MEDIUM",
       "metric_value": 0.0,
       "threshold": 0.4,
-      "message": "Tasa de nulos en 'cod_depto_proc': 0.00%",
+      "message": "Tasa de nulos en 'fecha': 0.00%",
       "details": {
         "null_count": 0
       }
     },
     {
-      "check_name": "null_rate_cod_municipio_proc",
+      "check_name": "null_rate_fuente_destino",
       "dimension": "Completeness",
-      "column": "cod_municipio_proc",
+      "column": "fuente_destino",
       "status": "PASSED",
       "severity": "MEDIUM",
       "metric_value": 0.0,
       "threshold": 0.4,
-      "message": "Tasa de nulos en 'cod_municipio_proc': 0.00%",
+      "message": "Tasa de nulos en 'fuente_destino': 0.00%",
       "details": {
         "null_count": 0
       }
     },
     {
-      "check_name": "null_rate_departamento_proc",
+      "check_name": "null_rate_codigo_departamento_origen",
       "dimension": "Completeness",
-      "column": "departamento_proc",
+      "column": "codigo_departamento_origen",
       "status": "PASSED",
       "severity": "MEDIUM",
       "metric_value": 0.0,
       "threshold": 0.4,
-      "message": "Tasa de nulos en 'departamento_proc': 0.00%",
+      "message": "Tasa de nulos en 'codigo_departamento_origen': 0.00%",
       "details": {
         "null_count": 0
       }
     },
     {
-      "check_name": "null_rate_municipio_proc",
+      "check_name": "null_rate_codigo_divipola_origen",
       "dimension": "Completeness",
-      "column": "municipio_proc",
+      "column": "codigo_divipola_origen",
       "status": "PASSED",
       "severity": "MEDIUM",
       "metric_value": 0.0,
       "threshold": 0.4,
-      "message": "Tasa de nulos en 'municipio_proc': 0.00%",
+      "message": "Tasa de nulos en 'codigo_divipola_origen': 0.00%",
       "details": {
         "null_count": 0
       }
     },
     {
-      "check_name": "null_rate_grupo",
+      "check_name": "null_rate_departamento_origen",
       "dimension": "Completeness",
-      "column": "grupo",
+      "column": "departamento_origen",
       "status": "PASSED",
       "severity": "MEDIUM",
       "metric_value": 0.0,
       "threshold": 0.4,
-      "message": "Tasa de nulos en 'grupo': 0.00%",
+      "message": "Tasa de nulos en 'departamento_origen': 0.00%",
       "details": {
         "null_count": 0
       }
     },
     {
-      "check_name": "null_rate_ali",
+      "check_name": "null_rate_municipio_origen",
       "dimension": "Completeness",
-      "column": "ali",
+      "column": "municipio_origen",
       "status": "PASSED",
       "severity": "MEDIUM",
       "metric_value": 0.0,
       "threshold": 0.4,
-      "message": "Tasa de nulos en 'ali': 0.00%",
+      "message": "Tasa de nulos en 'municipio_origen': 0.00%",
       "details": {
         "null_count": 0
       }
     },
     {
-      "check_name": "null_rate_cant_kg",
+      "check_name": "null_rate_grupo_alimento",
       "dimension": "Completeness",
-      "column": "cant_kg",
+      "column": "grupo_alimento",
       "status": "PASSED",
       "severity": "MEDIUM",
       "metric_value": 0.0,
       "threshold": 0.4,
-      "message": "Tasa de nulos en 'cant_kg': 0.00%",
+      "message": "Tasa de nulos en 'grupo_alimento': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_producto",
+      "dimension": "Completeness",
+      "column": "producto",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'producto': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_cantidad_kg",
+      "dimension": "Completeness",
+      "column": "cantidad_kg",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'cantidad_kg': 0.00%",
       "details": {
         "null_count": 0
       }
@@ -137,39 +163,94 @@
       "column": null,
       "status": "FAILED",
       "severity": "MEDIUM",
-      "metric_value": 0.1316,
+      "metric_value": 0.20761344537815127,
       "threshold": 0.01,
-      "message": "Filas duplicadas id\u00e9nticas: 1316 (13.16%)",
+      "message": "Filas duplicadas id\u00e9nticas: 12353 (20.76%)",
       "details": {
-        "duplicate_rows": 1316
+        "duplicate_rows": 12353
       }
     },
     {
-      "check_name": "timeliness_bounds_fechaencuesta",
+      "check_name": "primary_key_uniqueness",
+      "dimension": "Uniqueness",
+      "column": "anio+fecha+codigo_divipola_origen+producto",
+      "status": "FAILED",
+      "severity": "CRITICAL",
+      "metric_value": 0.6247058823529412,
+      "threshold": 0.0,
+      "message": "Duplicados en Clave Primaria ['anio', 'fecha', 'codigo_divipola_origen', 'producto']: 37170 (62.47%)",
+      "details": {}
+    },
+    {
+      "check_name": "range_check_cantidad_kg",
+      "dimension": "Validity",
+      "column": "cantidad_kg",
+      "status": "PASSED",
+      "severity": "HIGH",
+      "metric_value": 0.0,
+      "threshold": 0.01,
+      "message": "Valores fuera de rango [0.0, 1000000.0] en 'cantidad_kg': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "regex_divipola_codigo_divipola_origen",
+      "dimension": "Validity",
+      "column": "codigo_divipola_origen",
+      "status": "WARNING",
+      "severity": "HIGH",
+      "metric_value": 1.0,
+      "threshold": 0.05,
+      "message": "Conformidad patr\u00f3n c\u00f3digo DIVIPOLA en 'codigo_divipola_origen': 0.00%",
+      "details": {}
+    },
+    {
+      "check_name": "timeliness_bounds_anio",
       "dimension": "Timeliness",
-      "column": "fechaencuesta",
+      "column": "anio",
       "status": "PASSED",
       "severity": "MEDIUM",
       "metric_value": 0.0,
       "threshold": 0.01,
-      "message": "Fechas futuras an\u00f3malas en 'fechaencuesta': 0 (0.00%)",
+      "message": "Fechas futuras an\u00f3malas en 'anio': 0 (0.00%)",
       "details": {}
     },
     {
-      "check_name": "extreme_outliers_iqr_cant_kg",
+      "check_name": "timeliness_bounds_fecha",
+      "dimension": "Timeliness",
+      "column": "fecha",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.01,
+      "message": "Fechas futuras an\u00f3malas en 'fecha': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_anio",
       "dimension": "Accuracy",
-      "column": "cant_kg",
+      "column": "anio",
       "status": "PASSED",
       "severity": "LOW",
-      "metric_value": 0.0166,
+      "metric_value": 0.0,
       "threshold": 0.05,
-      "message": "Outliers extremos (>3*IQR) en 'cant_kg': 166 (1.66%)",
+      "message": "Outliers extremos (>3*IQR) en 'anio': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_cantidad_kg",
+      "dimension": "Accuracy",
+      "column": "cantidad_kg",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.028302521008403362,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'cantidad_kg': 1684 (2.83%)",
       "details": {}
     }
   ],
   "summary_metrics": {
     "null_cells_total": 0,
-    "total_cells": 90000,
-    "memory_usage_mb": 1.58
+    "total_cells": 654500,
+    "memory_usage_mb": 10.36
   }
 }

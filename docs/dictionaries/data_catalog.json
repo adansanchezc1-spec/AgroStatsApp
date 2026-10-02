@@ -1,109 +1,132 @@
 {
   "catalog_title": "AgroData Intelligence Platform Data Catalog",
   "standard": "DAMA-DMBOK 2",
-  "last_updated": "2026-10-01T19:23:09.636611",
+  "last_updated": "2026-10-01T20:02:21.285883",
   "tables_count": 12,
   "tables": {
     "sipsa_abastecimientos": {
       "table_name": "sipsa_abastecimientos",
       "layer": "SILVER",
       "domain": "Abastecimiento Agroalimentario",
-      "business_description": "Env\u00edos y vol\u00famenes de alimentos hacia mercados mayoristas (DANE SIPSA).",
-      "granularity": "Fecha \u00d7 Mercado Mayorista \u00d7 Producto \u00d7 Origen",
-      "primary_key": [],
+      "business_description": "Serie multi-anual consolidada (2025-2019) de flujos de carga origen-destino (DANE SIPSA).",
+      "granularity": "A\u00f1o x Mes x Municipio Origen (DIVIPOLA) x Central Destino",
+      "primary_key": [
+        "anio",
+        "fecha",
+        "codigo_divipola_origen",
+        "producto"
+      ],
       "update_frequency": "Peri\u00f3dica / Eventos",
       "columns": [
         {
-          "name": "fuente",
+          "name": "anio",
+          "physical_type": "int64",
+          "logical_type": "Numeric",
+          "nullable": false,
+          "description": "Atributo anio en dominio Abastecimiento Agroalimentario.",
+          "sensitivity_tier": "PUBLIC",
+          "example_value": "2025"
+        },
+        {
+          "name": "periodo",
           "physical_type": "str",
           "logical_type": "DateTime",
           "nullable": false,
-          "description": "Atributo fuente en dominio Abastecimiento Agroalimentario.",
+          "description": "Atributo periodo en dominio Abastecimiento Agroalimentario.",
+          "sensitivity_tier": "PUBLIC",
+          "example_value": "Cuatrimestre III"
+        },
+        {
+          "name": "fecha",
+          "physical_type": "datetime64[us]",
+          "logical_type": "DateTime",
+          "nullable": false,
+          "description": "Atributo fecha en dominio Abastecimiento Agroalimentario.",
+          "sensitivity_tier": "PUBLIC",
+          "example_value": "2025-09-01 00:00:00"
+        },
+        {
+          "name": "fuente_destino",
+          "physical_type": "str",
+          "logical_type": "DateTime",
+          "nullable": false,
+          "description": "Atributo fuente_destino en dominio Abastecimiento Agroalimentario.",
           "sensitivity_tier": "PUBLIC",
           "example_value": "Armenia, Mercar"
         },
         {
-          "name": "fechaencuesta",
+          "name": "codigo_departamento_origen",
           "physical_type": "str",
           "logical_type": "DateTime",
           "nullable": false,
-          "description": "Atributo fechaencuesta en dominio Abastecimiento Agroalimentario.",
+          "description": "Atributo codigo_departamento_origen en dominio Abastecimiento Agroalimentario.",
           "sensitivity_tier": "PUBLIC",
-          "example_value": "02/01/2019"
+          "example_value": "'63"
         },
         {
-          "name": "cod_depto_proc",
+          "name": "codigo_divipola_origen",
           "physical_type": "str",
           "logical_type": "DateTime",
           "nullable": false,
-          "description": "Atributo cod_depto_proc en dominio Abastecimiento Agroalimentario.",
+          "description": "Atributo codigo_divipola_origen en dominio Abastecimiento Agroalimentario.",
           "sensitivity_tier": "PUBLIC",
-          "example_value": "'52"
+          "example_value": "'63190"
         },
         {
-          "name": "cod_municipio_proc",
+          "name": "departamento_origen",
           "physical_type": "str",
           "logical_type": "DateTime",
           "nullable": false,
-          "description": "Atributo cod_municipio_proc en dominio Abastecimiento Agroalimentario.",
+          "description": "Atributo departamento_origen en dominio Abastecimiento Agroalimentario.",
           "sensitivity_tier": "PUBLIC",
-          "example_value": "'52317"
+          "example_value": "QUIND\u00cdO"
         },
         {
-          "name": "departamento_proc",
+          "name": "municipio_origen",
           "physical_type": "str",
           "logical_type": "DateTime",
           "nullable": false,
-          "description": "Atributo departamento_proc en dominio Abastecimiento Agroalimentario.",
+          "description": "Atributo municipio_origen en dominio Abastecimiento Agroalimentario.",
           "sensitivity_tier": "PUBLIC",
-          "example_value": "NARI\u00d1O"
+          "example_value": "CIRCASIA"
         },
         {
-          "name": "municipio_proc",
+          "name": "grupo_alimento",
           "physical_type": "str",
           "logical_type": "DateTime",
           "nullable": false,
-          "description": "Atributo municipio_proc en dominio Abastecimiento Agroalimentario.",
+          "description": "Atributo grupo_alimento en dominio Abastecimiento Agroalimentario.",
           "sensitivity_tier": "PUBLIC",
-          "example_value": "GUACHUCAL"
+          "example_value": "VERDURAS Y HORTALIZAS"
         },
         {
-          "name": "grupo",
+          "name": "producto",
           "physical_type": "str",
           "logical_type": "DateTime",
           "nullable": false,
-          "description": "Atributo grupo en dominio Abastecimiento Agroalimentario.",
+          "description": "Atributo producto en dominio Abastecimiento Agroalimentario.",
           "sensitivity_tier": "PUBLIC",
-          "example_value": "TUBERCULOS, RAICES Y PLATANOS"
+          "example_value": "Tomate chonto"
         },
         {
-          "name": "ali",
-          "physical_type": "str",
-          "logical_type": "DateTime",
-          "nullable": false,
-          "description": "Atributo ali en dominio Abastecimiento Agroalimentario.",
-          "sensitivity_tier": "PUBLIC",
-          "example_value": "Papa suprema"
-        },
-        {
-          "name": "cant_kg",
-          "physical_type": "int64",
+          "name": "cantidad_kg",
+          "physical_type": "float64",
           "logical_type": "Numeric",
           "nullable": false,
-          "description": "Atributo cant_kg en dominio Abastecimiento Agroalimentario.",
-          "sensitivity_tier": "PUBLIC",
-          "example_value": "10000"
+          "description": "Atributo cantidad_kg en dominio Abastecimiento Agroalimentario.",
+          "sensitivity_tier": "INTERNAL",
+          "example_value": "4.4"
         }
       ],
-      "record_count": 10000,
-      "size_bytes": 1656150
+      "record_count": 59500,
+      "size_bytes": 10861121
     },
     "sipsa_precios": {
       "table_name": "sipsa_precios",
       "layer": "SILVER",
       "domain": "Precios Mayoristas",
-      "business_description": "Precios de comercializaci\u00f3n mayorista en centrales de abastos (DANE SIPSA).",
-      "granularity": "Fecha \u00d7 Mercado \u00d7 Producto",
+      "business_description": "Cotizaciones mayoristas diarias desenrolladas por central de abastos (DANE SIPSA).",
+      "granularity": "Fecha x Mercado Mayorista x Producto",
       "primary_key": [
         "producto"
       ],
@@ -378,8 +401,8 @@
       "table_name": "sipsa_insumos",
       "layer": "SILVER",
       "domain": "Costos e Insumos",
-      "business_description": "Precios e \u00edndices de fertilizantes, pesticidas y concentrados pecuarios.",
-      "granularity": "Mes \u00d7 Insumo \u00d7 Territorio",
+      "business_description": "\u00cdndices y precios mayoristas de fertilizantes y plaguicidas agr\u00edcolas.",
+      "granularity": "Mes x Insumo Qu\u00edmico",
       "primary_key": [
         "fecha"
       ],
@@ -915,248 +938,90 @@
       "table_name": "dane_ipc",
       "layer": "SILVER",
       "domain": "Macroeconom\u00eda Agraria",
-      "business_description": "\u00cdndice de Precios al Consumidor (IPC) e \u00cdndice de Precios del Productor (IPP).",
-      "granularity": "Mes \u00d7 Dominio Geogr\u00e1fico \u00d7 Clase",
-      "primary_key": [],
+      "business_description": "Serie longitudinal (2003-2026) del \u00cdndice de Precios al Consumidor (IPC Alimentos).",
+      "granularity": "A\u00f1o x Mes (Longitudinal)",
+      "primary_key": [
+        "anio",
+        "mes_num"
+      ],
       "update_frequency": "Peri\u00f3dica / Eventos",
       "columns": [
         {
-          "name": "unnamed_0",
+          "name": "anio",
+          "physical_type": "int64",
+          "logical_type": "Numeric",
+          "nullable": false,
+          "description": "Atributo anio en dominio Macroeconom\u00eda Agraria.",
+          "sensitivity_tier": "PUBLIC",
+          "example_value": "2026"
+        },
+        {
+          "name": "mes_num",
+          "physical_type": "int64",
+          "logical_type": "Numeric",
+          "nullable": false,
+          "description": "Atributo mes_num en dominio Macroeconom\u00eda Agraria.",
+          "sensitivity_tier": "PUBLIC",
+          "example_value": "8"
+        },
+        {
+          "name": "mes_nombre",
           "physical_type": "str",
           "logical_type": "DateTime",
-          "nullable": true,
-          "description": "Atributo unnamed_0 en dominio Macroeconom\u00eda Agraria.",
+          "nullable": false,
+          "description": "Atributo mes_nombre en dominio Macroeconom\u00eda Agraria.",
           "sensitivity_tier": "PUBLIC",
-          "example_value": "Total, Indice de Precios al Consumido..."
+          "example_value": "Agosto"
         },
         {
-          "name": "unnamed_1",
+          "name": "fecha",
+          "physical_type": "str",
+          "logical_type": "DateTime",
+          "nullable": false,
+          "description": "Atributo fecha en dominio Macroeconom\u00eda Agraria.",
+          "sensitivity_tier": "PUBLIC",
+          "example_value": "2026-08-01"
+        },
+        {
+          "name": "ipc_alimentos",
+          "physical_type": "float64",
+          "logical_type": "Numeric",
+          "nullable": false,
+          "description": "Atributo ipc_alimentos en dominio Macroeconom\u00eda Agraria.",
+          "sensitivity_tier": "PUBLIC",
+          "example_value": "160.42"
+        },
+        {
+          "name": "variacion_mensual_pct",
           "physical_type": "float64",
           "logical_type": "Numeric",
           "nullable": true,
-          "description": "Atributo unnamed_1 en dominio Macroeconom\u00eda Agraria.",
+          "description": "Atributo variacion_mensual_pct en dominio Macroeconom\u00eda Agraria.",
           "sensitivity_tier": "PUBLIC",
-          "example_value": "2003.0"
+          "example_value": "0.3942674760623266"
         },
         {
-          "name": "unnamed_2",
+          "name": "variacion_anual_pct",
           "physical_type": "float64",
           "logical_type": "Numeric",
           "nullable": true,
-          "description": "Atributo unnamed_2 en dominio Macroeconom\u00eda Agraria.",
+          "description": "Atributo variacion_anual_pct en dominio Macroeconom\u00eda Agraria.",
           "sensitivity_tier": "PUBLIC",
-          "example_value": "2004.0"
-        },
-        {
-          "name": "unnamed_3",
-          "physical_type": "float64",
-          "logical_type": "Numeric",
-          "nullable": true,
-          "description": "Atributo unnamed_3 en dominio Macroeconom\u00eda Agraria.",
-          "sensitivity_tier": "PUBLIC",
-          "example_value": "2005.0"
-        },
-        {
-          "name": "unnamed_4",
-          "physical_type": "float64",
-          "logical_type": "Numeric",
-          "nullable": true,
-          "description": "Atributo unnamed_4 en dominio Macroeconom\u00eda Agraria.",
-          "sensitivity_tier": "PUBLIC",
-          "example_value": "2006.0"
-        },
-        {
-          "name": "unnamed_5",
-          "physical_type": "float64",
-          "logical_type": "Numeric",
-          "nullable": true,
-          "description": "Atributo unnamed_5 en dominio Macroeconom\u00eda Agraria.",
-          "sensitivity_tier": "PUBLIC",
-          "example_value": "2007.0"
-        },
-        {
-          "name": "unnamed_6",
-          "physical_type": "float64",
-          "logical_type": "Numeric",
-          "nullable": true,
-          "description": "Atributo unnamed_6 en dominio Macroeconom\u00eda Agraria.",
-          "sensitivity_tier": "PUBLIC",
-          "example_value": "2008.0"
-        },
-        {
-          "name": "unnamed_7",
-          "physical_type": "float64",
-          "logical_type": "Numeric",
-          "nullable": true,
-          "description": "Atributo unnamed_7 en dominio Macroeconom\u00eda Agraria.",
-          "sensitivity_tier": "PUBLIC",
-          "example_value": "2009.0"
-        },
-        {
-          "name": "unnamed_8",
-          "physical_type": "float64",
-          "logical_type": "Numeric",
-          "nullable": true,
-          "description": "Atributo unnamed_8 en dominio Macroeconom\u00eda Agraria.",
-          "sensitivity_tier": "PUBLIC",
-          "example_value": "2010.0"
-        },
-        {
-          "name": "unnamed_9",
-          "physical_type": "float64",
-          "logical_type": "Numeric",
-          "nullable": true,
-          "description": "Atributo unnamed_9 en dominio Macroeconom\u00eda Agraria.",
-          "sensitivity_tier": "PUBLIC",
-          "example_value": "2011.0"
-        },
-        {
-          "name": "unnamed_10",
-          "physical_type": "float64",
-          "logical_type": "Numeric",
-          "nullable": true,
-          "description": "Atributo unnamed_10 en dominio Macroeconom\u00eda Agraria.",
-          "sensitivity_tier": "PUBLIC",
-          "example_value": "2012.0"
-        },
-        {
-          "name": "unnamed_11",
-          "physical_type": "float64",
-          "logical_type": "Numeric",
-          "nullable": true,
-          "description": "Atributo unnamed_11 en dominio Macroeconom\u00eda Agraria.",
-          "sensitivity_tier": "PUBLIC",
-          "example_value": "2013.0"
-        },
-        {
-          "name": "unnamed_12",
-          "physical_type": "float64",
-          "logical_type": "Numeric",
-          "nullable": true,
-          "description": "Atributo unnamed_12 en dominio Macroeconom\u00eda Agraria.",
-          "sensitivity_tier": "PUBLIC",
-          "example_value": "2014.0"
-        },
-        {
-          "name": "unnamed_13",
-          "physical_type": "float64",
-          "logical_type": "Numeric",
-          "nullable": true,
-          "description": "Atributo unnamed_13 en dominio Macroeconom\u00eda Agraria.",
-          "sensitivity_tier": "PUBLIC",
-          "example_value": "2015.0"
-        },
-        {
-          "name": "unnamed_14",
-          "physical_type": "float64",
-          "logical_type": "Numeric",
-          "nullable": true,
-          "description": "Atributo unnamed_14 en dominio Macroeconom\u00eda Agraria.",
-          "sensitivity_tier": "PUBLIC",
-          "example_value": "2016.0"
-        },
-        {
-          "name": "unnamed_15",
-          "physical_type": "float64",
-          "logical_type": "Numeric",
-          "nullable": true,
-          "description": "Atributo unnamed_15 en dominio Macroeconom\u00eda Agraria.",
-          "sensitivity_tier": "PUBLIC",
-          "example_value": "2017.0"
-        },
-        {
-          "name": "unnamed_16",
-          "physical_type": "float64",
-          "logical_type": "Numeric",
-          "nullable": true,
-          "description": "Atributo unnamed_16 en dominio Macroeconom\u00eda Agraria.",
-          "sensitivity_tier": "PUBLIC",
-          "example_value": "2018.0"
-        },
-        {
-          "name": "unnamed_17",
-          "physical_type": "float64",
-          "logical_type": "Numeric",
-          "nullable": true,
-          "description": "Atributo unnamed_17 en dominio Macroeconom\u00eda Agraria.",
-          "sensitivity_tier": "PUBLIC",
-          "example_value": "2019.0"
-        },
-        {
-          "name": "unnamed_18",
-          "physical_type": "float64",
-          "logical_type": "Numeric",
-          "nullable": true,
-          "description": "Atributo unnamed_18 en dominio Macroeconom\u00eda Agraria.",
-          "sensitivity_tier": "PUBLIC",
-          "example_value": "2020.0"
-        },
-        {
-          "name": "unnamed_19",
-          "physical_type": "float64",
-          "logical_type": "Numeric",
-          "nullable": true,
-          "description": "Atributo unnamed_19 en dominio Macroeconom\u00eda Agraria.",
-          "sensitivity_tier": "PUBLIC",
-          "example_value": "2021.0"
-        },
-        {
-          "name": "unnamed_20",
-          "physical_type": "float64",
-          "logical_type": "Numeric",
-          "nullable": true,
-          "description": "Atributo unnamed_20 en dominio Macroeconom\u00eda Agraria.",
-          "sensitivity_tier": "PUBLIC",
-          "example_value": "2022.0"
-        },
-        {
-          "name": "unnamed_21",
-          "physical_type": "float64",
-          "logical_type": "Numeric",
-          "nullable": true,
-          "description": "Atributo unnamed_21 en dominio Macroeconom\u00eda Agraria.",
-          "sensitivity_tier": "PUBLIC",
-          "example_value": "2023.0"
-        },
-        {
-          "name": "unnamed_22",
-          "physical_type": "float64",
-          "logical_type": "Numeric",
-          "nullable": true,
-          "description": "Atributo unnamed_22 en dominio Macroeconom\u00eda Agraria.",
-          "sensitivity_tier": "PUBLIC",
-          "example_value": "2024.0"
-        },
-        {
-          "name": "unnamed_23",
-          "physical_type": "float64",
-          "logical_type": "Numeric",
-          "nullable": true,
-          "description": "Atributo unnamed_23 en dominio Macroeconom\u00eda Agraria.",
-          "sensitivity_tier": "PUBLIC",
-          "example_value": "2025.0"
-        },
-        {
-          "name": "unnamed_24",
-          "physical_type": "float64",
-          "logical_type": "Numeric",
-          "nullable": true,
-          "description": "Atributo unnamed_24 en dominio Macroeconom\u00eda Agraria.",
-          "sensitivity_tier": "PUBLIC",
-          "example_value": "2026.0"
+          "example_value": "6.245446718325698"
         }
       ],
-      "record_count": 19,
-      "size_bytes": 4245
+      "record_count": 284,
+      "size_bytes": 20689
     },
     "ideam_pluviometria": {
       "table_name": "ideam_pluviometria",
       "layer": "SILVER",
       "domain": "Hidrometeorolog\u00eda Agr\u00edcola",
-      "business_description": "Registros hist\u00f3ricos de pluviometr\u00eda y precipitaci\u00f3n acumulada por estaci\u00f3n.",
-      "granularity": "Fecha \u00d7 Estaci\u00f3n Meteorol\u00f3gica",
+      "business_description": "Registros pluviom\u00e9tricos y precipitaci\u00f3n acumulada por estaci\u00f3n meteorol\u00f3gica.",
+      "granularity": "Fecha x Estaci\u00f3n x C\u00f3digo DIVIPOLA",
       "primary_key": [
-        "codigoestacion"
+        "codigoestacion",
+        "fechaobservacion"
       ],
       "update_frequency": "Peri\u00f3dica / Eventos",
       "columns": [
@@ -1275,7 +1140,7 @@
           "nullable": false,
           "description": "Atributo codigo_divipola en dominio Hidrometeorolog\u00eda Agr\u00edcola.",
           "sensitivity_tier": "PUBLIC",
-          "example_value": "MUN_74824"
+          "example_value": "MUN_98430"
         }
       ],
       "record_count": 100,
@@ -1285,8 +1150,8 @@
       "table_name": "ideam_telemetria_realtime",
       "layer": "SILVER",
       "domain": "Telemetr\u00eda en Tiempo Real",
-      "business_description": "Sensorica telem\u00e9trica hidrometeorol\u00f3gica en tiempo real v\u00eda Socrata SODA 2.0.",
-      "granularity": "Timestamp \u00d7 C\u00f3digo Sensor",
+      "business_description": "Observaciones sensoricas continuas de estaciones IDEAM (API 57sv-p2fu).",
+      "granularity": "Timestamp x C\u00f3digo Sensor x DIVIPOLA",
       "primary_key": [
         "codigoestacion",
         "fechaobservacion"
@@ -1417,49 +1282,60 @@
           "nullable": false,
           "description": "Atributo codigo_divipola en dominio Telemetr\u00eda en Tiempo Real.",
           "sensitivity_tier": "PUBLIC",
-          "example_value": "MUN_73984"
+          "example_value": "MUN_71987"
         }
       ],
       "record_count": 1000,
-      "size_bytes": 301751
+      "size_bytes": 301598
     },
     "dane_csaa": {
       "table_name": "dane_csaa",
       "layer": "SILVER",
       "domain": "Cuentas Nacionales",
-      "business_description": "Cuenta Sat\u00e9lite de la Agroindustria: Valor Agregado Bruto (VAB) y Producci\u00f3n.",
-      "granularity": "Cadena Productiva \u00d7 Fase \u00d7 A\u00f1o",
-      "primary_key": [],
+      "business_description": "Cuenta Sat\u00e9lite de la Agroindustria: Valor Agregado Bruto (VAB) por fase productiva.",
+      "granularity": "C\u00f3digo Cuadro x Cadena Agropecuaria",
+      "primary_key": [
+        "codigo_cuadro"
+      ],
       "update_frequency": "Peri\u00f3dica / Eventos",
       "columns": [
         {
-          "name": "unnamed_1",
+          "name": "codigo_cuadro",
           "physical_type": "str",
           "logical_type": "DateTime",
-          "nullable": true,
-          "description": "Atributo unnamed_1 en dominio Cuentas Nacionales.",
+          "nullable": false,
+          "description": "Atributo codigo_cuadro en dominio Cuentas Nacionales.",
           "sensitivity_tier": "PUBLIC",
-          "example_value": "Fase agr\u00edcola"
+          "example_value": "Cuadro 1"
         },
         {
-          "name": "unnamed_2",
+          "name": "descripcion_indicador",
           "physical_type": "str",
           "logical_type": "DateTime",
-          "nullable": true,
-          "description": "Atributo unnamed_2 en dominio Cuentas Nacionales.",
+          "nullable": false,
+          "description": "Atributo descripcion_indicador en dominio Cuentas Nacionales.",
           "sensitivity_tier": "PUBLIC",
           "example_value": "\u00c1rea sembrada de arroz paddy verde me..."
+        },
+        {
+          "name": "fase_cadena",
+          "physical_type": "str",
+          "logical_type": "DateTime",
+          "nullable": false,
+          "description": "Atributo fase_cadena en dominio Cuentas Nacionales.",
+          "sensitivity_tier": "PUBLIC",
+          "example_value": "Fase Agr\u00edcola / Agroindustrial"
         }
       ],
-      "record_count": 34,
-      "size_bytes": 4486
+      "record_count": 22,
+      "size_bytes": 3597
     },
     "doc_webservice_chunks": {
       "table_name": "doc_webservice_chunks",
       "layer": "SILVER",
       "domain": "Documentaci\u00f3n No Estructurada",
-      "business_description": "Fragmentos procesados y vectorizados de la documentaci\u00f3n t\u00e9cnica oficial DANE.",
-      "granularity": "Documento \u00d7 N\u00famero de Chunk",
+      "business_description": "Fragmentos procesados de la especificaci\u00f3n t\u00e9cnica DANE WebService SIPSA.",
+      "granularity": "Documento x Chunk ID",
       "primary_key": [
         "chunk_id"
       ],
@@ -1517,24 +1393,170 @@
     "landing_leads": {
       "table_name": "landing_leads",
       "layer": "SILVER",
-      "domain": "Customer & Growth Analytics",
+      "domain": "Customer & Commercial Analytics",
       "business_description": "Prospectos de productores y clientes con seudonimizaci\u00f3n SHA-256 (Ley 1581).",
-      "granularity": "ID Lead \u00d7 Timestamp Registro",
-      "primary_key": [],
+      "granularity": "ID Lead x Timestamp Registro",
+      "primary_key": [
+        "id"
+      ],
       "update_frequency": "Peri\u00f3dica / Eventos",
       "columns": [
         {
-          "name": "raw_content",
+          "name": "id",
           "physical_type": "str",
           "logical_type": "DateTime",
           "nullable": false,
-          "description": "Atributo raw_content en dominio Customer & Growth Analytics.",
+          "description": "Atributo id en dominio Customer & Commercial Analytics.",
+          "sensitivity_tier": "INTERNAL",
+          "example_value": "LEAD-2026-1001"
+        },
+        {
+          "name": "ticketid",
+          "physical_type": "str",
+          "logical_type": "DateTime",
+          "nullable": false,
+          "description": "Atributo ticketid en dominio Customer & Commercial Analytics.",
+          "sensitivity_tier": "INTERNAL",
+          "example_value": "LEAD-2026-1001"
+        },
+        {
+          "name": "companyname",
+          "physical_type": "str",
+          "logical_type": "DateTime",
+          "nullable": false,
+          "description": "Atributo companyname en dominio Customer & Commercial Analytics.",
           "sensitivity_tier": "PUBLIC",
-          "example_value": "/**\n * STATSFIRM CO. \u2014 LEADS & INQUIR..."
+          "example_value": "Fintech Andes Corp."
+        },
+        {
+          "name": "contactname",
+          "physical_type": "str",
+          "logical_type": "DateTime",
+          "nullable": false,
+          "description": "Atributo contactname en dominio Customer & Commercial Analytics.",
+          "sensitivity_tier": "PUBLIC",
+          "example_value": "4390a8a8e554070b734dd36643273a9405972..."
+        },
+        {
+          "name": "email",
+          "physical_type": "str",
+          "logical_type": "DateTime",
+          "nullable": false,
+          "description": "Atributo email en dominio Customer & Commercial Analytics.",
+          "sensitivity_tier": "CONFIDENTIAL_PII",
+          "example_value": "2042a2b555e377eb9fa482ceb53730e717c71..."
+        },
+        {
+          "name": "phone",
+          "physical_type": "str",
+          "logical_type": "DateTime",
+          "nullable": false,
+          "description": "Atributo phone en dominio Customer & Commercial Analytics.",
+          "sensitivity_tier": "CONFIDENTIAL_PII",
+          "example_value": "c70da8950ae09e2f18461ab76332bfe590169..."
+        },
+        {
+          "name": "industry",
+          "physical_type": "str",
+          "logical_type": "DateTime",
+          "nullable": false,
+          "description": "Atributo industry en dominio Customer & Commercial Analytics.",
+          "sensitivity_tier": "PUBLIC",
+          "example_value": "Finanzas & Banca"
+        },
+        {
+          "name": "services",
+          "physical_type": "str",
+          "logical_type": "DateTime",
+          "nullable": false,
+          "description": "Atributo services en dominio Customer & Commercial Analytics.",
+          "sensitivity_tier": "PUBLIC",
+          "example_value": "['data-engineering', 'ai-data-science']"
+        },
+        {
+          "name": "datavolumetb",
+          "physical_type": "int64",
+          "logical_type": "Numeric",
+          "nullable": false,
+          "description": "Atributo datavolumetb en dominio Customer & Commercial Analytics.",
+          "sensitivity_tier": "PUBLIC",
+          "example_value": "12"
+        },
+        {
+          "name": "budgetusd",
+          "physical_type": "int64",
+          "logical_type": "Numeric",
+          "nullable": false,
+          "description": "Atributo budgetusd en dominio Customer & Commercial Analytics.",
+          "sensitivity_tier": "PUBLIC",
+          "example_value": "45000"
+        },
+        {
+          "name": "urgency",
+          "physical_type": "str",
+          "logical_type": "DateTime",
+          "nullable": false,
+          "description": "Atributo urgency en dominio Customer & Commercial Analytics.",
+          "sensitivity_tier": "PUBLIC",
+          "example_value": "alta"
+        },
+        {
+          "name": "challengedescription",
+          "physical_type": "str",
+          "logical_type": "DateTime",
+          "nullable": false,
+          "description": "Atributo challengedescription en dominio Customer & Commercial Analytics.",
+          "sensitivity_tier": "PUBLIC",
+          "example_value": "Modernizaci\u00f3n de DWH legado hacia Dat..."
+        },
+        {
+          "name": "score",
+          "physical_type": "int64",
+          "logical_type": "Numeric",
+          "nullable": false,
+          "description": "Atributo score en dominio Customer & Commercial Analytics.",
+          "sensitivity_tier": "PUBLIC",
+          "example_value": "88"
+        },
+        {
+          "name": "priority",
+          "physical_type": "str",
+          "logical_type": "DateTime",
+          "nullable": false,
+          "description": "Atributo priority en dominio Customer & Commercial Analytics.",
+          "sensitivity_tier": "PUBLIC",
+          "example_value": "ALTA"
+        },
+        {
+          "name": "status",
+          "physical_type": "str",
+          "logical_type": "DateTime",
+          "nullable": false,
+          "description": "Atributo status en dominio Customer & Commercial Analytics.",
+          "sensitivity_tier": "PUBLIC",
+          "example_value": "QUALIFIED_FOR_ARB"
+        },
+        {
+          "name": "assignedto",
+          "physical_type": "str",
+          "logical_type": "DateTime",
+          "nullable": false,
+          "description": "Atributo assignedto en dominio Customer & Commercial Analytics.",
+          "sensitivity_tier": "PUBLIC",
+          "example_value": "Mateo Arismendi (Jefe de Procesos)"
+        },
+        {
+          "name": "createdat",
+          "physical_type": "str",
+          "logical_type": "DateTime",
+          "nullable": false,
+          "description": "Atributo createdat en dominio Customer & Commercial Analytics.",
+          "sensitivity_tier": "PUBLIC",
+          "example_value": "2026-09-05 14:22:10 UTC"
         }
       ],
       "record_count": 1,
-      "size_bytes": 2963
+      "size_bytes": 767
     },
     "dim_municipio_divipola": {
       "table_name": "dim_municipio_divipola",
@@ -1698,19 +1720,19 @@
           "name": "metrica_parametrica",
           "physical_type": "float64",
           "logical_type": "Numeric",
-          "nullable": false,
+          "nullable": true,
           "description": "Atributo metrica_parametrica en dominio Analytics & Reporting.",
           "sensitivity_tier": "PUBLIC",
-          "example_value": "35596071.0"
+          "example_value": "120326500.0"
         },
         {
           "name": "metrica_no_parametrica",
           "physical_type": "float64",
           "logical_type": "Numeric",
-          "nullable": false,
+          "nullable": true,
           "description": "Atributo metrica_no_parametrica en dominio Analytics & Reporting.",
           "sensitivity_tier": "PUBLIC",
-          "example_value": "19500000.0"
+          "example_value": "120309000.0"
         },
         {
           "name": "unidad",
@@ -1728,11 +1750,11 @@
           "nullable": false,
           "description": "Atributo interpretacion en dominio Analytics & Reporting.",
           "sensitivity_tier": "PUBLIC",
-          "example_value": "Volumen total abastecido: 35,596,071 Kg"
+          "example_value": "Volumen total abastecido: 120,326,500 Kg"
         }
       ],
       "record_count": 9,
-      "size_bytes": 1831
+      "size_bytes": 1826
     }
   }
 }

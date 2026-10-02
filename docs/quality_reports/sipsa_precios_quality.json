@@ -1,14 +1,14 @@
 {
   "dataset_name": "sipsa_precios",
-  "timestamp": "2026-10-01T19:22:37.645682",
+  "timestamp": "2026-10-01T20:02:03.607221",
   "total_records": 36,
   "total_columns": 29,
-  "overall_score": 0.9745,
+  "overall_score": 0.9785,
   "status": "WARNING",
   "dimension_scores": {
     "Completeness": 0.9234,
     "Uniqueness": 1.0,
-    "Validity": 0.98,
+    "Validity": 1.0,
     "Consistency": 1.0,
     "Timeliness": 1.0,
     "Accuracy": 0.9769
@@ -413,6 +413,17 @@
       "metric_value": 0.0,
       "threshold": 0.0,
       "message": "Duplicados en Clave Primaria ['producto']: 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "range_check_bogota_corabastos_precio",
+      "dimension": "Validity",
+      "column": "bogota_corabastos_precio",
+      "status": "PASSED",
+      "severity": "HIGH",
+      "metric_value": 0.0,
+      "threshold": 0.01,
+      "message": "Valores fuera de rango [0.0, 500000.0] en 'bogota_corabastos_precio': 0 (0.00%)",
       "details": {}
     },
     {

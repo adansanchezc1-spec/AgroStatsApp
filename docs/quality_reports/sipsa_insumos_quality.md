@@ -1,6 +1,6 @@
 # Reporte de Calidad de Datos: `sipsa_insumos`
-**Estándar**: ISO/IEC 25010 & DAMA-DMBOK 2 | **Fecha**: 2026-10-01T19:22:38.469383  
-**Estado General**: ⚠️ WARNING | **Score Global**: `99.5%`  
+**Estándar**: ISO/IEC 25010 & DAMA-DMBOK 2 | **Fecha**: 2026-10-01T20:02:06.129800  
+**Estado General**: ⚠️ WARNING | **Score Global**: `99.9%`  
 **Volumen**: 92 filas × 58 columnas
 
 ---
@@ -10,7 +10,7 @@
 |---|:---:|:---:|
 | **Completeness** | 99.5% | ✅ Óptimo |
 | **Uniqueness** | 100.0% | ✅ Óptimo |
-| **Validity** | 98.0% | ✅ Óptimo |
+| **Validity** | 100.0% | ✅ Óptimo |
 | **Consistency** | 100.0% | ✅ Óptimo |
 | **Timeliness** | 100.0% | ✅ Óptimo |
 | **Accuracy** | 99.7% | ✅ Óptimo |
@@ -80,6 +80,7 @@
 | null_rate_total_molusquicidas | Completeness | `total_molusquicidas` | MEDIUM | 0.000 | 0.400 | ✅ PASS |
 | row_deduplication_check | Uniqueness | `Global` | MEDIUM | 0.000 | 0.010 | ✅ PASS |
 | primary_key_uniqueness | Uniqueness | `fecha` | CRITICAL | 0.000 | 0.000 | ✅ PASS |
+| range_check_indice_total | Validity | `indice_total` | HIGH | 0.000 | 0.010 | ✅ PASS |
 | timeliness_bounds_fecha | Timeliness | `fecha` | MEDIUM | 0.000 | 0.010 | ✅ PASS |
 | extreme_outliers_iqr_indice_total | Accuracy | `indice_total` | LOW | 0.000 | 0.050 | ✅ PASS |
 | extreme_outliers_iqr_total_fertilizantes | Accuracy | `total_fertilizantes` | LOW | 0.000 | 0.050 | ✅ PASS |

@@ -1,13 +1,13 @@
 {
   "dataset_name": "dane_csaa",
-  "timestamp": "2026-10-01T19:23:06.700297",
-  "total_records": 34,
-  "total_columns": 2,
-  "overall_score": 0.9594,
-  "status": "WARNING",
+  "timestamp": "2026-10-01T20:02:16.507258",
+  "total_records": 22,
+  "total_columns": 3,
+  "overall_score": 0.991,
+  "status": "PASSED",
   "dimension_scores": {
-    "Completeness": 0.8971,
-    "Uniqueness": 0.9706,
+    "Completeness": 1.0,
+    "Uniqueness": 1.0,
     "Validity": 0.98,
     "Consistency": 1.0,
     "Timeliness": 1.0,
@@ -15,48 +15,72 @@
   },
   "checks": [
     {
-      "check_name": "null_rate_unnamed_1",
+      "check_name": "null_rate_codigo_cuadro",
       "dimension": "Completeness",
-      "column": "unnamed_1",
+      "column": "codigo_cuadro",
       "status": "PASSED",
       "severity": "MEDIUM",
-      "metric_value": 0.058823529411764705,
+      "metric_value": 0.0,
       "threshold": 0.4,
-      "message": "Tasa de nulos en 'unnamed_1': 5.88%",
+      "message": "Tasa de nulos en 'codigo_cuadro': 0.00%",
       "details": {
-        "null_count": 2
+        "null_count": 0
       }
     },
     {
-      "check_name": "null_rate_unnamed_2",
+      "check_name": "null_rate_descripcion_indicador",
       "dimension": "Completeness",
-      "column": "unnamed_2",
+      "column": "descripcion_indicador",
       "status": "PASSED",
       "severity": "MEDIUM",
-      "metric_value": 0.14705882352941177,
+      "metric_value": 0.0,
       "threshold": 0.4,
-      "message": "Tasa de nulos en 'unnamed_2': 14.71%",
+      "message": "Tasa de nulos en 'descripcion_indicador': 0.00%",
       "details": {
-        "null_count": 5
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_fase_cadena",
+      "dimension": "Completeness",
+      "column": "fase_cadena",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'fase_cadena': 0.00%",
+      "details": {
+        "null_count": 0
       }
     },
     {
       "check_name": "row_deduplication_check",
       "dimension": "Uniqueness",
       "column": null,
-      "status": "WARNING",
+      "status": "PASSED",
       "severity": "MEDIUM",
-      "metric_value": 0.029411764705882353,
+      "metric_value": 0.0,
       "threshold": 0.01,
-      "message": "Filas duplicadas id\u00e9nticas: 1 (2.94%)",
+      "message": "Filas duplicadas id\u00e9nticas: 0 (0.00%)",
       "details": {
-        "duplicate_rows": 1
+        "duplicate_rows": 0
       }
+    },
+    {
+      "check_name": "primary_key_uniqueness",
+      "dimension": "Uniqueness",
+      "column": "codigo_cuadro",
+      "status": "PASSED",
+      "severity": "CRITICAL",
+      "metric_value": 0.0,
+      "threshold": 0.0,
+      "message": "Duplicados en Clave Primaria ['codigo_cuadro']: 0 (0.00%)",
+      "details": {}
     }
   ],
   "summary_metrics": {
-    "null_cells_total": 7,
-    "total_cells": 68,
+    "null_cells_total": 0,
+    "total_cells": 66,
     "memory_usage_mb": 0.0
   }
 }

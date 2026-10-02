@@ -1,17 +1,17 @@
 {
   "dataset_name": "ideam_telemetria_realtime",
-  "timestamp": "2026-10-01T19:23:05.110603",
+  "timestamp": "2026-10-01T20:02:13.074621",
   "total_records": 1000,
   "total_columns": 14,
-  "overall_score": 0.8903,
+  "overall_score": 0.8892,
   "status": "FAILED",
   "dimension_scores": {
     "Completeness": 0.9997,
-    "Uniqueness": 0.974,
-    "Validity": 0.4975,
+    "Uniqueness": 0.968,
+    "Validity": 0.496,
     "Consistency": 1.0,
     "Timeliness": 1.0,
-    "Accuracy": 0.961
+    "Accuracy": 0.965
   },
   "checks": [
     {
@@ -215,9 +215,9 @@
       "column": "codigoestacion+fechaobservacion",
       "status": "FAILED",
       "severity": "CRITICAL",
-      "metric_value": 0.026,
+      "metric_value": 0.032,
       "threshold": 0.0,
-      "message": "Duplicados en Clave Primaria ['codigoestacion', 'fechaobservacion']: 26 (2.60%)",
+      "message": "Duplicados en Clave Primaria ['codigoestacion', 'fechaobservacion']: 32 (3.20%)",
       "details": {}
     },
     {
@@ -226,9 +226,9 @@
       "column": "valorobservado",
       "status": "WARNING",
       "severity": "HIGH",
-      "metric_value": 0.005,
+      "metric_value": 0.008,
       "threshold": 0.01,
-      "message": "Valores fuera de rango [-10.0, 1000.0] en 'valorobservado': 5 (0.50%)",
+      "message": "Valores fuera de rango [-10.0, 1000.0] en 'valorobservado': 8 (0.80%)",
       "details": {}
     },
     {
@@ -292,9 +292,9 @@
       "column": "valorobservado",
       "status": "WARNING",
       "severity": "LOW",
-      "metric_value": 0.095,
+      "metric_value": 0.099,
       "threshold": 0.05,
-      "message": "Outliers extremos (>3*IQR) en 'valorobservado': 95 (9.50%)",
+      "message": "Outliers extremos (>3*IQR) en 'valorobservado': 99 (9.90%)",
       "details": {}
     },
     {
@@ -303,9 +303,9 @@
       "column": "latitud",
       "status": "WARNING",
       "severity": "LOW",
-      "metric_value": 0.083,
+      "metric_value": 0.062,
       "threshold": 0.05,
-      "message": "Outliers extremos (>3*IQR) en 'latitud': 83 (8.30%)",
+      "message": "Outliers extremos (>3*IQR) en 'latitud': 62 (6.20%)",
       "details": {}
     },
     {
@@ -314,9 +314,9 @@
       "column": "longitud",
       "status": "PASSED",
       "severity": "LOW",
-      "metric_value": 0.017,
+      "metric_value": 0.014,
       "threshold": 0.05,
-      "message": "Outliers extremos (>3*IQR) en 'longitud': 17 (1.70%)",
+      "message": "Outliers extremos (>3*IQR) en 'longitud': 14 (1.40%)",
       "details": {}
     }
   ],

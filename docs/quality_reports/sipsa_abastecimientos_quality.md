@@ -1,7 +1,7 @@
 # Reporte de Calidad de Datos: `sipsa_abastecimientos`
-**Estándar**: ISO/IEC 25010 & DAMA-DMBOK 2 | **Fecha**: 2026-10-01T19:22:36.481083  
-**Estado General**: ⚠️ WARNING | **Score Global**: `96.8%`  
-**Volumen**: 10,000 filas × 9 columnas
+**Estándar**: ISO/IEC 25010 & DAMA-DMBOK 2 | **Fecha**: 2026-10-01T20:01:49.229732  
+**Estado General**: ❌ FAILED | **Score Global**: `77.4%`  
+**Volumen**: 59,500 filas × 11 columnas
 
 ---
 ## 1. Desempeño por Dimensión de Calidad (DAMA-DMBOK 2)
@@ -9,26 +9,33 @@
 | Dimensión | Puntuación | Estado |
 |---|:---:|:---:|
 | **Completeness** | 100.0% | ✅ Óptimo |
-| **Uniqueness** | 86.8% | ⚠️ Aceptable |
-| **Validity** | 98.0% | ✅ Óptimo |
+| **Uniqueness** | 37.5% | ❌ Crítico |
+| **Validity** | 50.0% | ❌ Crítico |
 | **Consistency** | 100.0% | ✅ Óptimo |
 | **Timeliness** | 100.0% | ✅ Óptimo |
-| **Accuracy** | 98.3% | ✅ Óptimo |
+| **Accuracy** | 98.6% | ✅ Óptimo |
 
 ---
 ## 2. Detalle de Pruebas de Calidad (Quality Checks)
 
 | Regla / Chequeo | Dimensión | Columna | Severidad | Métrica | Umbral | Resultado |
 |---|---|---|:---:|:---:|:---:|:---:|
-| null_rate_fuente | Completeness | `fuente` | MEDIUM | 0.000 | 0.400 | ✅ PASS |
-| null_rate_fechaencuesta | Completeness | `fechaencuesta` | MEDIUM | 0.000 | 0.400 | ✅ PASS |
-| null_rate_cod_depto_proc | Completeness | `cod_depto_proc` | MEDIUM | 0.000 | 0.400 | ✅ PASS |
-| null_rate_cod_municipio_proc | Completeness | `cod_municipio_proc` | MEDIUM | 0.000 | 0.400 | ✅ PASS |
-| null_rate_departamento_proc | Completeness | `departamento_proc` | MEDIUM | 0.000 | 0.400 | ✅ PASS |
-| null_rate_municipio_proc | Completeness | `municipio_proc` | MEDIUM | 0.000 | 0.400 | ✅ PASS |
-| null_rate_grupo | Completeness | `grupo` | MEDIUM | 0.000 | 0.400 | ✅ PASS |
-| null_rate_ali | Completeness | `ali` | MEDIUM | 0.000 | 0.400 | ✅ PASS |
-| null_rate_cant_kg | Completeness | `cant_kg` | MEDIUM | 0.000 | 0.400 | ✅ PASS |
-| row_deduplication_check | Uniqueness | `Global` | MEDIUM | 0.132 | 0.010 | ❌ FAIL |
-| timeliness_bounds_fechaencuesta | Timeliness | `fechaencuesta` | MEDIUM | 0.000 | 0.010 | ✅ PASS |
-| extreme_outliers_iqr_cant_kg | Accuracy | `cant_kg` | LOW | 0.017 | 0.050 | ✅ PASS |
+| null_rate_anio | Completeness | `anio` | MEDIUM | 0.000 | 0.400 | ✅ PASS |
+| null_rate_periodo | Completeness | `periodo` | MEDIUM | 0.000 | 0.400 | ✅ PASS |
+| null_rate_fecha | Completeness | `fecha` | MEDIUM | 0.000 | 0.400 | ✅ PASS |
+| null_rate_fuente_destino | Completeness | `fuente_destino` | MEDIUM | 0.000 | 0.400 | ✅ PASS |
+| null_rate_codigo_departamento_origen | Completeness | `codigo_departamento_origen` | MEDIUM | 0.000 | 0.400 | ✅ PASS |
+| null_rate_codigo_divipola_origen | Completeness | `codigo_divipola_origen` | MEDIUM | 0.000 | 0.400 | ✅ PASS |
+| null_rate_departamento_origen | Completeness | `departamento_origen` | MEDIUM | 0.000 | 0.400 | ✅ PASS |
+| null_rate_municipio_origen | Completeness | `municipio_origen` | MEDIUM | 0.000 | 0.400 | ✅ PASS |
+| null_rate_grupo_alimento | Completeness | `grupo_alimento` | MEDIUM | 0.000 | 0.400 | ✅ PASS |
+| null_rate_producto | Completeness | `producto` | MEDIUM | 0.000 | 0.400 | ✅ PASS |
+| null_rate_cantidad_kg | Completeness | `cantidad_kg` | MEDIUM | 0.000 | 0.400 | ✅ PASS |
+| row_deduplication_check | Uniqueness | `Global` | MEDIUM | 0.208 | 0.010 | ❌ FAIL |
+| primary_key_uniqueness | Uniqueness | `anio+fecha+codigo_divipola_origen+producto` | CRITICAL | 0.625 | 0.000 | ❌ FAIL |
+| range_check_cantidad_kg | Validity | `cantidad_kg` | HIGH | 0.000 | 0.010 | ✅ PASS |
+| regex_divipola_codigo_divipola_origen | Validity | `codigo_divipola_origen` | HIGH | 1.000 | 0.050 | ⚠️ WARN |
+| timeliness_bounds_anio | Timeliness | `anio` | MEDIUM | 0.000 | 0.010 | ✅ PASS |
+| timeliness_bounds_fecha | Timeliness | `fecha` | MEDIUM | 0.000 | 0.010 | ✅ PASS |
+| extreme_outliers_iqr_anio | Accuracy | `anio` | LOW | 0.000 | 0.050 | ✅ PASS |
+| extreme_outliers_iqr_cantidad_kg | Accuracy | `cantidad_kg` | LOW | 0.028 | 0.050 | ✅ PASS |

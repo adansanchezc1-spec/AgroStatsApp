@@ -1,5 +1,5 @@
 # Catálogo de Datos y Diccionario de Metadatos (DAMA-DMBOK 2)
-**Plataforma**: AgroStats Intelligence Platform | **Fecha**: 2026-10-01 19:23:09
+**Plataforma**: AgroStats Intelligence Platform | **Fecha**: 2026-10-01 20:02:21
 **Entidades Gobernadas**: 12 tablas y marts
 
 ---
@@ -7,15 +7,15 @@
 
 | Tabla / Entidad | Capa | Dominio | Granularidad | Registros | Frecuencia |
 |---|:---:|---|---|---:|:---:|
-| `sipsa_abastecimientos` | **SILVER** | Abastecimiento Agroalimentario | Fecha × Mercado Mayorista × Producto × Origen | 10,000 | Periódica / Eventos |
-| `sipsa_precios` | **SILVER** | Precios Mayoristas | Fecha × Mercado × Producto | 36 | Periódica / Eventos |
-| `sipsa_insumos` | **SILVER** | Costos e Insumos | Mes × Insumo × Territorio | 92 | Periódica / Eventos |
-| `dane_ipc` | **SILVER** | Macroeconomía Agraria | Mes × Dominio Geográfico × Clase | 19 | Periódica / Eventos |
-| `ideam_pluviometria` | **SILVER** | Hidrometeorología Agrícola | Fecha × Estación Meteorológica | 100 | Periódica / Eventos |
-| `ideam_telemetria_realtime` | **SILVER** | Telemetría en Tiempo Real | Timestamp × Código Sensor | 1,000 | Periódica / Eventos |
-| `dane_csaa` | **SILVER** | Cuentas Nacionales | Cadena Productiva × Fase × Año | 34 | Periódica / Eventos |
-| `doc_webservice_chunks` | **SILVER** | Documentación No Estructurada | Documento × Número de Chunk | 39 | Periódica / Eventos |
-| `landing_leads` | **SILVER** | Customer & Growth Analytics | ID Lead × Timestamp Registro | 1 | Periódica / Eventos |
+| `sipsa_abastecimientos` | **SILVER** | Abastecimiento Agroalimentario | Año x Mes x Municipio Origen (DIVIPOLA) x Central Destino | 59,500 | Periódica / Eventos |
+| `sipsa_precios` | **SILVER** | Precios Mayoristas | Fecha x Mercado Mayorista x Producto | 36 | Periódica / Eventos |
+| `sipsa_insumos` | **SILVER** | Costos e Insumos | Mes x Insumo Químico | 92 | Periódica / Eventos |
+| `dane_ipc` | **SILVER** | Macroeconomía Agraria | Año x Mes (Longitudinal) | 284 | Periódica / Eventos |
+| `ideam_pluviometria` | **SILVER** | Hidrometeorología Agrícola | Fecha x Estación x Código DIVIPOLA | 100 | Periódica / Eventos |
+| `ideam_telemetria_realtime` | **SILVER** | Telemetría en Tiempo Real | Timestamp x Código Sensor x DIVIPOLA | 1,000 | Periódica / Eventos |
+| `dane_csaa` | **SILVER** | Cuentas Nacionales | Código Cuadro x Cadena Agropecuaria | 22 | Periódica / Eventos |
+| `doc_webservice_chunks` | **SILVER** | Documentación No Estructurada | Documento x Chunk ID | 39 | Periódica / Eventos |
+| `landing_leads` | **SILVER** | Customer & Commercial Analytics | ID Lead x Timestamp Registro | 1 | Periódica / Eventos |
 | `dim_municipio_divipola` | **GOLD** | Analytics & Reporting | Agregada / Dimensional | 8 | Batch / Demanda |
 | `dim_producto_agro` | **GOLD** | Analytics & Reporting | Agregada / Dimensional | 8 | Batch / Demanda |
 | `mart_business_questions` | **GOLD** | Analytics & Reporting | Agregada / Dimensional | 9 | Batch / Demanda |
@@ -25,26 +25,28 @@
 
 ### Entidad: `sipsa_abastecimientos`
 - **Capa Medallion**: SILVER
-- **Descripción**: Envíos y volúmenes de alimentos hacia mercados mayoristas (DANE SIPSA).
-- **Granularidad**: `Fecha × Mercado Mayorista × Producto × Origen`
-- **Clave Primaria**: `N/A`
+- **Descripción**: Serie multi-anual consolidada (2025-2019) de flujos de carga origen-destino (DANE SIPSA).
+- **Granularidad**: `Año x Mes x Municipio Origen (DIVIPOLA) x Central Destino`
+- **Clave Primaria**: `anio, fecha, codigo_divipola_origen, producto`
 
 | Columna | Tipo Físico | Tipo Lógico | Nullable | Sensibilidad | Ejemplo |
 |---|---|---|:---:|:---:|---|
-| `fuente` | `str` | DateTime | No | `PUBLIC` | `Armenia, Mercar` |
-| `fechaencuesta` | `str` | DateTime | No | `PUBLIC` | `02/01/2019` |
-| `cod_depto_proc` | `str` | DateTime | No | `PUBLIC` | `'52` |
-| `cod_municipio_proc` | `str` | DateTime | No | `PUBLIC` | `'52317` |
-| `departamento_proc` | `str` | DateTime | No | `PUBLIC` | `NARIÑO` |
-| `municipio_proc` | `str` | DateTime | No | `PUBLIC` | `GUACHUCAL` |
-| `grupo` | `str` | DateTime | No | `PUBLIC` | `TUBERCULOS, RAICES Y PLATANOS` |
-| `ali` | `str` | DateTime | No | `PUBLIC` | `Papa suprema` |
-| `cant_kg` | `int64` | Numeric | No | `PUBLIC` | `10000` |
+| `anio` | `int64` | Numeric | No | `PUBLIC` | `2025` |
+| `periodo` | `str` | DateTime | No | `PUBLIC` | `Cuatrimestre III` |
+| `fecha` | `datetime64[us]` | DateTime | No | `PUBLIC` | `2025-09-01 00:00:00` |
+| `fuente_destino` | `str` | DateTime | No | `PUBLIC` | `Armenia, Mercar` |
+| `codigo_departamento_origen` | `str` | DateTime | No | `PUBLIC` | `'63` |
+| `codigo_divipola_origen` | `str` | DateTime | No | `PUBLIC` | `'63190` |
+| `departamento_origen` | `str` | DateTime | No | `PUBLIC` | `QUINDÍO` |
+| `municipio_origen` | `str` | DateTime | No | `PUBLIC` | `CIRCASIA` |
+| `grupo_alimento` | `str` | DateTime | No | `PUBLIC` | `VERDURAS Y HORTALIZAS` |
+| `producto` | `str` | DateTime | No | `PUBLIC` | `Tomate chonto` |
+| `cantidad_kg` | `float64` | Numeric | No | `INTERNAL` | `4.4` |
 
 ### Entidad: `sipsa_precios`
 - **Capa Medallion**: SILVER
-- **Descripción**: Precios de comercialización mayorista en centrales de abastos (DANE SIPSA).
-- **Granularidad**: `Fecha × Mercado × Producto`
+- **Descripción**: Cotizaciones mayoristas diarias desenrolladas por central de abastos (DANE SIPSA).
+- **Granularidad**: `Fecha x Mercado Mayorista x Producto`
 - **Clave Primaria**: `producto`
 
 | Columna | Tipo Físico | Tipo Lógico | Nullable | Sensibilidad | Ejemplo |
@@ -81,8 +83,8 @@
 
 ### Entidad: `sipsa_insumos`
 - **Capa Medallion**: SILVER
-- **Descripción**: Precios e índices de fertilizantes, pesticidas y concentrados pecuarios.
-- **Granularidad**: `Mes × Insumo × Territorio`
+- **Descripción**: Índices y precios mayoristas de fertilizantes y plaguicidas agrícolas.
+- **Granularidad**: `Mes x Insumo Químico`
 - **Clave Primaria**: `fecha`
 
 | Columna | Tipo Físico | Tipo Lógico | Nullable | Sensibilidad | Ejemplo |
@@ -148,43 +150,25 @@
 
 ### Entidad: `dane_ipc`
 - **Capa Medallion**: SILVER
-- **Descripción**: Índice de Precios al Consumidor (IPC) e Índice de Precios del Productor (IPP).
-- **Granularidad**: `Mes × Dominio Geográfico × Clase`
-- **Clave Primaria**: `N/A`
+- **Descripción**: Serie longitudinal (2003-2026) del Índice de Precios al Consumidor (IPC Alimentos).
+- **Granularidad**: `Año x Mes (Longitudinal)`
+- **Clave Primaria**: `anio, mes_num`
 
 | Columna | Tipo Físico | Tipo Lógico | Nullable | Sensibilidad | Ejemplo |
 |---|---|---|:---:|:---:|---|
-| `unnamed_0` | `str` | DateTime | Sí | `PUBLIC` | `Total, Indice de Precios al Consumido...` |
-| `unnamed_1` | `float64` | Numeric | Sí | `PUBLIC` | `2003.0` |
-| `unnamed_2` | `float64` | Numeric | Sí | `PUBLIC` | `2004.0` |
-| `unnamed_3` | `float64` | Numeric | Sí | `PUBLIC` | `2005.0` |
-| `unnamed_4` | `float64` | Numeric | Sí | `PUBLIC` | `2006.0` |
-| `unnamed_5` | `float64` | Numeric | Sí | `PUBLIC` | `2007.0` |
-| `unnamed_6` | `float64` | Numeric | Sí | `PUBLIC` | `2008.0` |
-| `unnamed_7` | `float64` | Numeric | Sí | `PUBLIC` | `2009.0` |
-| `unnamed_8` | `float64` | Numeric | Sí | `PUBLIC` | `2010.0` |
-| `unnamed_9` | `float64` | Numeric | Sí | `PUBLIC` | `2011.0` |
-| `unnamed_10` | `float64` | Numeric | Sí | `PUBLIC` | `2012.0` |
-| `unnamed_11` | `float64` | Numeric | Sí | `PUBLIC` | `2013.0` |
-| `unnamed_12` | `float64` | Numeric | Sí | `PUBLIC` | `2014.0` |
-| `unnamed_13` | `float64` | Numeric | Sí | `PUBLIC` | `2015.0` |
-| `unnamed_14` | `float64` | Numeric | Sí | `PUBLIC` | `2016.0` |
-| `unnamed_15` | `float64` | Numeric | Sí | `PUBLIC` | `2017.0` |
-| `unnamed_16` | `float64` | Numeric | Sí | `PUBLIC` | `2018.0` |
-| `unnamed_17` | `float64` | Numeric | Sí | `PUBLIC` | `2019.0` |
-| `unnamed_18` | `float64` | Numeric | Sí | `PUBLIC` | `2020.0` |
-| `unnamed_19` | `float64` | Numeric | Sí | `PUBLIC` | `2021.0` |
-| `unnamed_20` | `float64` | Numeric | Sí | `PUBLIC` | `2022.0` |
-| `unnamed_21` | `float64` | Numeric | Sí | `PUBLIC` | `2023.0` |
-| `unnamed_22` | `float64` | Numeric | Sí | `PUBLIC` | `2024.0` |
-| `unnamed_23` | `float64` | Numeric | Sí | `PUBLIC` | `2025.0` |
-| `unnamed_24` | `float64` | Numeric | Sí | `PUBLIC` | `2026.0` |
+| `anio` | `int64` | Numeric | No | `PUBLIC` | `2026` |
+| `mes_num` | `int64` | Numeric | No | `PUBLIC` | `8` |
+| `mes_nombre` | `str` | DateTime | No | `PUBLIC` | `Agosto` |
+| `fecha` | `str` | DateTime | No | `PUBLIC` | `2026-08-01` |
+| `ipc_alimentos` | `float64` | Numeric | No | `PUBLIC` | `160.42` |
+| `variacion_mensual_pct` | `float64` | Numeric | Sí | `PUBLIC` | `0.3942674760623266` |
+| `variacion_anual_pct` | `float64` | Numeric | Sí | `PUBLIC` | `6.245446718325698` |
 
 ### Entidad: `ideam_pluviometria`
 - **Capa Medallion**: SILVER
-- **Descripción**: Registros históricos de pluviometría y precipitación acumulada por estación.
-- **Granularidad**: `Fecha × Estación Meteorológica`
-- **Clave Primaria**: `codigoestacion`
+- **Descripción**: Registros pluviométricos y precipitación acumulada por estación meteorológica.
+- **Granularidad**: `Fecha x Estación x Código DIVIPOLA`
+- **Clave Primaria**: `codigoestacion, fechaobservacion`
 
 | Columna | Tipo Físico | Tipo Lógico | Nullable | Sensibilidad | Ejemplo |
 |---|---|---|:---:|:---:|---|
@@ -200,12 +184,12 @@
 | `longitud` | `float64` | Numeric | No | `PUBLIC` | `-75.73416667` |
 | `descripcionsensor` | `str` | DateTime | No | `PUBLIC` | `Precipitacion` |
 | `unidadmedida` | `str` | DateTime | No | `INTERNAL` | `mm` |
-| `codigo_divipola` | `str` | DateTime | No | `PUBLIC` | `MUN_74824` |
+| `codigo_divipola` | `str` | DateTime | No | `PUBLIC` | `MUN_98430` |
 
 ### Entidad: `ideam_telemetria_realtime`
 - **Capa Medallion**: SILVER
-- **Descripción**: Sensorica telemétrica hidrometeorológica en tiempo real vía Socrata SODA 2.0.
-- **Granularidad**: `Timestamp × Código Sensor`
+- **Descripción**: Observaciones sensoricas continuas de estaciones IDEAM (API 57sv-p2fu).
+- **Granularidad**: `Timestamp x Código Sensor x DIVIPOLA`
 - **Clave Primaria**: `codigoestacion, fechaobservacion`
 
 | Columna | Tipo Físico | Tipo Lógico | Nullable | Sensibilidad | Ejemplo |
@@ -223,23 +207,24 @@
 | `descripcionsensor` | `str` | DateTime | Sí | `PUBLIC` | `Temperatura del suelo a 50 cm` |
 | `unidadmedida` | `str` | DateTime | Sí | `INTERNAL` | `°C` |
 | `entidad` | `str` | DateTime | No | `INTERNAL` | `ESTACIONES PARTICULARES` |
-| `codigo_divipola` | `str` | DateTime | No | `PUBLIC` | `MUN_73984` |
+| `codigo_divipola` | `str` | DateTime | No | `PUBLIC` | `MUN_71987` |
 
 ### Entidad: `dane_csaa`
 - **Capa Medallion**: SILVER
-- **Descripción**: Cuenta Satélite de la Agroindustria: Valor Agregado Bruto (VAB) y Producción.
-- **Granularidad**: `Cadena Productiva × Fase × Año`
-- **Clave Primaria**: `N/A`
+- **Descripción**: Cuenta Satélite de la Agroindustria: Valor Agregado Bruto (VAB) por fase productiva.
+- **Granularidad**: `Código Cuadro x Cadena Agropecuaria`
+- **Clave Primaria**: `codigo_cuadro`
 
 | Columna | Tipo Físico | Tipo Lógico | Nullable | Sensibilidad | Ejemplo |
 |---|---|---|:---:|:---:|---|
-| `unnamed_1` | `str` | DateTime | Sí | `PUBLIC` | `Fase agrícola` |
-| `unnamed_2` | `str` | DateTime | Sí | `PUBLIC` | `Área sembrada de arroz paddy verde me...` |
+| `codigo_cuadro` | `str` | DateTime | No | `PUBLIC` | `Cuadro 1` |
+| `descripcion_indicador` | `str` | DateTime | No | `PUBLIC` | `Área sembrada de arroz paddy verde me...` |
+| `fase_cadena` | `str` | DateTime | No | `PUBLIC` | `Fase Agrícola / Agroindustrial` |
 
 ### Entidad: `doc_webservice_chunks`
 - **Capa Medallion**: SILVER
-- **Descripción**: Fragmentos procesados y vectorizados de la documentación técnica oficial DANE.
-- **Granularidad**: `Documento × Número de Chunk`
+- **Descripción**: Fragmentos procesados de la especificación técnica DANE WebService SIPSA.
+- **Granularidad**: `Documento x Chunk ID`
 - **Clave Primaria**: `chunk_id`
 
 | Columna | Tipo Físico | Tipo Lógico | Nullable | Sensibilidad | Ejemplo |
@@ -253,13 +238,28 @@
 ### Entidad: `landing_leads`
 - **Capa Medallion**: SILVER
 - **Descripción**: Prospectos de productores y clientes con seudonimización SHA-256 (Ley 1581).
-- **Granularidad**: `ID Lead × Timestamp Registro`
-- **Clave Primaria**: `N/A`
+- **Granularidad**: `ID Lead x Timestamp Registro`
+- **Clave Primaria**: `id`
 
 | Columna | Tipo Físico | Tipo Lógico | Nullable | Sensibilidad | Ejemplo |
 |---|---|---|:---:|:---:|---|
-| `raw_content` | `str` | DateTime | No | `PUBLIC` | `/**
- * STATSFIRM CO. — LEADS & INQUIR...` |
+| `id` | `str` | DateTime | No | `INTERNAL` | `LEAD-2026-1001` |
+| `ticketid` | `str` | DateTime | No | `INTERNAL` | `LEAD-2026-1001` |
+| `companyname` | `str` | DateTime | No | `PUBLIC` | `Fintech Andes Corp.` |
+| `contactname` | `str` | DateTime | No | `PUBLIC` | `4390a8a8e554070b734dd36643273a9405972...` |
+| `email` | `str` | DateTime | No | `CONFIDENTIAL_PII` | `2042a2b555e377eb9fa482ceb53730e717c71...` |
+| `phone` | `str` | DateTime | No | `CONFIDENTIAL_PII` | `c70da8950ae09e2f18461ab76332bfe590169...` |
+| `industry` | `str` | DateTime | No | `PUBLIC` | `Finanzas & Banca` |
+| `services` | `str` | DateTime | No | `PUBLIC` | `['data-engineering', 'ai-data-science']` |
+| `datavolumetb` | `int64` | Numeric | No | `PUBLIC` | `12` |
+| `budgetusd` | `int64` | Numeric | No | `PUBLIC` | `45000` |
+| `urgency` | `str` | DateTime | No | `PUBLIC` | `alta` |
+| `challengedescription` | `str` | DateTime | No | `PUBLIC` | `Modernización de DWH legado hacia Dat...` |
+| `score` | `int64` | Numeric | No | `PUBLIC` | `88` |
+| `priority` | `str` | DateTime | No | `PUBLIC` | `ALTA` |
+| `status` | `str` | DateTime | No | `PUBLIC` | `QUALIFIED_FOR_ARB` |
+| `assignedto` | `str` | DateTime | No | `PUBLIC` | `Mateo Arismendi (Jefe de Procesos)` |
+| `createdat` | `str` | DateTime | No | `PUBLIC` | `2026-09-05 14:22:10 UTC` |
 
 ### Entidad: `dim_municipio_divipola`
 - **Capa Medallion**: GOLD
@@ -300,7 +300,7 @@
 | `pregunta_id` | `str` | DateTime | No | `INTERNAL` | `A1` |
 | `dimension` | `str` | DateTime | No | `PUBLIC` | `Demanda y Abastecimiento` |
 | `titulo` | `str` | DateTime | No | `PUBLIC` | `Tamaño del mercado de abastecimiento` |
-| `metrica_parametrica` | `float64` | Numeric | No | `PUBLIC` | `35596071.0` |
-| `metrica_no_parametrica` | `float64` | Numeric | No | `PUBLIC` | `19500000.0` |
+| `metrica_parametrica` | `float64` | Numeric | Sí | `PUBLIC` | `120326500.0` |
+| `metrica_no_parametrica` | `float64` | Numeric | Sí | `PUBLIC` | `120309000.0` |
 | `unidad` | `str` | DateTime | No | `INTERNAL` | `Kg` |
-| `interpretacion` | `str` | DateTime | No | `PUBLIC` | `Volumen total abastecido: 35,596,071 Kg` |
+| `interpretacion` | `str` | DateTime | No | `PUBLIC` | `Volumen total abastecido: 120,326,500 Kg` |

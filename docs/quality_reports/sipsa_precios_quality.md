@@ -1,6 +1,6 @@
 # Reporte de Calidad de Datos: `sipsa_precios`
-**Estándar**: ISO/IEC 25010 & DAMA-DMBOK 2 | **Fecha**: 2026-10-01T19:22:37.645682  
-**Estado General**: ⚠️ WARNING | **Score Global**: `97.5%`  
+**Estándar**: ISO/IEC 25010 & DAMA-DMBOK 2 | **Fecha**: 2026-10-01T20:02:03.607221  
+**Estado General**: ⚠️ WARNING | **Score Global**: `97.9%`  
 **Volumen**: 36 filas × 29 columnas
 
 ---
@@ -10,7 +10,7 @@
 |---|:---:|:---:|
 | **Completeness** | 92.3% | ✅ Óptimo |
 | **Uniqueness** | 100.0% | ✅ Óptimo |
-| **Validity** | 98.0% | ✅ Óptimo |
+| **Validity** | 100.0% | ✅ Óptimo |
 | **Consistency** | 100.0% | ✅ Óptimo |
 | **Timeliness** | 100.0% | ✅ Óptimo |
 | **Accuracy** | 97.7% | ✅ Óptimo |
@@ -51,6 +51,7 @@
 | null_rate_tunja_var | Completeness | `tunja_var` | MEDIUM | 0.222 | 0.400 | ✅ PASS |
 | row_deduplication_check | Uniqueness | `Global` | MEDIUM | 0.000 | 0.010 | ✅ PASS |
 | primary_key_uniqueness | Uniqueness | `producto` | CRITICAL | 0.000 | 0.000 | ✅ PASS |
+| range_check_bogota_corabastos_precio | Validity | `bogota_corabastos_precio` | HIGH | 0.000 | 0.010 | ✅ PASS |
 | extreme_outliers_iqr_armenia_mercar_precio | Accuracy | `armenia_mercar_precio` | LOW | 0.000 | 0.050 | ✅ PASS |
 | extreme_outliers_iqr_bogota_corabastos_precio | Accuracy | `bogota_corabastos_precio` | LOW | 0.000 | 0.050 | ✅ PASS |
 | extreme_outliers_iqr_bogota_corabastos_var | Accuracy | `bogota_corabastos_var` | LOW | 0.029 | 0.050 | ✅ PASS |

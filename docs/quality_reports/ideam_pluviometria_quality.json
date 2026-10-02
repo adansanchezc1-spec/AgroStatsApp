@@ -1,14 +1,14 @@
 {
   "dataset_name": "ideam_pluviometria",
-  "timestamp": "2026-10-01T19:22:40.256215",
+  "timestamp": "2026-10-01T20:02:10.114482",
   "total_records": 100,
   "total_columns": 13,
-  "overall_score": 0.777,
-  "status": "FAILED",
+  "overall_score": 0.895,
+  "status": "WARNING",
   "dimension_scores": {
     "Completeness": 1.0,
-    "Uniqueness": 0.91,
-    "Validity": 0.0,
+    "Uniqueness": 1.0,
+    "Validity": 0.5,
     "Consistency": 1.0,
     "Timeliness": 1.0,
     "Accuracy": 0.95
@@ -199,12 +199,23 @@
     {
       "check_name": "primary_key_uniqueness",
       "dimension": "Uniqueness",
-      "column": "codigoestacion",
-      "status": "FAILED",
+      "column": "codigoestacion+fechaobservacion",
+      "status": "PASSED",
       "severity": "CRITICAL",
-      "metric_value": 0.09,
+      "metric_value": 0.0,
       "threshold": 0.0,
-      "message": "Duplicados en Clave Primaria ['codigoestacion']: 9 (9.00%)",
+      "message": "Duplicados en Clave Primaria ['codigoestacion', 'fechaobservacion']: 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "range_check_valorobservado",
+      "dimension": "Validity",
+      "column": "valorobservado",
+      "status": "PASSED",
+      "severity": "HIGH",
+      "metric_value": 0.0,
+      "threshold": 0.01,
+      "message": "Valores fuera de rango [0.0, 1000.0] en 'valorobservado': 0 (0.00%)",
       "details": {}
     },
     {

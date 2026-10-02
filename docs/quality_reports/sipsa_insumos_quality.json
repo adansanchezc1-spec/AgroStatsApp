@@ -1,14 +1,14 @@
 {
   "dataset_name": "sipsa_insumos",
-  "timestamp": "2026-10-01T19:22:38.469383",
+  "timestamp": "2026-10-01T20:02:06.129800",
   "total_records": 92,
   "total_columns": 58,
-  "overall_score": 0.9945,
+  "overall_score": 0.9985,
   "status": "WARNING",
   "dimension_scores": {
     "Completeness": 0.9953,
     "Uniqueness": 1.0,
-    "Validity": 0.98,
+    "Validity": 1.0,
     "Consistency": 1.0,
     "Timeliness": 1.0,
     "Accuracy": 0.9969
@@ -790,6 +790,17 @@
       "metric_value": 0.0,
       "threshold": 0.0,
       "message": "Duplicados en Clave Primaria ['fecha']: 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "range_check_indice_total",
+      "dimension": "Validity",
+      "column": "indice_total",
+      "status": "PASSED",
+      "severity": "HIGH",
+      "metric_value": 0.0,
+      "threshold": 0.01,
+      "message": "Valores fuera de rango [0.0, 10000.0] en 'indice_total': 0 (0.00%)",
       "details": {}
     },
     {

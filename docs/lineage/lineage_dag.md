@@ -1,14 +1,14 @@
 # Diagrama de Linaje y Trazabilidad de Datos (DAG)
 
-**Generado**: 2026-10-01T19:23:09.634650 | **Run ID**: `RUN_20261001_192236`
+**Generado**: 2026-10-01T20:02:21.282669 | **Run ID**: `RUN_20261001_200147`
 
 ```mermaid
 flowchart LR
     classDef bronze fill:#f9d5e5,stroke:#333,stroke-width:1px;
     classDef silver fill:#eeeeee,stroke:#333,stroke-width:1px;
     classDef gold fill:#d4edda,stroke:#28a745,stroke-width:2px;
-    bronze_sipsa_abastecimientos["sipsa_abastecimientos<br/>(10,000 filas)"]:::bronze
-    silver_sipsa_abastecimientos["sipsa_abastecimientos<br/>(10,000 filas)"]:::silver
+    bronze_sipsa_abastecimientos["sipsa_abastecimientos<br/>(59,500 filas)"]:::bronze
+    silver_sipsa_abastecimientos["sipsa_abastecimientos<br/>(59,500 filas)"]:::silver
     bronze_sipsa_abastecimientos --> silver_sipsa_abastecimientos
     bronze_sipsa_precios["sipsa_precios<br/>(36 filas)"]:::bronze
     silver_sipsa_precios["sipsa_precios<br/>(36 filas)"]:::silver
@@ -16,8 +16,8 @@ flowchart LR
     bronze_sipsa_insumos["sipsa_insumos<br/>(92 filas)"]:::bronze
     silver_sipsa_insumos["sipsa_insumos<br/>(92 filas)"]:::silver
     bronze_sipsa_insumos --> silver_sipsa_insumos
-    bronze_dane_ipc["dane_ipc<br/>(19 filas)"]:::bronze
-    silver_dane_ipc["dane_ipc<br/>(19 filas)"]:::silver
+    bronze_dane_ipc["dane_ipc<br/>(284 filas)"]:::bronze
+    silver_dane_ipc["dane_ipc<br/>(284 filas)"]:::silver
     bronze_dane_ipc --> silver_dane_ipc
     bronze_ideam_pluviometria["ideam_pluviometria<br/>(100 filas)"]:::bronze
     silver_ideam_pluviometria["ideam_pluviometria<br/>(100 filas)"]:::silver
@@ -25,8 +25,8 @@ flowchart LR
     bronze_ideam_telemetria_realtime["ideam_telemetria_realtime<br/>(1,000 filas)"]:::bronze
     silver_ideam_telemetria_realtime["ideam_telemetria_realtime<br/>(1,000 filas)"]:::silver
     bronze_ideam_telemetria_realtime --> silver_ideam_telemetria_realtime
-    bronze_dane_csaa["dane_csaa<br/>(38 filas)"]:::bronze
-    silver_dane_csaa["dane_csaa<br/>(34 filas)"]:::silver
+    bronze_dane_csaa["dane_csaa<br/>(22 filas)"]:::bronze
+    silver_dane_csaa["dane_csaa<br/>(22 filas)"]:::silver
     bronze_dane_csaa --> silver_dane_csaa
     bronze_doc_webservice_chunks["doc_webservice_chunks<br/>(39 filas)"]:::bronze
     silver_doc_webservice_chunks["doc_webservice_chunks<br/>(39 filas)"]:::silver

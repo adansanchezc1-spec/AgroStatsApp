@@ -1,6 +1,6 @@
 # Reporte de Calidad de Datos: `ideam_pluviometria`
-**Estándar**: ISO/IEC 25010 & DAMA-DMBOK 2 | **Fecha**: 2026-10-01T19:22:40.256215  
-**Estado General**: ❌ FAILED | **Score Global**: `77.7%`  
+**Estándar**: ISO/IEC 25010 & DAMA-DMBOK 2 | **Fecha**: 2026-10-01T20:02:10.114482  
+**Estado General**: ⚠️ WARNING | **Score Global**: `89.5%`  
 **Volumen**: 100 filas × 13 columnas
 
 ---
@@ -9,8 +9,8 @@
 | Dimensión | Puntuación | Estado |
 |---|:---:|:---:|
 | **Completeness** | 100.0% | ✅ Óptimo |
-| **Uniqueness** | 91.0% | ✅ Óptimo |
-| **Validity** | 0.0% | ❌ Crítico |
+| **Uniqueness** | 100.0% | ✅ Óptimo |
+| **Validity** | 50.0% | ❌ Crítico |
 | **Consistency** | 100.0% | ✅ Óptimo |
 | **Timeliness** | 100.0% | ✅ Óptimo |
 | **Accuracy** | 95.0% | ✅ Óptimo |
@@ -34,7 +34,8 @@
 | null_rate_unidadmedida | Completeness | `unidadmedida` | MEDIUM | 0.000 | 0.400 | ✅ PASS |
 | null_rate_codigo_divipola | Completeness | `codigo_divipola` | MEDIUM | 0.000 | 0.400 | ✅ PASS |
 | row_deduplication_check | Uniqueness | `Global` | MEDIUM | 0.000 | 0.010 | ✅ PASS |
-| primary_key_uniqueness | Uniqueness | `codigoestacion` | CRITICAL | 0.090 | 0.000 | ❌ FAIL |
+| primary_key_uniqueness | Uniqueness | `codigoestacion+fechaobservacion` | CRITICAL | 0.000 | 0.000 | ✅ PASS |
+| range_check_valorobservado | Validity | `valorobservado` | HIGH | 0.000 | 0.010 | ✅ PASS |
 | regex_divipola_codigo_divipola | Validity | `codigo_divipola` | HIGH | 1.000 | 0.050 | ⚠️ WARN |
 | colombia_geobounds_consistency | Consistency | `latitud,longitud` | MEDIUM | 0.000 | 0.100 | ✅ PASS |
 | timeliness_bounds_fechaobservacion | Timeliness | `fechaobservacion` | MEDIUM | 0.000 | 0.010 | ✅ PASS |
