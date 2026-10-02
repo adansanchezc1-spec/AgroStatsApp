@@ -149,6 +149,19 @@ class BusinessQuestionsEngine:
 
     # --- MÓDULO B: Oferta y Desempeño Productivo (UPRA EVA) ---
     @staticmethod
+    def solve_b1_central_tendency(series: pd.Series) -> Dict[str, float]:
+        """B1: Nivel y tendencia central (Media Paramétrica vs. Mediana No Paramétrica)."""
+        s = series.dropna()
+        if len(s) == 0:
+            return {"mean": 0.0, "median": 0.0, "std": 0.0, "iqr": 0.0}
+        return {
+            "mean": float(s.mean()),
+            "median": float(s.median()),
+            "std": float(s.std()) if len(s) > 1 else 0.0,
+            "iqr": float(stats.iqr(s)) if len(s) > 1 else 0.0
+        }
+
+    @staticmethod
     def solve_b1_top_production(df: pd.DataFrame, prod_col: str, val_col: str) -> pd.DataFrame:
         """B1: ¿Qué productos presentan mayor producción?"""
         agg = df.groupby(prod_col)[val_col].agg(
@@ -211,6 +224,20 @@ class BusinessQuestionsEngine:
 
     # --- MÓDULO D: Brecha Oferta-Mercado (UPRA + SIPSA) ---
     @staticmethod
+    def solve_d1_supply_shock_alert(series: pd.Series, z_threshold: float = 2.0) -> Dict[str, Any]:
+        """D1: Detección de shocks de oferta y alertas climáticas extremas."""
+        s = series.dropna()
+        if len(s) < 3 or s.std() == 0:
+            return {"shock_count": 0, "shock_ratio": 0.0, "is_alert": False}
+        z_scores = np.abs((s - s.mean()) / s.std())
+        shocks = int((z_scores > z_threshold).sum())
+        return {
+            "shock_count": shocks,
+            "shock_ratio": float(shocks / len(s)),
+            "is_alert": shocks > 0
+        }
+
+    @staticmethod
     def solve_d1_gap(supply: pd.Series, demand: pd.Series) -> Dict[str, float]:
         """D1: ¿Dónde existe brecha oferta-mercado?"""
         s_clean, d_clean = supply.dropna(), demand.dropna()
@@ -263,7 +290,7 @@ class BusinessQuestionsEngine:
         """I1 - I2: ¿Existe relación producción/abastecimiento/clima y precio?"""
         df_join = pd.DataFrame({"x": series_x, "y": series_y}).dropna()
         if len(df_join) < 3:
-            return {"pearson_r": 0.0, "spearman_rho": 0.0}
+            return {"pearson_r_parametric": 0.0, "spearman_rho_non_parametric": 0.0}
         r, _ = stats.pearsonr(df_join["x"], df_join["y"])
         rho, _ = stats.spearmanr(df_join["x"], df_join["y"])
         return {

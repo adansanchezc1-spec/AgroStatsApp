@@ -1,0 +1,175 @@
+{
+  "dataset_name": "sipsa_abastecimientos",
+  "timestamp": "2026-10-01T19:22:36.481083",
+  "total_records": 10000,
+  "total_columns": 9,
+  "overall_score": 0.968,
+  "status": "WARNING",
+  "dimension_scores": {
+    "Completeness": 1.0,
+    "Uniqueness": 0.8684,
+    "Validity": 0.98,
+    "Consistency": 1.0,
+    "Timeliness": 1.0,
+    "Accuracy": 0.9834
+  },
+  "checks": [
+    {
+      "check_name": "null_rate_fuente",
+      "dimension": "Completeness",
+      "column": "fuente",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'fuente': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_fechaencuesta",
+      "dimension": "Completeness",
+      "column": "fechaencuesta",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'fechaencuesta': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_cod_depto_proc",
+      "dimension": "Completeness",
+      "column": "cod_depto_proc",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'cod_depto_proc': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_cod_municipio_proc",
+      "dimension": "Completeness",
+      "column": "cod_municipio_proc",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'cod_municipio_proc': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_departamento_proc",
+      "dimension": "Completeness",
+      "column": "departamento_proc",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'departamento_proc': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_municipio_proc",
+      "dimension": "Completeness",
+      "column": "municipio_proc",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'municipio_proc': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_grupo",
+      "dimension": "Completeness",
+      "column": "grupo",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'grupo': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_ali",
+      "dimension": "Completeness",
+      "column": "ali",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'ali': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_cant_kg",
+      "dimension": "Completeness",
+      "column": "cant_kg",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'cant_kg': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "row_deduplication_check",
+      "dimension": "Uniqueness",
+      "column": null,
+      "status": "FAILED",
+      "severity": "MEDIUM",
+      "metric_value": 0.1316,
+      "threshold": 0.01,
+      "message": "Filas duplicadas id\u00e9nticas: 1316 (13.16%)",
+      "details": {
+        "duplicate_rows": 1316
+      }
+    },
+    {
+      "check_name": "timeliness_bounds_fechaencuesta",
+      "dimension": "Timeliness",
+      "column": "fechaencuesta",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.01,
+      "message": "Fechas futuras an\u00f3malas en 'fechaencuesta': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_cant_kg",
+      "dimension": "Accuracy",
+      "column": "cant_kg",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0166,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'cant_kg': 166 (1.66%)",
+      "details": {}
+    }
+  ],
+  "summary_metrics": {
+    "null_cells_total": 0,
+    "total_cells": 90000,
+    "memory_usage_mb": 1.58
+  }
+}

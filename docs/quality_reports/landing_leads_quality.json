@@ -1,0 +1,49 @@
+{
+  "dataset_name": "landing_leads",
+  "timestamp": "2026-10-01T19:23:09.228554",
+  "total_records": 1,
+  "total_columns": 1,
+  "overall_score": 0.991,
+  "status": "PASSED",
+  "dimension_scores": {
+    "Completeness": 1.0,
+    "Uniqueness": 1.0,
+    "Validity": 0.98,
+    "Consistency": 1.0,
+    "Timeliness": 1.0,
+    "Accuracy": 0.95
+  },
+  "checks": [
+    {
+      "check_name": "null_rate_raw_content",
+      "dimension": "Completeness",
+      "column": "raw_content",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'raw_content': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "row_deduplication_check",
+      "dimension": "Uniqueness",
+      "column": null,
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.01,
+      "message": "Filas duplicadas id\u00e9nticas: 0 (0.00%)",
+      "details": {
+        "duplicate_rows": 0
+      }
+    }
+  ],
+  "summary_metrics": {
+    "null_cells_total": 0,
+    "total_cells": 1,
+    "memory_usage_mb": 0.0
+  }
+}

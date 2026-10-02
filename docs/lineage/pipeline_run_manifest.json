@@ -1,0 +1,434 @@
+{
+  "run_id": "RUN_20261001_192236",
+  "completed_at": "2026-10-01T19:23:09.628818",
+  "total_execution_time_seconds": 33.41,
+  "total_silver_records": 11321,
+  "total_nodes": 21,
+  "layers_summary": {
+    "bronze_count": 9,
+    "silver_count": 9,
+    "gold_count": 3
+  },
+  "nodes": {
+    "bronze_sipsa_abastecimientos": {
+      "node_id": "bronze_sipsa_abastecimientos",
+      "layer": "BRONZE",
+      "dataset_name": "sipsa_abastecimientos",
+      "target_path_or_table": "data\\lakehouse\\bronze\\sipsa_abastecimientos\\data.parquet",
+      "input_records": 10000,
+      "output_records": 10000,
+      "checksum_sha256": "921af9d2f97c8680318851e9bbf16bddb38658944f760bf05a84d6a01fd81852",
+      "execution_time_sec": 0.061,
+      "timestamp": "2026-10-01T19:22:36.359819",
+      "quality_score": null,
+      "quality_status": null,
+      "transformations_applied": [
+        "audit_metadata_injection",
+        "parquet_serialization"
+      ],
+      "upstream_nodes": []
+    },
+    "silver_sipsa_abastecimientos": {
+      "node_id": "silver_sipsa_abastecimientos",
+      "layer": "SILVER",
+      "dataset_name": "sipsa_abastecimientos",
+      "target_path_or_table": "table:sipsa_abastecimientos",
+      "input_records": 10000,
+      "output_records": 10000,
+      "checksum_sha256": "afca3ebf640043f501b5b9a3c96235dcf3b7640bb2b9b29f1ed6b7a692334cbb",
+      "execution_time_sec": 0.473,
+      "timestamp": "2026-10-01T19:22:36.832649",
+      "quality_score": 0.968,
+      "quality_status": "WARNING",
+      "transformations_applied": [
+        "sanitize_snake_case_and_nulls"
+      ],
+      "upstream_nodes": [
+        "bronze_sipsa_abastecimientos"
+      ]
+    },
+    "bronze_sipsa_precios": {
+      "node_id": "bronze_sipsa_precios",
+      "layer": "BRONZE",
+      "dataset_name": "sipsa_precios",
+      "target_path_or_table": "data\\lakehouse\\bronze\\sipsa_precios\\data.parquet",
+      "input_records": 36,
+      "output_records": 36,
+      "checksum_sha256": "6a3aeb89ab30693b2d6fb06050c160c02fb9f7ac17206d5ff572213276366ffb",
+      "execution_time_sec": 0.019,
+      "timestamp": "2026-10-01T19:22:37.547573",
+      "quality_score": null,
+      "quality_status": null,
+      "transformations_applied": [
+        "audit_metadata_injection",
+        "parquet_serialization"
+      ],
+      "upstream_nodes": []
+    },
+    "silver_sipsa_precios": {
+      "node_id": "silver_sipsa_precios",
+      "layer": "SILVER",
+      "dataset_name": "sipsa_precios",
+      "target_path_or_table": "table:sipsa_precios",
+      "input_records": 36,
+      "output_records": 36,
+      "checksum_sha256": "4ca3e2c36ea7adb03c0f1db15a05493eed4c9fcec1cce6a4581f4e0dc4d74192",
+      "execution_time_sec": 0.288,
+      "timestamp": "2026-10-01T19:22:37.835973",
+      "quality_score": 0.9745,
+      "quality_status": "WARNING",
+      "transformations_applied": [
+        "sanitize_snake_case_and_nulls"
+      ],
+      "upstream_nodes": [
+        "bronze_sipsa_precios"
+      ]
+    },
+    "bronze_sipsa_insumos": {
+      "node_id": "bronze_sipsa_insumos",
+      "layer": "BRONZE",
+      "dataset_name": "sipsa_insumos",
+      "target_path_or_table": "data\\lakehouse\\bronze\\sipsa_insumos\\data.parquet",
+      "input_records": 92,
+      "output_records": 92,
+      "checksum_sha256": "e1fd92bff4b590b30daca65df7a41074d96a8eb3c34fb4b8d19037d3478cfda6",
+      "execution_time_sec": 0.031,
+      "timestamp": "2026-10-01T19:22:38.457903",
+      "quality_score": null,
+      "quality_status": null,
+      "transformations_applied": [
+        "audit_metadata_injection",
+        "parquet_serialization"
+      ],
+      "upstream_nodes": []
+    },
+    "silver_sipsa_insumos": {
+      "node_id": "silver_sipsa_insumos",
+      "layer": "SILVER",
+      "dataset_name": "sipsa_insumos",
+      "target_path_or_table": "table:sipsa_insumos",
+      "input_records": 92,
+      "output_records": 92,
+      "checksum_sha256": "e1fd92bff4b590b30daca65df7a41074d96a8eb3c34fb4b8d19037d3478cfda6",
+      "execution_time_sec": 0.508,
+      "timestamp": "2026-10-01T19:22:38.966044",
+      "quality_score": 0.9945,
+      "quality_status": "WARNING",
+      "transformations_applied": [
+        "sanitize_snake_case_and_nulls"
+      ],
+      "upstream_nodes": [
+        "bronze_sipsa_insumos"
+      ]
+    },
+    "bronze_dane_ipc": {
+      "node_id": "bronze_dane_ipc",
+      "layer": "BRONZE",
+      "dataset_name": "dane_ipc",
+      "target_path_or_table": "data\\lakehouse\\bronze\\dane_ipc\\data.parquet",
+      "input_records": 19,
+      "output_records": 19,
+      "checksum_sha256": "3689139f2de82b56322b3a506e7083a173a9629f0e78128f2e9d9539b96d840b",
+      "execution_time_sec": 0.018,
+      "timestamp": "2026-10-01T19:22:39.541018",
+      "quality_score": null,
+      "quality_status": null,
+      "transformations_applied": [
+        "audit_metadata_injection",
+        "parquet_serialization"
+      ],
+      "upstream_nodes": []
+    },
+    "silver_dane_ipc": {
+      "node_id": "silver_dane_ipc",
+      "layer": "SILVER",
+      "dataset_name": "dane_ipc",
+      "target_path_or_table": "table:dane_ipc",
+      "input_records": 19,
+      "output_records": 19,
+      "checksum_sha256": "0b89fc1df83e06176392e652bcc0ead46258f6e80886d4feb63ef6a09f0bfd8f",
+      "execution_time_sec": 0.213,
+      "timestamp": "2026-10-01T19:22:39.754262",
+      "quality_score": 0.9079,
+      "quality_status": "WARNING",
+      "transformations_applied": [
+        "sanitize_snake_case_and_nulls"
+      ],
+      "upstream_nodes": [
+        "bronze_dane_ipc"
+      ]
+    },
+    "bronze_ideam_pluviometria": {
+      "node_id": "bronze_ideam_pluviometria",
+      "layer": "BRONZE",
+      "dataset_name": "ideam_pluviometria",
+      "target_path_or_table": "data\\lakehouse\\bronze\\ideam_pluviometria\\data.parquet",
+      "input_records": 100,
+      "output_records": 100,
+      "checksum_sha256": "78e00deaea98895f5acc7eaa6b2d8a3e62487c276e5a835a03f8997a601ef9e2",
+      "execution_time_sec": 0.012,
+      "timestamp": "2026-10-01T19:22:40.228151",
+      "quality_score": null,
+      "quality_status": null,
+      "transformations_applied": [
+        "audit_metadata_injection",
+        "parquet_serialization"
+      ],
+      "upstream_nodes": []
+    },
+    "silver_ideam_pluviometria": {
+      "node_id": "silver_ideam_pluviometria",
+      "layer": "SILVER",
+      "dataset_name": "ideam_pluviometria",
+      "target_path_or_table": "table:ideam_pluviometria",
+      "input_records": 100,
+      "output_records": 100,
+      "checksum_sha256": "6005ea62dc3046202d1950f86252b960c1ae61073d376ee446699f55029e31e4",
+      "execution_time_sec": 0.158,
+      "timestamp": "2026-10-01T19:22:40.386139",
+      "quality_score": 0.777,
+      "quality_status": "FAILED",
+      "transformations_applied": [
+        "sanitize_snake_case_and_nulls",
+        "spatial_divipola_harmonization"
+      ],
+      "upstream_nodes": [
+        "bronze_ideam_pluviometria"
+      ]
+    },
+    "bronze_ideam_telemetria_realtime": {
+      "node_id": "bronze_ideam_telemetria_realtime",
+      "layer": "BRONZE",
+      "dataset_name": "ideam_telemetria_realtime",
+      "target_path_or_table": "data\\lakehouse\\bronze\\ideam_telemetria_realtime\\data.parquet",
+      "input_records": 1000,
+      "output_records": 1000,
+      "checksum_sha256": "34a935991ca69c57c72b5c452aaeb47266aebcac19d47b142cbd2fb3fb2be251",
+      "execution_time_sec": 0.025,
+      "timestamp": "2026-10-01T19:23:05.041998",
+      "quality_score": null,
+      "quality_status": null,
+      "transformations_applied": [
+        "audit_metadata_injection",
+        "parquet_serialization"
+      ],
+      "upstream_nodes": []
+    },
+    "silver_ideam_telemetria_realtime": {
+      "node_id": "silver_ideam_telemetria_realtime",
+      "layer": "SILVER",
+      "dataset_name": "ideam_telemetria_realtime",
+      "target_path_or_table": "table:ideam_telemetria_realtime",
+      "input_records": 1000,
+      "output_records": 1000,
+      "checksum_sha256": "437707281b621ea0302651f0e6c87e14742d96935f85a545fbefaac36d9a1279",
+      "execution_time_sec": 0.245,
+      "timestamp": "2026-10-01T19:23:05.287536",
+      "quality_score": 0.8903,
+      "quality_status": "FAILED",
+      "transformations_applied": [
+        "sanitize_snake_case_and_nulls",
+        "spatial_divipola_harmonization"
+      ],
+      "upstream_nodes": [
+        "bronze_ideam_telemetria_realtime"
+      ]
+    },
+    "bronze_dane_csaa": {
+      "node_id": "bronze_dane_csaa",
+      "layer": "BRONZE",
+      "dataset_name": "dane_csaa",
+      "target_path_or_table": "data\\lakehouse\\bronze\\dane_csaa\\data.parquet",
+      "input_records": 38,
+      "output_records": 38,
+      "checksum_sha256": "acb15756f9f2cff42d85df2e1726702508a2508d9018772e017381b32ed246fd",
+      "execution_time_sec": 0.015,
+      "timestamp": "2026-10-01T19:23:06.670356",
+      "quality_score": null,
+      "quality_status": null,
+      "transformations_applied": [
+        "audit_metadata_injection",
+        "parquet_serialization"
+      ],
+      "upstream_nodes": []
+    },
+    "silver_dane_csaa": {
+      "node_id": "silver_dane_csaa",
+      "layer": "SILVER",
+      "dataset_name": "dane_csaa",
+      "target_path_or_table": "table:dane_csaa",
+      "input_records": 38,
+      "output_records": 34,
+      "checksum_sha256": "af3c9a1b31c9f4df8059ef0e97804fa4749d85dcd7170a48e937203fb5572e25",
+      "execution_time_sec": 0.098,
+      "timestamp": "2026-10-01T19:23:06.769238",
+      "quality_score": 0.9594,
+      "quality_status": "WARNING",
+      "transformations_applied": [
+        "sanitize_snake_case_and_nulls"
+      ],
+      "upstream_nodes": [
+        "bronze_dane_csaa"
+      ]
+    },
+    "bronze_doc_webservice_chunks": {
+      "node_id": "bronze_doc_webservice_chunks",
+      "layer": "BRONZE",
+      "dataset_name": "doc_webservice_chunks",
+      "target_path_or_table": "data\\lakehouse\\bronze\\doc_webservice_chunks\\data.parquet",
+      "input_records": 39,
+      "output_records": 39,
+      "checksum_sha256": "60226de7a198301b5adb318f18f6565c424f7495273251a625d9dc1c409f48b4",
+      "execution_time_sec": 0.027,
+      "timestamp": "2026-10-01T19:23:08.165467",
+      "quality_score": null,
+      "quality_status": null,
+      "transformations_applied": [
+        "audit_metadata_injection",
+        "parquet_serialization"
+      ],
+      "upstream_nodes": []
+    },
+    "silver_doc_webservice_chunks": {
+      "node_id": "silver_doc_webservice_chunks",
+      "layer": "SILVER",
+      "dataset_name": "doc_webservice_chunks",
+      "target_path_or_table": "table:doc_webservice_chunks",
+      "input_records": 39,
+      "output_records": 39,
+      "checksum_sha256": "60226de7a198301b5adb318f18f6565c424f7495273251a625d9dc1c409f48b4",
+      "execution_time_sec": 0.238,
+      "timestamp": "2026-10-01T19:23:08.403620",
+      "quality_score": 0.996,
+      "quality_status": "PASSED",
+      "transformations_applied": [
+        "sanitize_snake_case_and_nulls"
+      ],
+      "upstream_nodes": [
+        "bronze_doc_webservice_chunks"
+      ]
+    },
+    "bronze_landing_leads": {
+      "node_id": "bronze_landing_leads",
+      "layer": "BRONZE",
+      "dataset_name": "landing_leads",
+      "target_path_or_table": "data\\lakehouse\\bronze\\landing_leads\\data.parquet",
+      "input_records": 1,
+      "output_records": 1,
+      "checksum_sha256": "60de0f5bee328105fd862dc6e83890d6baed1a03e118721bcee7bac3092dc04a",
+      "execution_time_sec": 0.017,
+      "timestamp": "2026-10-01T19:23:09.213138",
+      "quality_score": null,
+      "quality_status": null,
+      "transformations_applied": [
+        "audit_metadata_injection",
+        "parquet_serialization"
+      ],
+      "upstream_nodes": []
+    },
+    "silver_landing_leads": {
+      "node_id": "silver_landing_leads",
+      "layer": "SILVER",
+      "dataset_name": "landing_leads",
+      "target_path_or_table": "table:landing_leads",
+      "input_records": 1,
+      "output_records": 1,
+      "checksum_sha256": "60de0f5bee328105fd862dc6e83890d6baed1a03e118721bcee7bac3092dc04a",
+      "execution_time_sec": 0.086,
+      "timestamp": "2026-10-01T19:23:09.300009",
+      "quality_score": 0.991,
+      "quality_status": "PASSED",
+      "transformations_applied": [
+        "sanitize_snake_case_and_nulls",
+        "pii_sha256_masking"
+      ],
+      "upstream_nodes": [
+        "bronze_landing_leads"
+      ]
+    },
+    "gold_dim_municipio_divipola": {
+      "node_id": "gold_dim_municipio_divipola",
+      "layer": "GOLD",
+      "dataset_name": "dim_municipio_divipola",
+      "target_path_or_table": "table:dim_municipio_divipola",
+      "input_records": 11321,
+      "output_records": 8,
+      "checksum_sha256": "228a16b9ac28a1a1eb1b3142a439d8746fb8793fe6e54e0c947c02608e8463c3",
+      "execution_time_sec": 0.122,
+      "timestamp": "2026-10-01T19:23:09.423068",
+      "quality_score": 1.0,
+      "quality_status": "PASSED",
+      "transformations_applied": [
+        "dimensional_star_schema_aggregation",
+        "precalculated_analytics"
+      ],
+      "upstream_nodes": [
+        "silver_sipsa_abastecimientos",
+        "silver_sipsa_precios",
+        "silver_sipsa_insumos",
+        "silver_dane_ipc",
+        "silver_ideam_pluviometria",
+        "silver_ideam_telemetria_realtime",
+        "silver_dane_csaa",
+        "silver_doc_webservice_chunks",
+        "silver_landing_leads"
+      ]
+    },
+    "gold_dim_producto_agro": {
+      "node_id": "gold_dim_producto_agro",
+      "layer": "GOLD",
+      "dataset_name": "dim_producto_agro",
+      "target_path_or_table": "table:dim_producto_agro",
+      "input_records": 11321,
+      "output_records": 8,
+      "checksum_sha256": "4c16b3eeef101efcaf97176ed76badd534d0926ad4fda28c07035003ef406682",
+      "execution_time_sec": 0.188,
+      "timestamp": "2026-10-01T19:23:09.488876",
+      "quality_score": 1.0,
+      "quality_status": "PASSED",
+      "transformations_applied": [
+        "dimensional_star_schema_aggregation",
+        "precalculated_analytics"
+      ],
+      "upstream_nodes": [
+        "silver_sipsa_abastecimientos",
+        "silver_sipsa_precios",
+        "silver_sipsa_insumos",
+        "silver_dane_ipc",
+        "silver_ideam_pluviometria",
+        "silver_ideam_telemetria_realtime",
+        "silver_dane_csaa",
+        "silver_doc_webservice_chunks",
+        "silver_landing_leads"
+      ]
+    },
+    "gold_mart_business_questions": {
+      "node_id": "gold_mart_business_questions",
+      "layer": "GOLD",
+      "dataset_name": "mart_business_questions",
+      "target_path_or_table": "table:mart_business_questions",
+      "input_records": 11321,
+      "output_records": 9,
+      "checksum_sha256": "66026bfd33a57c9a5432ba2b08be5c7081d8148ac11a5fa735b517d0b1801e26",
+      "execution_time_sec": 0.266,
+      "timestamp": "2026-10-01T19:23:09.567075",
+      "quality_score": 1.0,
+      "quality_status": "PASSED",
+      "transformations_applied": [
+        "dimensional_star_schema_aggregation",
+        "precalculated_analytics"
+      ],
+      "upstream_nodes": [
+        "silver_sipsa_abastecimientos",
+        "silver_sipsa_precios",
+        "silver_sipsa_insumos",
+        "silver_dane_ipc",
+        "silver_ideam_pluviometria",
+        "silver_ideam_telemetria_realtime",
+        "silver_dane_csaa",
+        "silver_doc_webservice_chunks",
+        "silver_landing_leads"
+      ]
+    }
+  }
+}

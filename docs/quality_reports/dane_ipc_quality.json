@@ -1,0 +1,614 @@
+{
+  "dataset_name": "dane_ipc",
+  "timestamp": "2026-10-01T19:22:39.564150",
+  "total_records": 19,
+  "total_columns": 25,
+  "overall_score": 0.9079,
+  "status": "WARNING",
+  "dimension_scores": {
+    "Completeness": 0.6863,
+    "Uniqueness": 1.0,
+    "Validity": 0.98,
+    "Consistency": 1.0,
+    "Timeliness": 1.0,
+    "Accuracy": 0.903
+  },
+  "checks": [
+    {
+      "check_name": "null_rate_unnamed_0",
+      "dimension": "Completeness",
+      "column": "unnamed_0",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.05263157894736842,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'unnamed_0': 5.26%",
+      "details": {
+        "null_count": 1
+      }
+    },
+    {
+      "check_name": "null_rate_unnamed_1",
+      "dimension": "Completeness",
+      "column": "unnamed_1",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.3157894736842105,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'unnamed_1': 31.58%",
+      "details": {
+        "null_count": 6
+      }
+    },
+    {
+      "check_name": "null_rate_unnamed_2",
+      "dimension": "Completeness",
+      "column": "unnamed_2",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.3157894736842105,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'unnamed_2': 31.58%",
+      "details": {
+        "null_count": 6
+      }
+    },
+    {
+      "check_name": "null_rate_unnamed_3",
+      "dimension": "Completeness",
+      "column": "unnamed_3",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.3157894736842105,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'unnamed_3': 31.58%",
+      "details": {
+        "null_count": 6
+      }
+    },
+    {
+      "check_name": "null_rate_unnamed_4",
+      "dimension": "Completeness",
+      "column": "unnamed_4",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.3157894736842105,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'unnamed_4': 31.58%",
+      "details": {
+        "null_count": 6
+      }
+    },
+    {
+      "check_name": "null_rate_unnamed_5",
+      "dimension": "Completeness",
+      "column": "unnamed_5",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.3157894736842105,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'unnamed_5': 31.58%",
+      "details": {
+        "null_count": 6
+      }
+    },
+    {
+      "check_name": "null_rate_unnamed_6",
+      "dimension": "Completeness",
+      "column": "unnamed_6",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.3157894736842105,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'unnamed_6': 31.58%",
+      "details": {
+        "null_count": 6
+      }
+    },
+    {
+      "check_name": "null_rate_unnamed_7",
+      "dimension": "Completeness",
+      "column": "unnamed_7",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.3157894736842105,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'unnamed_7': 31.58%",
+      "details": {
+        "null_count": 6
+      }
+    },
+    {
+      "check_name": "null_rate_unnamed_8",
+      "dimension": "Completeness",
+      "column": "unnamed_8",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.3157894736842105,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'unnamed_8': 31.58%",
+      "details": {
+        "null_count": 6
+      }
+    },
+    {
+      "check_name": "null_rate_unnamed_9",
+      "dimension": "Completeness",
+      "column": "unnamed_9",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.3157894736842105,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'unnamed_9': 31.58%",
+      "details": {
+        "null_count": 6
+      }
+    },
+    {
+      "check_name": "null_rate_unnamed_10",
+      "dimension": "Completeness",
+      "column": "unnamed_10",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.3157894736842105,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'unnamed_10': 31.58%",
+      "details": {
+        "null_count": 6
+      }
+    },
+    {
+      "check_name": "null_rate_unnamed_11",
+      "dimension": "Completeness",
+      "column": "unnamed_11",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.3157894736842105,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'unnamed_11': 31.58%",
+      "details": {
+        "null_count": 6
+      }
+    },
+    {
+      "check_name": "null_rate_unnamed_12",
+      "dimension": "Completeness",
+      "column": "unnamed_12",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.3157894736842105,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'unnamed_12': 31.58%",
+      "details": {
+        "null_count": 6
+      }
+    },
+    {
+      "check_name": "null_rate_unnamed_13",
+      "dimension": "Completeness",
+      "column": "unnamed_13",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.3157894736842105,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'unnamed_13': 31.58%",
+      "details": {
+        "null_count": 6
+      }
+    },
+    {
+      "check_name": "null_rate_unnamed_14",
+      "dimension": "Completeness",
+      "column": "unnamed_14",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.3157894736842105,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'unnamed_14': 31.58%",
+      "details": {
+        "null_count": 6
+      }
+    },
+    {
+      "check_name": "null_rate_unnamed_15",
+      "dimension": "Completeness",
+      "column": "unnamed_15",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.3157894736842105,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'unnamed_15': 31.58%",
+      "details": {
+        "null_count": 6
+      }
+    },
+    {
+      "check_name": "null_rate_unnamed_16",
+      "dimension": "Completeness",
+      "column": "unnamed_16",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.3157894736842105,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'unnamed_16': 31.58%",
+      "details": {
+        "null_count": 6
+      }
+    },
+    {
+      "check_name": "null_rate_unnamed_17",
+      "dimension": "Completeness",
+      "column": "unnamed_17",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.3157894736842105,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'unnamed_17': 31.58%",
+      "details": {
+        "null_count": 6
+      }
+    },
+    {
+      "check_name": "null_rate_unnamed_18",
+      "dimension": "Completeness",
+      "column": "unnamed_18",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.3157894736842105,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'unnamed_18': 31.58%",
+      "details": {
+        "null_count": 6
+      }
+    },
+    {
+      "check_name": "null_rate_unnamed_19",
+      "dimension": "Completeness",
+      "column": "unnamed_19",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.3157894736842105,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'unnamed_19': 31.58%",
+      "details": {
+        "null_count": 6
+      }
+    },
+    {
+      "check_name": "null_rate_unnamed_20",
+      "dimension": "Completeness",
+      "column": "unnamed_20",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.3157894736842105,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'unnamed_20': 31.58%",
+      "details": {
+        "null_count": 6
+      }
+    },
+    {
+      "check_name": "null_rate_unnamed_21",
+      "dimension": "Completeness",
+      "column": "unnamed_21",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.3157894736842105,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'unnamed_21': 31.58%",
+      "details": {
+        "null_count": 6
+      }
+    },
+    {
+      "check_name": "null_rate_unnamed_22",
+      "dimension": "Completeness",
+      "column": "unnamed_22",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.3157894736842105,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'unnamed_22': 31.58%",
+      "details": {
+        "null_count": 6
+      }
+    },
+    {
+      "check_name": "null_rate_unnamed_23",
+      "dimension": "Completeness",
+      "column": "unnamed_23",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.3157894736842105,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'unnamed_23': 31.58%",
+      "details": {
+        "null_count": 6
+      }
+    },
+    {
+      "check_name": "null_rate_unnamed_24",
+      "dimension": "Completeness",
+      "column": "unnamed_24",
+      "status": "WARNING",
+      "severity": "MEDIUM",
+      "metric_value": 0.5263157894736842,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'unnamed_24': 52.63%",
+      "details": {
+        "null_count": 10
+      }
+    },
+    {
+      "check_name": "row_deduplication_check",
+      "dimension": "Uniqueness",
+      "column": null,
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.01,
+      "message": "Filas duplicadas id\u00e9nticas: 0 (0.00%)",
+      "details": {
+        "duplicate_rows": 0
+      }
+    },
+    {
+      "check_name": "extreme_outliers_iqr_unnamed_1",
+      "dimension": "Accuracy",
+      "column": "unnamed_1",
+      "status": "WARNING",
+      "severity": "LOW",
+      "metric_value": 0.15384615384615385,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'unnamed_1': 2 (15.38%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_unnamed_2",
+      "dimension": "Accuracy",
+      "column": "unnamed_2",
+      "status": "WARNING",
+      "severity": "LOW",
+      "metric_value": 0.07692307692307693,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'unnamed_2': 1 (7.69%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_unnamed_3",
+      "dimension": "Accuracy",
+      "column": "unnamed_3",
+      "status": "WARNING",
+      "severity": "LOW",
+      "metric_value": 0.07692307692307693,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'unnamed_3': 1 (7.69%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_unnamed_4",
+      "dimension": "Accuracy",
+      "column": "unnamed_4",
+      "status": "WARNING",
+      "severity": "LOW",
+      "metric_value": 0.07692307692307693,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'unnamed_4': 1 (7.69%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_unnamed_5",
+      "dimension": "Accuracy",
+      "column": "unnamed_5",
+      "status": "WARNING",
+      "severity": "LOW",
+      "metric_value": 0.23076923076923078,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'unnamed_5': 3 (23.08%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_unnamed_6",
+      "dimension": "Accuracy",
+      "column": "unnamed_6",
+      "status": "WARNING",
+      "severity": "LOW",
+      "metric_value": 0.07692307692307693,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'unnamed_6': 1 (7.69%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_unnamed_7",
+      "dimension": "Accuracy",
+      "column": "unnamed_7",
+      "status": "WARNING",
+      "severity": "LOW",
+      "metric_value": 0.15384615384615385,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'unnamed_7': 2 (15.38%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_unnamed_8",
+      "dimension": "Accuracy",
+      "column": "unnamed_8",
+      "status": "WARNING",
+      "severity": "LOW",
+      "metric_value": 0.15384615384615385,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'unnamed_8': 2 (15.38%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_unnamed_9",
+      "dimension": "Accuracy",
+      "column": "unnamed_9",
+      "status": "WARNING",
+      "severity": "LOW",
+      "metric_value": 0.07692307692307693,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'unnamed_9': 1 (7.69%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_unnamed_10",
+      "dimension": "Accuracy",
+      "column": "unnamed_10",
+      "status": "WARNING",
+      "severity": "LOW",
+      "metric_value": 0.07692307692307693,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'unnamed_10': 1 (7.69%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_unnamed_11",
+      "dimension": "Accuracy",
+      "column": "unnamed_11",
+      "status": "WARNING",
+      "severity": "LOW",
+      "metric_value": 0.07692307692307693,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'unnamed_11': 1 (7.69%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_unnamed_12",
+      "dimension": "Accuracy",
+      "column": "unnamed_12",
+      "status": "WARNING",
+      "severity": "LOW",
+      "metric_value": 0.07692307692307693,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'unnamed_12': 1 (7.69%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_unnamed_13",
+      "dimension": "Accuracy",
+      "column": "unnamed_13",
+      "status": "WARNING",
+      "severity": "LOW",
+      "metric_value": 0.07692307692307693,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'unnamed_13': 1 (7.69%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_unnamed_14",
+      "dimension": "Accuracy",
+      "column": "unnamed_14",
+      "status": "WARNING",
+      "severity": "LOW",
+      "metric_value": 0.07692307692307693,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'unnamed_14': 1 (7.69%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_unnamed_15",
+      "dimension": "Accuracy",
+      "column": "unnamed_15",
+      "status": "WARNING",
+      "severity": "LOW",
+      "metric_value": 0.15384615384615385,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'unnamed_15': 2 (15.38%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_unnamed_16",
+      "dimension": "Accuracy",
+      "column": "unnamed_16",
+      "status": "WARNING",
+      "severity": "LOW",
+      "metric_value": 0.07692307692307693,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'unnamed_16': 1 (7.69%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_unnamed_17",
+      "dimension": "Accuracy",
+      "column": "unnamed_17",
+      "status": "WARNING",
+      "severity": "LOW",
+      "metric_value": 0.07692307692307693,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'unnamed_17': 1 (7.69%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_unnamed_18",
+      "dimension": "Accuracy",
+      "column": "unnamed_18",
+      "status": "WARNING",
+      "severity": "LOW",
+      "metric_value": 0.07692307692307693,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'unnamed_18': 1 (7.69%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_unnamed_19",
+      "dimension": "Accuracy",
+      "column": "unnamed_19",
+      "status": "WARNING",
+      "severity": "LOW",
+      "metric_value": 0.07692307692307693,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'unnamed_19': 1 (7.69%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_unnamed_20",
+      "dimension": "Accuracy",
+      "column": "unnamed_20",
+      "status": "WARNING",
+      "severity": "LOW",
+      "metric_value": 0.07692307692307693,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'unnamed_20': 1 (7.69%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_unnamed_21",
+      "dimension": "Accuracy",
+      "column": "unnamed_21",
+      "status": "WARNING",
+      "severity": "LOW",
+      "metric_value": 0.07692307692307693,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'unnamed_21': 1 (7.69%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_unnamed_22",
+      "dimension": "Accuracy",
+      "column": "unnamed_22",
+      "status": "WARNING",
+      "severity": "LOW",
+      "metric_value": 0.07692307692307693,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'unnamed_22': 1 (7.69%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_unnamed_23",
+      "dimension": "Accuracy",
+      "column": "unnamed_23",
+      "status": "WARNING",
+      "severity": "LOW",
+      "metric_value": 0.07692307692307693,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'unnamed_23': 1 (7.69%)",
+      "details": {}
+    }
+  ],
+  "summary_metrics": {
+    "null_cells_total": 149,
+    "total_cells": 475,
+    "memory_usage_mb": 0.0
+  }
+}

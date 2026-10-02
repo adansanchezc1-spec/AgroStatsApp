@@ -1,0 +1,611 @@
+{
+  "dataset_name": "sipsa_precios",
+  "timestamp": "2026-10-01T19:22:37.645682",
+  "total_records": 36,
+  "total_columns": 29,
+  "overall_score": 0.9745,
+  "status": "WARNING",
+  "dimension_scores": {
+    "Completeness": 0.9234,
+    "Uniqueness": 1.0,
+    "Validity": 0.98,
+    "Consistency": 1.0,
+    "Timeliness": 1.0,
+    "Accuracy": 0.9769
+  },
+  "checks": [
+    {
+      "check_name": "null_rate_producto",
+      "dimension": "Completeness",
+      "column": "producto",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'producto': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_armenia_mercar_precio",
+      "dimension": "Completeness",
+      "column": "armenia_mercar_precio",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.1111111111111111,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'armenia_mercar_precio': 11.11%",
+      "details": {
+        "null_count": 4
+      }
+    },
+    {
+      "check_name": "null_rate_armenia_mercar_var",
+      "dimension": "Completeness",
+      "column": "armenia_mercar_var",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.1388888888888889,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'armenia_mercar_var': 13.89%",
+      "details": {
+        "null_count": 5
+      }
+    },
+    {
+      "check_name": "null_rate_bogota_corabastos_precio",
+      "dimension": "Completeness",
+      "column": "bogota_corabastos_precio",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.027777777777777776,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'bogota_corabastos_precio': 2.78%",
+      "details": {
+        "null_count": 1
+      }
+    },
+    {
+      "check_name": "null_rate_bogota_corabastos_var",
+      "dimension": "Completeness",
+      "column": "bogota_corabastos_var",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.027777777777777776,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'bogota_corabastos_var': 2.78%",
+      "details": {
+        "null_count": 1
+      }
+    },
+    {
+      "check_name": "null_rate_bucaramanga_centroabastos_precio",
+      "dimension": "Completeness",
+      "column": "bucaramanga_centroabastos_precio",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.08333333333333333,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'bucaramanga_centroabastos_precio': 8.33%",
+      "details": {
+        "null_count": 3
+      }
+    },
+    {
+      "check_name": "null_rate_bucaramanga_centroabastos_var",
+      "dimension": "Completeness",
+      "column": "bucaramanga_centroabastos_var",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.08333333333333333,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'bucaramanga_centroabastos_var': 8.33%",
+      "details": {
+        "null_count": 3
+      }
+    },
+    {
+      "check_name": "null_rate_cali_cavasa_precio",
+      "dimension": "Completeness",
+      "column": "cali_cavasa_precio",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'cali_cavasa_precio': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_cali_cavasa_var",
+      "dimension": "Completeness",
+      "column": "cali_cavasa_var",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'cali_cavasa_var': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_cucuta_cenabastos_precio",
+      "dimension": "Completeness",
+      "column": "cucuta_cenabastos_precio",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.16666666666666666,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'cucuta_cenabastos_precio': 16.67%",
+      "details": {
+        "null_count": 6
+      }
+    },
+    {
+      "check_name": "null_rate_cucuta_cenabastos_var",
+      "dimension": "Completeness",
+      "column": "cucuta_cenabastos_var",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.16666666666666666,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'cucuta_cenabastos_var': 16.67%",
+      "details": {
+        "null_count": 6
+      }
+    },
+    {
+      "check_name": "null_rate_ibague_plaza_la_21_precio",
+      "dimension": "Completeness",
+      "column": "ibague_plaza_la_21_precio",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'ibague_plaza_la_21_precio': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_ibague_plaza_la_21_var",
+      "dimension": "Completeness",
+      "column": "ibague_plaza_la_21_var",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'ibague_plaza_la_21_var': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_manizales_centro_galerias_precio",
+      "dimension": "Completeness",
+      "column": "manizales_centro_galerias_precio",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.1388888888888889,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'manizales_centro_galerias_precio': 13.89%",
+      "details": {
+        "null_count": 5
+      }
+    },
+    {
+      "check_name": "null_rate_manizales_centro_galerias_var",
+      "dimension": "Completeness",
+      "column": "manizales_centro_galerias_var",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.1388888888888889,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'manizales_centro_galerias_var': 13.89%",
+      "details": {
+        "null_count": 5
+      }
+    },
+    {
+      "check_name": "null_rate_medellin_cma_precio",
+      "dimension": "Completeness",
+      "column": "medellin_cma_precio",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'medellin_cma_precio': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_medellin_cma_var",
+      "dimension": "Completeness",
+      "column": "medellin_cma_var",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'medellin_cma_var': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_neiva_surabastos_precio",
+      "dimension": "Completeness",
+      "column": "neiva_surabastos_precio",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'neiva_surabastos_precio': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_neiva_surabastos_var",
+      "dimension": "Completeness",
+      "column": "neiva_surabastos_var",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'neiva_surabastos_var': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_pasto_el_potrerillo_precio",
+      "dimension": "Completeness",
+      "column": "pasto_el_potrerillo_precio",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'pasto_el_potrerillo_precio': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_pasto_el_potrerillo_var",
+      "dimension": "Completeness",
+      "column": "pasto_el_potrerillo_var",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'pasto_el_potrerillo_var': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_pereira_la_41impala_precio",
+      "dimension": "Completeness",
+      "column": "pereira_la_41impala_precio",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.25,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'pereira_la_41impala_precio': 25.00%",
+      "details": {
+        "null_count": 9
+      }
+    },
+    {
+      "check_name": "null_rate_pereira_la_41impala_var",
+      "dimension": "Completeness",
+      "column": "pereira_la_41impala_var",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.2777777777777778,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'pereira_la_41impala_var': 27.78%",
+      "details": {
+        "null_count": 10
+      }
+    },
+    {
+      "check_name": "null_rate_pereira_mercasa_precio",
+      "dimension": "Completeness",
+      "column": "pereira_mercasa_precio",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.08333333333333333,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'pereira_mercasa_precio': 8.33%",
+      "details": {
+        "null_count": 3
+      }
+    },
+    {
+      "check_name": "null_rate_pereira_mercasa_var",
+      "dimension": "Completeness",
+      "column": "pereira_mercasa_var",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.08333333333333333,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'pereira_mercasa_var': 8.33%",
+      "details": {
+        "null_count": 3
+      }
+    },
+    {
+      "check_name": "null_rate_santa_marta_precio",
+      "dimension": "Completeness",
+      "column": "santa_marta_precio",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'santa_marta_precio': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_santa_marta_var",
+      "dimension": "Completeness",
+      "column": "santa_marta_var",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'santa_marta_var': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_tunja_precio",
+      "dimension": "Completeness",
+      "column": "tunja_precio",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.2222222222222222,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'tunja_precio': 22.22%",
+      "details": {
+        "null_count": 8
+      }
+    },
+    {
+      "check_name": "null_rate_tunja_var",
+      "dimension": "Completeness",
+      "column": "tunja_var",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.2222222222222222,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'tunja_var': 22.22%",
+      "details": {
+        "null_count": 8
+      }
+    },
+    {
+      "check_name": "row_deduplication_check",
+      "dimension": "Uniqueness",
+      "column": null,
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.01,
+      "message": "Filas duplicadas id\u00e9nticas: 0 (0.00%)",
+      "details": {
+        "duplicate_rows": 0
+      }
+    },
+    {
+      "check_name": "primary_key_uniqueness",
+      "dimension": "Uniqueness",
+      "column": "producto",
+      "status": "PASSED",
+      "severity": "CRITICAL",
+      "metric_value": 0.0,
+      "threshold": 0.0,
+      "message": "Duplicados en Clave Primaria ['producto']: 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_armenia_mercar_precio",
+      "dimension": "Accuracy",
+      "column": "armenia_mercar_precio",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'armenia_mercar_precio': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_bogota_corabastos_precio",
+      "dimension": "Accuracy",
+      "column": "bogota_corabastos_precio",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'bogota_corabastos_precio': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_bogota_corabastos_var",
+      "dimension": "Accuracy",
+      "column": "bogota_corabastos_var",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.02857142857142857,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'bogota_corabastos_var': 1 (2.86%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_bucaramanga_centroabastos_precio",
+      "dimension": "Accuracy",
+      "column": "bucaramanga_centroabastos_precio",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'bucaramanga_centroabastos_precio': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_bucaramanga_centroabastos_var",
+      "dimension": "Accuracy",
+      "column": "bucaramanga_centroabastos_var",
+      "status": "WARNING",
+      "severity": "LOW",
+      "metric_value": 0.06060606060606061,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'bucaramanga_centroabastos_var': 2 (6.06%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_cucuta_cenabastos_precio",
+      "dimension": "Accuracy",
+      "column": "cucuta_cenabastos_precio",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'cucuta_cenabastos_precio': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_cucuta_cenabastos_var",
+      "dimension": "Accuracy",
+      "column": "cucuta_cenabastos_var",
+      "status": "WARNING",
+      "severity": "LOW",
+      "metric_value": 0.06666666666666667,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'cucuta_cenabastos_var': 2 (6.67%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_manizales_centro_galerias_precio",
+      "dimension": "Accuracy",
+      "column": "manizales_centro_galerias_precio",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'manizales_centro_galerias_precio': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_manizales_centro_galerias_var",
+      "dimension": "Accuracy",
+      "column": "manizales_centro_galerias_var",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.03225806451612903,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'manizales_centro_galerias_var': 1 (3.23%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_medellin_cma_precio",
+      "dimension": "Accuracy",
+      "column": "medellin_cma_precio",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'medellin_cma_precio': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_medellin_cma_var",
+      "dimension": "Accuracy",
+      "column": "medellin_cma_var",
+      "status": "WARNING",
+      "severity": "LOW",
+      "metric_value": 0.05555555555555555,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'medellin_cma_var': 2 (5.56%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_pereira_la_41impala_precio",
+      "dimension": "Accuracy",
+      "column": "pereira_la_41impala_precio",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'pereira_la_41impala_precio': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_pereira_la_41impala_var",
+      "dimension": "Accuracy",
+      "column": "pereira_la_41impala_var",
+      "status": "WARNING",
+      "severity": "LOW",
+      "metric_value": 0.07692307692307693,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'pereira_la_41impala_var': 2 (7.69%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_pereira_mercasa_precio",
+      "dimension": "Accuracy",
+      "column": "pereira_mercasa_precio",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'pereira_mercasa_precio': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_pereira_mercasa_var",
+      "dimension": "Accuracy",
+      "column": "pereira_mercasa_var",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'pereira_mercasa_var': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_tunja_precio",
+      "dimension": "Accuracy",
+      "column": "tunja_precio",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'tunja_precio': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_tunja_var",
+      "dimension": "Accuracy",
+      "column": "tunja_var",
+      "status": "WARNING",
+      "severity": "LOW",
+      "metric_value": 0.07142857142857142,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'tunja_var': 2 (7.14%)",
+      "details": {}
+    }
+  ],
+  "summary_metrics": {
+    "null_cells_total": 80,
+    "total_cells": 1044,
+    "memory_usage_mb": 0.01
+  }
+}

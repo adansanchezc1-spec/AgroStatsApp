@@ -1,0 +1,1439 @@
+{
+  "dataset_name": "sipsa_insumos",
+  "timestamp": "2026-10-01T19:22:38.469383",
+  "total_records": 92,
+  "total_columns": 58,
+  "overall_score": 0.9945,
+  "status": "WARNING",
+  "dimension_scores": {
+    "Completeness": 0.9953,
+    "Uniqueness": 1.0,
+    "Validity": 0.98,
+    "Consistency": 1.0,
+    "Timeliness": 1.0,
+    "Accuracy": 0.9969
+  },
+  "checks": [
+    {
+      "check_name": "null_rate_fecha",
+      "dimension": "Completeness",
+      "column": "fecha",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'fecha': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_indice_total",
+      "dimension": "Completeness",
+      "column": "indice_total",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'indice_total': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_total_fertilizantes",
+      "dimension": "Completeness",
+      "column": "total_fertilizantes",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'total_fertilizantes': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_total_plaguicidas",
+      "dimension": "Completeness",
+      "column": "total_plaguicidas",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'total_plaguicidas': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_total_otros",
+      "dimension": "Completeness",
+      "column": "total_otros",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.2717391304347826,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'total_otros': 27.17%",
+      "details": {
+        "null_count": 25
+      }
+    },
+    {
+      "check_name": "null_rate_total_simples",
+      "dimension": "Completeness",
+      "column": "total_simples",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'total_simples': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_total_compuestos",
+      "dimension": "Completeness",
+      "column": "total_compuestos",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'total_compuestos': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_total_herbicidas",
+      "dimension": "Completeness",
+      "column": "total_herbicidas",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'total_herbicidas': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_total_fungicidas",
+      "dimension": "Completeness",
+      "column": "total_fungicidas",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'total_fungicidas': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_total_insecticidas",
+      "dimension": "Completeness",
+      "column": "total_insecticidas",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'total_insecticidas': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_urea_46",
+      "dimension": "Completeness",
+      "column": "urea_46",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'urea_46': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_urea_sulfato",
+      "dimension": "Completeness",
+      "column": "urea_sulfato",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'urea_sulfato': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_dap_18_46",
+      "dimension": "Completeness",
+      "column": "dap_18_46",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'dap_18_46': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_kcl_0_0_60",
+      "dimension": "Completeness",
+      "column": "kcl_0_0_60",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'kcl_0_0_60': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_sam",
+      "dimension": "Completeness",
+      "column": "sam",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'sam': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate__15_15_15",
+      "dimension": "Completeness",
+      "column": "_15_15_15",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en '_15_15_15': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate__25_4_24",
+      "dimension": "Completeness",
+      "column": "_25_4_24",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en '_25_4_24': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate__17_6_18_2",
+      "dimension": "Completeness",
+      "column": "_17_6_18_2",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en '_17_6_18_2': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate__18_18_18",
+      "dimension": "Completeness",
+      "column": "_18_18_18",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en '_18_18_18': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate__31_8_8",
+      "dimension": "Completeness",
+      "column": "_31_8_8",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en '_31_8_8': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate__12_24_12",
+      "dimension": "Completeness",
+      "column": "_12_24_12",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en '_12_24_12': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate__13_26_6",
+      "dimension": "Completeness",
+      "column": "_13_26_6",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en '_13_26_6': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate__15_4_23",
+      "dimension": "Completeness",
+      "column": "_15_4_23",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en '_15_4_23': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate__10_20_30",
+      "dimension": "Completeness",
+      "column": "_10_20_30",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en '_10_20_30': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate__28_4_0_6",
+      "dimension": "Completeness",
+      "column": "_28_4_0_6",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en '_28_4_0_6': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_glifosato",
+      "dimension": "Completeness",
+      "column": "glifosato",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'glifosato': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_paraquat",
+      "dimension": "Completeness",
+      "column": "paraquat",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'paraquat': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_propanil",
+      "dimension": "Completeness",
+      "column": "propanil",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'propanil': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate__2_4_d_picloram",
+      "dimension": "Completeness",
+      "column": "_2_4_d_picloram",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en '_2_4_d_picloram': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate__2_4_d",
+      "dimension": "Completeness",
+      "column": "_2_4_d",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en '_2_4_d': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_aminopiralid_2_4_d",
+      "dimension": "Completeness",
+      "column": "aminopiralid_2_4_d",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'aminopiralid_2_4_d': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_diuron",
+      "dimension": "Completeness",
+      "column": "diuron",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'diuron': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_glufosinato_de_amonio",
+      "dimension": "Completeness",
+      "column": "glufosinato_de_amonio",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'glufosinato_de_amonio': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_picloram",
+      "dimension": "Completeness",
+      "column": "picloram",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'picloram': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_oxadiazon",
+      "dimension": "Completeness",
+      "column": "oxadiazon",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'oxadiazon': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_metsulfuron_metil",
+      "dimension": "Completeness",
+      "column": "metsulfuron_metil",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'metsulfuron_metil': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_pendimetalin",
+      "dimension": "Completeness",
+      "column": "pendimetalin",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'pendimetalin': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_clorotalonil",
+      "dimension": "Completeness",
+      "column": "clorotalonil",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'clorotalonil': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_difenoconazol",
+      "dimension": "Completeness",
+      "column": "difenoconazol",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'difenoconazol': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_mancozeb",
+      "dimension": "Completeness",
+      "column": "mancozeb",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'mancozeb': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_mancozeb_cimoxanil",
+      "dimension": "Completeness",
+      "column": "mancozeb_cimoxanil",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'mancozeb_cimoxanil': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_azoxistrobin_difenoconazol",
+      "dimension": "Completeness",
+      "column": "azoxistrobin_difenoconazol",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'azoxistrobin_difenoconazol': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_dimetomorf",
+      "dimension": "Completeness",
+      "column": "dimetomorf",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'dimetomorf': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_tebuconazol_trifloxistrobin",
+      "dimension": "Completeness",
+      "column": "tebuconazol_trifloxistrobin",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'tebuconazol_trifloxistrobin': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_propineb_fluopicolide",
+      "dimension": "Completeness",
+      "column": "propineb_fluopicolide",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'propineb_fluopicolide': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_mancozeb_metalaxil_m",
+      "dimension": "Completeness",
+      "column": "mancozeb_metalaxil_m",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'mancozeb_metalaxil_m': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_clorpirifos",
+      "dimension": "Completeness",
+      "column": "clorpirifos",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'clorpirifos': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_fipronil",
+      "dimension": "Completeness",
+      "column": "fipronil",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'fipronil': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_metomil",
+      "dimension": "Completeness",
+      "column": "metomil",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'metomil': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_tiametoxam_lambdacihalotrina",
+      "dimension": "Completeness",
+      "column": "tiametoxam_lambdacihalotrina",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'tiametoxam_lambdacihalotrina': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_abamectina",
+      "dimension": "Completeness",
+      "column": "abamectina",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'abamectina': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_imidacloprid",
+      "dimension": "Completeness",
+      "column": "imidacloprid",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'imidacloprid': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_profenofos_cipermetrina",
+      "dimension": "Completeness",
+      "column": "profenofos_cipermetrina",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'profenofos_cipermetrina': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_cipermetrina",
+      "dimension": "Completeness",
+      "column": "cipermetrina",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'cipermetrina': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_profenofos",
+      "dimension": "Completeness",
+      "column": "profenofos",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'profenofos': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_total_coadyuvantes",
+      "dimension": "Completeness",
+      "column": "total_coadyuvantes",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'total_coadyuvantes': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_total_reguladores",
+      "dimension": "Completeness",
+      "column": "total_reguladores",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'total_reguladores': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_total_molusquicidas",
+      "dimension": "Completeness",
+      "column": "total_molusquicidas",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'total_molusquicidas': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "row_deduplication_check",
+      "dimension": "Uniqueness",
+      "column": null,
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.01,
+      "message": "Filas duplicadas id\u00e9nticas: 0 (0.00%)",
+      "details": {
+        "duplicate_rows": 0
+      }
+    },
+    {
+      "check_name": "primary_key_uniqueness",
+      "dimension": "Uniqueness",
+      "column": "fecha",
+      "status": "PASSED",
+      "severity": "CRITICAL",
+      "metric_value": 0.0,
+      "threshold": 0.0,
+      "message": "Duplicados en Clave Primaria ['fecha']: 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "timeliness_bounds_fecha",
+      "dimension": "Timeliness",
+      "column": "fecha",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.01,
+      "message": "Fechas futuras an\u00f3malas en 'fecha': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_indice_total",
+      "dimension": "Accuracy",
+      "column": "indice_total",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'indice_total': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_total_fertilizantes",
+      "dimension": "Accuracy",
+      "column": "total_fertilizantes",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'total_fertilizantes': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_total_plaguicidas",
+      "dimension": "Accuracy",
+      "column": "total_plaguicidas",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'total_plaguicidas': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_total_otros",
+      "dimension": "Accuracy",
+      "column": "total_otros",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'total_otros': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_total_simples",
+      "dimension": "Accuracy",
+      "column": "total_simples",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'total_simples': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_total_compuestos",
+      "dimension": "Accuracy",
+      "column": "total_compuestos",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'total_compuestos': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_total_herbicidas",
+      "dimension": "Accuracy",
+      "column": "total_herbicidas",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'total_herbicidas': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_total_fungicidas",
+      "dimension": "Accuracy",
+      "column": "total_fungicidas",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'total_fungicidas': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_total_insecticidas",
+      "dimension": "Accuracy",
+      "column": "total_insecticidas",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'total_insecticidas': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_urea_46",
+      "dimension": "Accuracy",
+      "column": "urea_46",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'urea_46': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_urea_sulfato",
+      "dimension": "Accuracy",
+      "column": "urea_sulfato",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'urea_sulfato': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_dap_18_46",
+      "dimension": "Accuracy",
+      "column": "dap_18_46",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'dap_18_46': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_kcl_0_0_60",
+      "dimension": "Accuracy",
+      "column": "kcl_0_0_60",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'kcl_0_0_60': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_sam",
+      "dimension": "Accuracy",
+      "column": "sam",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'sam': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr__15_15_15",
+      "dimension": "Accuracy",
+      "column": "_15_15_15",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en '_15_15_15': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr__25_4_24",
+      "dimension": "Accuracy",
+      "column": "_25_4_24",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en '_25_4_24': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr__17_6_18_2",
+      "dimension": "Accuracy",
+      "column": "_17_6_18_2",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en '_17_6_18_2': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr__18_18_18",
+      "dimension": "Accuracy",
+      "column": "_18_18_18",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en '_18_18_18': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr__31_8_8",
+      "dimension": "Accuracy",
+      "column": "_31_8_8",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en '_31_8_8': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr__12_24_12",
+      "dimension": "Accuracy",
+      "column": "_12_24_12",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en '_12_24_12': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr__13_26_6",
+      "dimension": "Accuracy",
+      "column": "_13_26_6",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en '_13_26_6': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr__15_4_23",
+      "dimension": "Accuracy",
+      "column": "_15_4_23",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en '_15_4_23': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr__10_20_30",
+      "dimension": "Accuracy",
+      "column": "_10_20_30",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en '_10_20_30': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr__28_4_0_6",
+      "dimension": "Accuracy",
+      "column": "_28_4_0_6",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en '_28_4_0_6': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_glifosato",
+      "dimension": "Accuracy",
+      "column": "glifosato",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'glifosato': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_paraquat",
+      "dimension": "Accuracy",
+      "column": "paraquat",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'paraquat': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_propanil",
+      "dimension": "Accuracy",
+      "column": "propanil",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'propanil': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr__2_4_d_picloram",
+      "dimension": "Accuracy",
+      "column": "_2_4_d_picloram",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en '_2_4_d_picloram': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr__2_4_d",
+      "dimension": "Accuracy",
+      "column": "_2_4_d",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en '_2_4_d': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_aminopiralid_2_4_d",
+      "dimension": "Accuracy",
+      "column": "aminopiralid_2_4_d",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'aminopiralid_2_4_d': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_diuron",
+      "dimension": "Accuracy",
+      "column": "diuron",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'diuron': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_glufosinato_de_amonio",
+      "dimension": "Accuracy",
+      "column": "glufosinato_de_amonio",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'glufosinato_de_amonio': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_picloram",
+      "dimension": "Accuracy",
+      "column": "picloram",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'picloram': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_oxadiazon",
+      "dimension": "Accuracy",
+      "column": "oxadiazon",
+      "status": "WARNING",
+      "severity": "LOW",
+      "metric_value": 0.17391304347826086,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'oxadiazon': 16 (17.39%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_metsulfuron_metil",
+      "dimension": "Accuracy",
+      "column": "metsulfuron_metil",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'metsulfuron_metil': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_pendimetalin",
+      "dimension": "Accuracy",
+      "column": "pendimetalin",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'pendimetalin': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_clorotalonil",
+      "dimension": "Accuracy",
+      "column": "clorotalonil",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'clorotalonil': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_difenoconazol",
+      "dimension": "Accuracy",
+      "column": "difenoconazol",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'difenoconazol': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_mancozeb",
+      "dimension": "Accuracy",
+      "column": "mancozeb",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'mancozeb': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_mancozeb_cimoxanil",
+      "dimension": "Accuracy",
+      "column": "mancozeb_cimoxanil",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'mancozeb_cimoxanil': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_azoxistrobin_difenoconazol",
+      "dimension": "Accuracy",
+      "column": "azoxistrobin_difenoconazol",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'azoxistrobin_difenoconazol': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_dimetomorf",
+      "dimension": "Accuracy",
+      "column": "dimetomorf",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'dimetomorf': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_tebuconazol_trifloxistrobin",
+      "dimension": "Accuracy",
+      "column": "tebuconazol_trifloxistrobin",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'tebuconazol_trifloxistrobin': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_propineb_fluopicolide",
+      "dimension": "Accuracy",
+      "column": "propineb_fluopicolide",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'propineb_fluopicolide': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_mancozeb_metalaxil_m",
+      "dimension": "Accuracy",
+      "column": "mancozeb_metalaxil_m",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'mancozeb_metalaxil_m': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_clorpirifos",
+      "dimension": "Accuracy",
+      "column": "clorpirifos",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'clorpirifos': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_fipronil",
+      "dimension": "Accuracy",
+      "column": "fipronil",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'fipronil': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_metomil",
+      "dimension": "Accuracy",
+      "column": "metomil",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'metomil': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_tiametoxam_lambdacihalotrina",
+      "dimension": "Accuracy",
+      "column": "tiametoxam_lambdacihalotrina",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'tiametoxam_lambdacihalotrina': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_abamectina",
+      "dimension": "Accuracy",
+      "column": "abamectina",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'abamectina': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_imidacloprid",
+      "dimension": "Accuracy",
+      "column": "imidacloprid",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'imidacloprid': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_profenofos_cipermetrina",
+      "dimension": "Accuracy",
+      "column": "profenofos_cipermetrina",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'profenofos_cipermetrina': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_cipermetrina",
+      "dimension": "Accuracy",
+      "column": "cipermetrina",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'cipermetrina': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_profenofos",
+      "dimension": "Accuracy",
+      "column": "profenofos",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'profenofos': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_total_coadyuvantes",
+      "dimension": "Accuracy",
+      "column": "total_coadyuvantes",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'total_coadyuvantes': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_total_reguladores",
+      "dimension": "Accuracy",
+      "column": "total_reguladores",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'total_reguladores': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_total_molusquicidas",
+      "dimension": "Accuracy",
+      "column": "total_molusquicidas",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'total_molusquicidas': 0 (0.00%)",
+      "details": {}
+    }
+  ],
+  "summary_metrics": {
+    "null_cells_total": 25,
+    "total_cells": 5336,
+    "memory_usage_mb": 0.04
+  }
+}

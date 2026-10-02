@@ -1,0 +1,282 @@
+{
+  "dataset_name": "ideam_pluviometria",
+  "timestamp": "2026-10-01T19:22:40.256215",
+  "total_records": 100,
+  "total_columns": 13,
+  "overall_score": 0.777,
+  "status": "FAILED",
+  "dimension_scores": {
+    "Completeness": 1.0,
+    "Uniqueness": 0.91,
+    "Validity": 0.0,
+    "Consistency": 1.0,
+    "Timeliness": 1.0,
+    "Accuracy": 0.95
+  },
+  "checks": [
+    {
+      "check_name": "null_rate_codigoestacion",
+      "dimension": "Completeness",
+      "column": "codigoestacion",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'codigoestacion': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_codigosensor",
+      "dimension": "Completeness",
+      "column": "codigosensor",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'codigosensor': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_fechaobservacion",
+      "dimension": "Completeness",
+      "column": "fechaobservacion",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'fechaobservacion': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_valorobservado",
+      "dimension": "Completeness",
+      "column": "valorobservado",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'valorobservado': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_nombreestacion",
+      "dimension": "Completeness",
+      "column": "nombreestacion",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'nombreestacion': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_departamento",
+      "dimension": "Completeness",
+      "column": "departamento",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'departamento': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_municipio",
+      "dimension": "Completeness",
+      "column": "municipio",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'municipio': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_zonahidrografica",
+      "dimension": "Completeness",
+      "column": "zonahidrografica",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'zonahidrografica': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_latitud",
+      "dimension": "Completeness",
+      "column": "latitud",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'latitud': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_longitud",
+      "dimension": "Completeness",
+      "column": "longitud",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'longitud': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_descripcionsensor",
+      "dimension": "Completeness",
+      "column": "descripcionsensor",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'descripcionsensor': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_unidadmedida",
+      "dimension": "Completeness",
+      "column": "unidadmedida",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'unidadmedida': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_codigo_divipola",
+      "dimension": "Completeness",
+      "column": "codigo_divipola",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'codigo_divipola': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "row_deduplication_check",
+      "dimension": "Uniqueness",
+      "column": null,
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.01,
+      "message": "Filas duplicadas id\u00e9nticas: 0 (0.00%)",
+      "details": {
+        "duplicate_rows": 0
+      }
+    },
+    {
+      "check_name": "primary_key_uniqueness",
+      "dimension": "Uniqueness",
+      "column": "codigoestacion",
+      "status": "FAILED",
+      "severity": "CRITICAL",
+      "metric_value": 0.09,
+      "threshold": 0.0,
+      "message": "Duplicados en Clave Primaria ['codigoestacion']: 9 (9.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "regex_divipola_codigo_divipola",
+      "dimension": "Validity",
+      "column": "codigo_divipola",
+      "status": "WARNING",
+      "severity": "HIGH",
+      "metric_value": 1.0,
+      "threshold": 0.05,
+      "message": "Conformidad patr\u00f3n c\u00f3digo DIVIPOLA en 'codigo_divipola': 0.00%",
+      "details": {}
+    },
+    {
+      "check_name": "colombia_geobounds_consistency",
+      "dimension": "Consistency",
+      "column": "latitud,longitud",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.1,
+      "message": "Puntos geoespaciales dentro del pol\u00edgono Colombia: 100.00%",
+      "details": {}
+    },
+    {
+      "check_name": "timeliness_bounds_fechaobservacion",
+      "dimension": "Timeliness",
+      "column": "fechaobservacion",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.01,
+      "message": "Fechas futuras an\u00f3malas en 'fechaobservacion': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_codigoestacion",
+      "dimension": "Accuracy",
+      "column": "codigoestacion",
+      "status": "WARNING",
+      "severity": "LOW",
+      "metric_value": 0.15,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'codigoestacion': 15 (15.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_latitud",
+      "dimension": "Accuracy",
+      "column": "latitud",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'latitud': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_longitud",
+      "dimension": "Accuracy",
+      "column": "longitud",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'longitud': 0 (0.00%)",
+      "details": {}
+    }
+  ],
+  "summary_metrics": {
+    "null_cells_total": 0,
+    "total_cells": 1300,
+    "memory_usage_mb": 0.02
+  }
+}

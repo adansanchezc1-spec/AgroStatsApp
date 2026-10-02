@@ -1,0 +1,145 @@
+{
+  "dataset_name": "doc_webservice_chunks",
+  "timestamp": "2026-10-01T19:23:08.208138",
+  "total_records": 39,
+  "total_columns": 5,
+  "overall_score": 0.996,
+  "status": "PASSED",
+  "dimension_scores": {
+    "Completeness": 1.0,
+    "Uniqueness": 1.0,
+    "Validity": 0.98,
+    "Consistency": 1.0,
+    "Timeliness": 1.0,
+    "Accuracy": 1.0
+  },
+  "checks": [
+    {
+      "check_name": "null_rate_chunk_id",
+      "dimension": "Completeness",
+      "column": "chunk_id",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'chunk_id': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_source_file",
+      "dimension": "Completeness",
+      "column": "source_file",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'source_file': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_page_number",
+      "dimension": "Completeness",
+      "column": "page_number",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'page_number': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_chunk_text",
+      "dimension": "Completeness",
+      "column": "chunk_text",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'chunk_text': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "null_rate_char_length",
+      "dimension": "Completeness",
+      "column": "char_length",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'char_length': 0.00%",
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "check_name": "row_deduplication_check",
+      "dimension": "Uniqueness",
+      "column": null,
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.0,
+      "threshold": 0.01,
+      "message": "Filas duplicadas id\u00e9nticas: 0 (0.00%)",
+      "details": {
+        "duplicate_rows": 0
+      }
+    },
+    {
+      "check_name": "primary_key_uniqueness",
+      "dimension": "Uniqueness",
+      "column": "chunk_id",
+      "status": "PASSED",
+      "severity": "CRITICAL",
+      "metric_value": 0.0,
+      "threshold": 0.0,
+      "message": "Duplicados en Clave Primaria ['chunk_id']: 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_chunk_id",
+      "dimension": "Accuracy",
+      "column": "chunk_id",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'chunk_id': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_page_number",
+      "dimension": "Accuracy",
+      "column": "page_number",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'page_number': 0 (0.00%)",
+      "details": {}
+    },
+    {
+      "check_name": "extreme_outliers_iqr_char_length",
+      "dimension": "Accuracy",
+      "column": "char_length",
+      "status": "PASSED",
+      "severity": "LOW",
+      "metric_value": 0.0,
+      "threshold": 0.05,
+      "message": "Outliers extremos (>3*IQR) en 'char_length': 0 (0.00%)",
+      "details": {}
+    }
+  ],
+  "summary_metrics": {
+    "null_cells_total": 0,
+    "total_cells": 195,
+    "memory_usage_mb": 0.02
+  }
+}

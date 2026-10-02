@@ -1,0 +1,62 @@
+{
+  "dataset_name": "dane_csaa",
+  "timestamp": "2026-10-01T19:23:06.700297",
+  "total_records": 34,
+  "total_columns": 2,
+  "overall_score": 0.9594,
+  "status": "WARNING",
+  "dimension_scores": {
+    "Completeness": 0.8971,
+    "Uniqueness": 0.9706,
+    "Validity": 0.98,
+    "Consistency": 1.0,
+    "Timeliness": 1.0,
+    "Accuracy": 0.95
+  },
+  "checks": [
+    {
+      "check_name": "null_rate_unnamed_1",
+      "dimension": "Completeness",
+      "column": "unnamed_1",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.058823529411764705,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'unnamed_1': 5.88%",
+      "details": {
+        "null_count": 2
+      }
+    },
+    {
+      "check_name": "null_rate_unnamed_2",
+      "dimension": "Completeness",
+      "column": "unnamed_2",
+      "status": "PASSED",
+      "severity": "MEDIUM",
+      "metric_value": 0.14705882352941177,
+      "threshold": 0.4,
+      "message": "Tasa de nulos en 'unnamed_2': 14.71%",
+      "details": {
+        "null_count": 5
+      }
+    },
+    {
+      "check_name": "row_deduplication_check",
+      "dimension": "Uniqueness",
+      "column": null,
+      "status": "WARNING",
+      "severity": "MEDIUM",
+      "metric_value": 0.029411764705882353,
+      "threshold": 0.01,
+      "message": "Filas duplicadas id\u00e9nticas: 1 (2.94%)",
+      "details": {
+        "duplicate_rows": 1
+      }
+    }
+  ],
+  "summary_metrics": {
+    "null_cells_total": 7,
+    "total_cells": 68,
+    "memory_usage_mb": 0.0
+  }
+}
