@@ -1,0 +1,193 @@
+2026-10-07T18:22:24-0500 | INFO     | agrostats.test_module:test_tc003_structured_logger_formatting_and_file_creation:48 | Mensaje de auditoría de prueba unitaria
+2026-10-07T18:22:24-0500 | INFO     | agrostats.timing:wrapper:24 | Función 'suma_rapida' completada en 0.00 ms
+2026-10-07T18:22:24-0500 | ERROR    | agrostats.timing:wrapper:28 | Función 'funcion_con_error' falló tras 0.00 ms con error: Error forzado de prueba
+2026-10-07T19:08:26-0500 | WARNING  | agrostats.ingestion.socrata_client:__init__:34 | SocrataClient inicializado sin App-Token (cuota pública limitada)
+2026-10-07T19:08:26-0500 | INFO     | agrostats.ingestion.ica_client:__init__:37 | ICAClient configurado con ResourceKey: a7581d79...
+2026-10-07T19:09:45-0500 | INFO     | agrostats.notebooks.01_ingestion:<module>:17 | Entorno inicializado. Modo: development | Base Dir: C:\Users\ADAN\OneDrive\Documentos\App_agro\AgroStatsApp
+2026-10-07T19:09:45-0500 | WARNING  | agrostats.ingestion.socrata_client:__init__:34 | SocrataClient inicializado sin App-Token (cuota pública limitada)
+2026-10-07T19:09:45-0500 | INFO     | agrostats.ingestion.ica_client:__init__:37 | ICAClient configurado con ResourceKey: a7581d79...
+2026-10-07T19:09:50-0500 | ERROR    | agrostats.ingestion.socrata_client:check_health:43 | Healthcheck falló para recurso 2pn8-n2q5: 404 Client Error: Not Found for url: https://www.datos.gov.co/resource/2pn8-n2q5.json?%24limit=1
+2026-10-07T19:09:56-0500 | INFO     | agrostats.ingestion.socrata_client:fetch_dataframe:115 | Dataset 57sv-p2fu consolidado en DataFrame con 5000 filas
+2026-10-07T19:09:56-0500 | INFO     | agrostats.ingestion.landing_manager:save_raw_dataset:114 | Dataset guardado en Bronze: telemetria_sensores.parquet (5000 filas, 110165 bytes, SHA256: 8abdda45af...)
+2026-10-07T19:09:57-0500 | INFO     | agrostats.ingestion.socrata_client:fetch_dataframe:115 | Dataset s54a-sgyg consolidado en DataFrame con 5000 filas
+2026-10-07T19:09:57-0500 | INFO     | agrostats.ingestion.landing_manager:save_raw_dataset:114 | Dataset guardado en Bronze: pluviometria_estaciones.parquet (5000 filas, 123414 bytes, SHA256: 0251f61272...)
+2026-10-07T19:09:58-0500 | INFO     | agrostats.ingestion.socrata_client:fetch_dataframe:115 | Dataset sbwg-7ju4 consolidado en DataFrame con 5000 filas
+2026-10-07T19:09:58-0500 | INFO     | agrostats.ingestion.landing_manager:save_raw_dataset:114 | Dataset guardado en Bronze: temperatura_media.parquet (5000 filas, 68056 bytes, SHA256: 6cbc73167b...)
+2026-10-07T19:09:59-0500 | INFO     | agrostats.ingestion.socrata_client:fetch_dataframe:115 | Dataset ccvq-rp9s consolidado en DataFrame con 5000 filas
+2026-10-07T19:09:59-0500 | INFO     | agrostats.ingestion.landing_manager:save_raw_dataset:114 | Dataset guardado en Bronze: temperatura_maxima.parquet (5000 filas, 118688 bytes, SHA256: ae8d28b211...)
+2026-10-07T19:10:00-0500 | INFO     | agrostats.ingestion.socrata_client:fetch_dataframe:115 | Dataset afdg-3zpb consolidado en DataFrame con 5000 filas
+2026-10-07T19:10:00-0500 | INFO     | agrostats.ingestion.landing_manager:save_raw_dataset:114 | Dataset guardado en Bronze: temperatura_minima.parquet (5000 filas, 118365 bytes, SHA256: f05a6f9d87...)
+2026-10-07T19:10:01-0500 | INFO     | agrostats.ingestion.socrata_client:fetch_dataframe:115 | Dataset rv9s-8nv6 consolidado en DataFrame con 169 filas
+2026-10-07T19:10:01-0500 | INFO     | agrostats.ingestion.landing_manager:save_raw_dataset:114 | Dataset guardado en Bronze: radiacion_solar.parquet (169 filas, 33900 bytes, SHA256: 0b1e92b50e...)
+2026-10-07T19:10:01-0500 | INFO     | agrostats.ingestion.socrata_client:fetch_dataframe:115 | Dataset nsz2-kzcq consolidado en DataFrame con 5000 filas
+2026-10-07T19:10:02-0500 | INFO     | agrostats.ingestion.landing_manager:save_raw_dataset:114 | Dataset guardado en Bronze: normales_spi.parquet (5000 filas, 296640 bytes, SHA256: 648c291565...)
+2026-10-07T19:10:07-0500 | INFO     | agrostats.ingestion.socrata_client:fetch_dataframe:115 | Dataset gwbi-fnzs consolidado en DataFrame con 93 filas
+2026-10-07T19:10:07-0500 | INFO     | agrostats.ingestion.landing_manager:save_raw_dataset:114 | Dataset guardado en Bronze: sipsa_insumos_precios.parquet (93 filas, 68514 bytes, SHA256: e66e97a050...)
+2026-10-07T19:10:08-0500 | INFO     | agrostats.ingestion.socrata_client:fetch_dataframe:115 | Dataset wgj6-cvyj consolidado en DataFrame con 68 filas
+2026-10-07T19:10:08-0500 | INFO     | agrostats.ingestion.landing_manager:save_raw_dataset:114 | Dataset guardado en Bronze: sipsa_alimentos_balanceados.parquet (68 filas, 6941 bytes, SHA256: d2a6efbacf...)
+2026-10-07T19:10:26-0500 | INFO     | agrostats.notebooks.01_ingestion:<module>:17 | Entorno inicializado. Modo: development | Base Dir: C:\Users\ADAN\OneDrive\Documentos\App_agro\AgroStatsApp
+2026-10-07T19:10:26-0500 | WARNING  | agrostats.ingestion.socrata_client:__init__:34 | SocrataClient inicializado sin App-Token (cuota pública limitada)
+2026-10-07T19:10:26-0500 | INFO     | agrostats.ingestion.ica_client:__init__:37 | ICAClient configurado con ResourceKey: a7581d79...
+2026-10-07T19:10:30-0500 | ERROR    | agrostats.ingestion.socrata_client:check_health:43 | Healthcheck falló para recurso 2pn8-n2q5: 404 Client Error: Not Found for url: https://www.datos.gov.co/resource/2pn8-n2q5.json?%24limit=1
+2026-10-07T19:10:31-0500 | INFO     | agrostats.ingestion.socrata_client:fetch_dataframe:115 | Dataset 57sv-p2fu consolidado en DataFrame con 5000 filas
+2026-10-07T19:10:31-0500 | INFO     | agrostats.ingestion.landing_manager:save_raw_dataset:81 | Archivo inmutable existente en C:\Users\ADAN\OneDrive\Documentos\App_agro\AgroStatsApp\data\RAW\ideam\telemetria_sensores.parquet (SHA-256: 8abdda45af...). Omitiendo sobrescritura.
+2026-10-07T19:10:32-0500 | INFO     | agrostats.ingestion.socrata_client:fetch_dataframe:115 | Dataset s54a-sgyg consolidado en DataFrame con 5000 filas
+2026-10-07T19:10:32-0500 | INFO     | agrostats.ingestion.landing_manager:save_raw_dataset:81 | Archivo inmutable existente en C:\Users\ADAN\OneDrive\Documentos\App_agro\AgroStatsApp\data\RAW\ideam\pluviometria_estaciones.parquet (SHA-256: 0251f61272...). Omitiendo sobrescritura.
+2026-10-07T19:10:33-0500 | INFO     | agrostats.ingestion.socrata_client:fetch_dataframe:115 | Dataset sbwg-7ju4 consolidado en DataFrame con 5000 filas
+2026-10-07T19:10:33-0500 | INFO     | agrostats.ingestion.landing_manager:save_raw_dataset:81 | Archivo inmutable existente en C:\Users\ADAN\OneDrive\Documentos\App_agro\AgroStatsApp\data\RAW\ideam\temperatura_media.parquet (SHA-256: 6cbc73167b...). Omitiendo sobrescritura.
+2026-10-07T19:10:33-0500 | INFO     | agrostats.ingestion.socrata_client:fetch_dataframe:115 | Dataset ccvq-rp9s consolidado en DataFrame con 5000 filas
+2026-10-07T19:10:33-0500 | INFO     | agrostats.ingestion.landing_manager:save_raw_dataset:81 | Archivo inmutable existente en C:\Users\ADAN\OneDrive\Documentos\App_agro\AgroStatsApp\data\RAW\ideam\temperatura_maxima.parquet (SHA-256: ae8d28b211...). Omitiendo sobrescritura.
+2026-10-07T19:10:34-0500 | INFO     | agrostats.ingestion.socrata_client:fetch_dataframe:115 | Dataset afdg-3zpb consolidado en DataFrame con 5000 filas
+2026-10-07T19:10:35-0500 | INFO     | agrostats.ingestion.landing_manager:save_raw_dataset:81 | Archivo inmutable existente en C:\Users\ADAN\OneDrive\Documentos\App_agro\AgroStatsApp\data\RAW\ideam\temperatura_minima.parquet (SHA-256: f05a6f9d87...). Omitiendo sobrescritura.
+2026-10-07T19:10:35-0500 | INFO     | agrostats.ingestion.socrata_client:fetch_dataframe:115 | Dataset rv9s-8nv6 consolidado en DataFrame con 169 filas
+2026-10-07T19:10:35-0500 | INFO     | agrostats.ingestion.landing_manager:save_raw_dataset:81 | Archivo inmutable existente en C:\Users\ADAN\OneDrive\Documentos\App_agro\AgroStatsApp\data\RAW\ideam\radiacion_solar.parquet (SHA-256: 0b1e92b50e...). Omitiendo sobrescritura.
+2026-10-07T19:10:35-0500 | INFO     | agrostats.ingestion.socrata_client:fetch_dataframe:115 | Dataset nsz2-kzcq consolidado en DataFrame con 5000 filas
+2026-10-07T19:10:35-0500 | INFO     | agrostats.ingestion.landing_manager:save_raw_dataset:81 | Archivo inmutable existente en C:\Users\ADAN\OneDrive\Documentos\App_agro\AgroStatsApp\data\RAW\ideam\normales_spi.parquet (SHA-256: 648c291565...). Omitiendo sobrescritura.
+2026-10-07T19:10:36-0500 | INFO     | agrostats.ingestion.socrata_client:fetch_dataframe:115 | Dataset gwbi-fnzs consolidado en DataFrame con 93 filas
+2026-10-07T19:10:36-0500 | INFO     | agrostats.ingestion.landing_manager:save_raw_dataset:81 | Archivo inmutable existente en C:\Users\ADAN\OneDrive\Documentos\App_agro\AgroStatsApp\data\RAW\dane\sipsa_insumos_precios.parquet (SHA-256: e66e97a050...). Omitiendo sobrescritura.
+2026-10-07T19:10:36-0500 | INFO     | agrostats.ingestion.socrata_client:fetch_dataframe:115 | Dataset wgj6-cvyj consolidado en DataFrame con 68 filas
+2026-10-07T19:10:36-0500 | INFO     | agrostats.ingestion.landing_manager:save_raw_dataset:81 | Archivo inmutable existente en C:\Users\ADAN\OneDrive\Documentos\App_agro\AgroStatsApp\data\RAW\dane\sipsa_alimentos_balanceados.parquet (SHA-256: d2a6efbacf...). Omitiendo sobrescritura.
+2026-10-07T19:10:38-0500 | INFO     | agrostats.ingestion.socrata_client:fetch_dataframe:115 | Dataset gaic-b8aw consolidado en DataFrame con 5000 filas
+2026-10-07T19:10:38-0500 | INFO     | agrostats.ingestion.landing_manager:save_raw_dataset:114 | Dataset guardado en Bronze: upra_exportaciones_bioinsumos.parquet (5000 filas, 90063 bytes, SHA256: 0f8c5f9596...)
+2026-10-07T19:16:11-0500 | WARNING  | agrostats.ingestion.base_client:log_it:64 | Retrying src.ingestion.base_client.BaseAPIClient.request_with_retry.<locals>._execute in 1 seconds as it raised ConnectionError: HTTPSConnectionPool(host='wabi-us-north-central-a-primary-redirect.analysis.windows.net', port=443): Max retries exceeded with url: /powerbi/api/v1.0/public/reports/querydata?synchronous=true (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000003098DD48AD0>: Failed to resolve 'wabi-us-north-central-a-primary-redirect.analysis.windows.net' ([Errno 11001] getaddrinfo failed)")).
+2026-10-07T19:16:12-0500 | WARNING  | agrostats.ingestion.base_client:log_it:64 | Retrying src.ingestion.base_client.BaseAPIClient.request_with_retry.<locals>._execute in 2 seconds as it raised ConnectionError: HTTPSConnectionPool(host='wabi-us-north-central-a-primary-redirect.analysis.windows.net', port=443): Max retries exceeded with url: /powerbi/api/v1.0/public/reports/querydata?synchronous=true (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000003098DD4A010>: Failed to resolve 'wabi-us-north-central-a-primary-redirect.analysis.windows.net' ([Errno 11001] getaddrinfo failed)")).
+2026-10-07T19:16:14-0500 | WARNING  | agrostats.ingestion.base_client:log_it:64 | Retrying src.ingestion.base_client.BaseAPIClient.request_with_retry.<locals>._execute in 4 seconds as it raised ConnectionError: HTTPSConnectionPool(host='wabi-us-north-central-a-primary-redirect.analysis.windows.net', port=443): Max retries exceeded with url: /powerbi/api/v1.0/public/reports/querydata?synchronous=true (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000003098DD4B050>: Failed to resolve 'wabi-us-north-central-a-primary-redirect.analysis.windows.net' ([Errno 11001] getaddrinfo failed)")).
+2026-10-07T19:16:20-0500 | INFO     | agrostats.ingestion.socrata_client:fetch_dataframe:115 | Dataset gaic-b8aw consolidado en DataFrame con 5000 filas
+2026-10-07T19:16:20-0500 | INFO     | agrostats.ingestion.landing_manager:save_raw_dataset:81 | Archivo inmutable existente en C:\Users\ADAN\OneDrive\Documentos\App_agro\AgroStatsApp\data\RAW\upra\upra_exportaciones_bioinsumos.parquet (SHA-256: 0f8c5f9596...). Omitiendo sobrescritura.
+2026-10-07T19:26:51-0500 | WARNING  | agrostats.ingestion.socrata_client:__init__:34 | SocrataClient inicializado sin App-Token (cuota pública limitada)
+2026-10-07T19:26:52-0500 | INFO     | agrostats.ingestion.socrata_client:fetch_dataframe:115 | Dataset 2pnw-mmge consolidado en DataFrame con 5 filas
+2026-10-07T19:27:58-0500 | INFO     | agrostats.ingestion.socrata_client:fetch_dataframe:115 | Dataset gaic-b8aw consolidado en DataFrame con 5000 filas
+2026-10-07T19:27:58-0500 | INFO     | agrostats.ingestion.landing_manager:save_raw_dataset:81 | Archivo inmutable existente en C:\Users\ADAN\OneDrive\Documentos\App_agro\AgroStatsApp\data\RAW\upra\upra_exportaciones_bioinsumos.parquet (SHA-256: 0f8c5f9596...). Omitiendo sobrescritura.
+2026-10-07T19:28:18-0500 | INFO     | agrostats.notebooks.01_ingestion:<module>:17 | Entorno inicializado. Modo: development | Base Dir: C:\Users\ADAN\OneDrive\Documentos\App_agro\AgroStatsApp
+2026-10-07T19:28:18-0500 | WARNING  | agrostats.ingestion.socrata_client:__init__:34 | SocrataClient inicializado sin App-Token (cuota pública limitada)
+2026-10-07T19:28:18-0500 | INFO     | agrostats.ingestion.ica_client:__init__:37 | ICAClient configurado con ResourceKey: a7581d79...
+2026-10-07T19:28:22-0500 | INFO     | agrostats.ingestion.socrata_client:fetch_dataframe:115 | Dataset 57sv-p2fu consolidado en DataFrame con 5000 filas
+2026-10-07T19:28:22-0500 | INFO     | agrostats.ingestion.landing_manager:save_raw_dataset:81 | Archivo inmutable existente en C:\Users\ADAN\OneDrive\Documentos\App_agro\AgroStatsApp\data\RAW\ideam\telemetria_sensores.parquet (SHA-256: 8abdda45af...). Omitiendo sobrescritura.
+2026-10-07T19:28:23-0500 | INFO     | agrostats.ingestion.socrata_client:fetch_dataframe:115 | Dataset s54a-sgyg consolidado en DataFrame con 5000 filas
+2026-10-07T19:28:23-0500 | INFO     | agrostats.ingestion.landing_manager:save_raw_dataset:81 | Archivo inmutable existente en C:\Users\ADAN\OneDrive\Documentos\App_agro\AgroStatsApp\data\RAW\ideam\pluviometria_estaciones.parquet (SHA-256: 0251f61272...). Omitiendo sobrescritura.
+2026-10-07T19:28:23-0500 | INFO     | agrostats.ingestion.socrata_client:fetch_dataframe:115 | Dataset sbwg-7ju4 consolidado en DataFrame con 5000 filas
+2026-10-07T19:28:23-0500 | INFO     | agrostats.ingestion.landing_manager:save_raw_dataset:81 | Archivo inmutable existente en C:\Users\ADAN\OneDrive\Documentos\App_agro\AgroStatsApp\data\RAW\ideam\temperatura_media.parquet (SHA-256: 6cbc73167b...). Omitiendo sobrescritura.
+2026-10-07T19:28:24-0500 | INFO     | agrostats.ingestion.socrata_client:fetch_dataframe:115 | Dataset ccvq-rp9s consolidado en DataFrame con 5000 filas
+2026-10-07T19:28:24-0500 | INFO     | agrostats.ingestion.landing_manager:save_raw_dataset:81 | Archivo inmutable existente en C:\Users\ADAN\OneDrive\Documentos\App_agro\AgroStatsApp\data\RAW\ideam\temperatura_maxima.parquet (SHA-256: ae8d28b211...). Omitiendo sobrescritura.
+2026-10-07T19:28:25-0500 | INFO     | agrostats.ingestion.socrata_client:fetch_dataframe:115 | Dataset afdg-3zpb consolidado en DataFrame con 5000 filas
+2026-10-07T19:28:25-0500 | INFO     | agrostats.ingestion.landing_manager:save_raw_dataset:81 | Archivo inmutable existente en C:\Users\ADAN\OneDrive\Documentos\App_agro\AgroStatsApp\data\RAW\ideam\temperatura_minima.parquet (SHA-256: f05a6f9d87...). Omitiendo sobrescritura.
+2026-10-07T19:28:25-0500 | INFO     | agrostats.ingestion.socrata_client:fetch_dataframe:115 | Dataset rv9s-8nv6 consolidado en DataFrame con 169 filas
+2026-10-07T19:28:25-0500 | INFO     | agrostats.ingestion.landing_manager:save_raw_dataset:81 | Archivo inmutable existente en C:\Users\ADAN\OneDrive\Documentos\App_agro\AgroStatsApp\data\RAW\ideam\radiacion_solar.parquet (SHA-256: 0b1e92b50e...). Omitiendo sobrescritura.
+2026-10-07T19:28:26-0500 | INFO     | agrostats.ingestion.socrata_client:fetch_dataframe:115 | Dataset nsz2-kzcq consolidado en DataFrame con 5000 filas
+2026-10-07T19:28:26-0500 | INFO     | agrostats.ingestion.landing_manager:save_raw_dataset:81 | Archivo inmutable existente en C:\Users\ADAN\OneDrive\Documentos\App_agro\AgroStatsApp\data\RAW\ideam\normales_spi.parquet (SHA-256: 648c291565...). Omitiendo sobrescritura.
+2026-10-07T19:28:26-0500 | INFO     | agrostats.ingestion.socrata_client:fetch_dataframe:115 | Dataset gwbi-fnzs consolidado en DataFrame con 93 filas
+2026-10-07T19:28:26-0500 | INFO     | agrostats.ingestion.landing_manager:save_raw_dataset:81 | Archivo inmutable existente en C:\Users\ADAN\OneDrive\Documentos\App_agro\AgroStatsApp\data\RAW\dane\sipsa_insumos_precios.parquet (SHA-256: e66e97a050...). Omitiendo sobrescritura.
+2026-10-07T19:28:27-0500 | INFO     | agrostats.ingestion.socrata_client:fetch_dataframe:115 | Dataset wgj6-cvyj consolidado en DataFrame con 68 filas
+2026-10-07T19:28:27-0500 | INFO     | agrostats.ingestion.landing_manager:save_raw_dataset:81 | Archivo inmutable existente en C:\Users\ADAN\OneDrive\Documentos\App_agro\AgroStatsApp\data\RAW\dane\sipsa_alimentos_balanceados.parquet (SHA-256: d2a6efbacf...). Omitiendo sobrescritura.
+2026-10-07T19:28:27-0500 | INFO     | agrostats.ingestion.socrata_client:fetch_dataframe:115 | Dataset gaic-b8aw consolidado en DataFrame con 5000 filas
+2026-10-07T19:28:27-0500 | INFO     | agrostats.ingestion.landing_manager:save_raw_dataset:81 | Archivo inmutable existente en C:\Users\ADAN\OneDrive\Documentos\App_agro\AgroStatsApp\data\RAW\upra\upra_exportaciones_bioinsumos.parquet (SHA-256: 0f8c5f9596...). Omitiendo sobrescritura.
+2026-10-07T19:28:28-0500 | INFO     | agrostats.ingestion.socrata_client:fetch_dataframe:115 | Dataset 2pnw-mmge consolidado en DataFrame con 5000 filas
+2026-10-07T19:28:28-0500 | INFO     | agrostats.ingestion.landing_manager:save_raw_dataset:114 | Dataset guardado en Bronze: upra_eva_historico.parquet (5000 filas, 69533 bytes, SHA256: 4ca59e4fc8...)
+2026-10-07T19:28:28-0500 | WARNING  | agrostats.ingestion.base_client:log_it:64 | Retrying src.ingestion.base_client.BaseAPIClient.request_with_retry.<locals>._execute in 1 seconds as it raised ConnectionError: HTTPSConnectionPool(host='wabi-us-north-central-a-primary-redirect.analysis.windows.net', port=443): Max retries exceeded with url: /powerbi/api/v1.0/public/reports/querydata?synchronous=true (Caused by NameResolutionError("HTTPSConnection(host='wabi-us-north-central-a-primary-redirect.analysis.windows.net', port=443): Failed to resolve 'wabi-us-north-central-a-primary-redirect.analysis.windows.net' ([Errno 11001] getaddrinfo failed)")).
+2026-10-07T19:28:29-0500 | WARNING  | agrostats.ingestion.base_client:log_it:64 | Retrying src.ingestion.base_client.BaseAPIClient.request_with_retry.<locals>._execute in 2 seconds as it raised ConnectionError: HTTPSConnectionPool(host='wabi-us-north-central-a-primary-redirect.analysis.windows.net', port=443): Max retries exceeded with url: /powerbi/api/v1.0/public/reports/querydata?synchronous=true (Caused by NameResolutionError("HTTPSConnection(host='wabi-us-north-central-a-primary-redirect.analysis.windows.net', port=443): Failed to resolve 'wabi-us-north-central-a-primary-redirect.analysis.windows.net' ([Errno 11001] getaddrinfo failed)")).
+2026-10-07T19:28:31-0500 | WARNING  | agrostats.ingestion.base_client:log_it:64 | Retrying src.ingestion.base_client.BaseAPIClient.request_with_retry.<locals>._execute in 4 seconds as it raised ConnectionError: HTTPSConnectionPool(host='wabi-us-north-central-a-primary-redirect.analysis.windows.net', port=443): Max retries exceeded with url: /powerbi/api/v1.0/public/reports/querydata?synchronous=true (Caused by NameResolutionError("HTTPSConnection(host='wabi-us-north-central-a-primary-redirect.analysis.windows.net', port=443): Failed to resolve 'wabi-us-north-central-a-primary-redirect.analysis.windows.net' ([Errno 11001] getaddrinfo failed)")).
+2026-10-07T19:29:17-0500 | INFO     | agrostats.notebooks.02_eda:<module>:16 | Iniciando notebook de EDA y perfilado de datos...
+2026-10-07T19:29:18-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 5000 filas, 13 columnas, 1566.15 KB
+2026-10-07T19:29:18-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 5000 filas, 12 columnas, 1055.77 KB
+2026-10-07T19:29:18-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 5000 filas, 12 columnas, 1087.49 KB
+2026-10-07T19:29:18-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 5000 filas, 12 columnas, 1089.97 KB
+2026-10-07T19:29:18-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 5000 filas, 12 columnas, 1090.29 KB
+2026-10-07T19:29:18-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 169 filas, 20 columnas, 48.40 KB
+2026-10-07T19:29:18-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 5000 filas, 24 columnas, 1592.83 KB
+2026-10-07T19:29:18-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 93 filas, 58 columnas, 73.69 KB
+2026-10-07T19:29:18-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 68 filas, 6 columnas, 6.90 KB
+2026-10-07T19:29:18-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 5000 filas, 13 columnas, 1884.43 KB
+2026-10-07T19:29:18-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 5000 filas, 17 columnas, 1242.86 KB
+2026-10-07T19:29:18-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 5000 filas, 13 columnas, 1566.15 KB
+2026-10-07T19:29:18-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 5000 filas, 12 columnas, 1055.77 KB
+2026-10-07T19:29:18-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 5000 filas, 12 columnas, 1087.49 KB
+2026-10-07T19:29:18-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 5000 filas, 12 columnas, 1089.97 KB
+2026-10-07T19:29:18-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 5000 filas, 12 columnas, 1090.29 KB
+2026-10-07T19:29:18-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 169 filas, 20 columnas, 48.40 KB
+2026-10-07T19:29:18-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 5000 filas, 24 columnas, 1592.83 KB
+2026-10-07T19:29:18-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 93 filas, 58 columnas, 73.69 KB
+2026-10-07T19:29:18-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 68 filas, 6 columnas, 6.90 KB
+2026-10-07T19:29:18-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 5000 filas, 13 columnas, 1884.43 KB
+2026-10-07T19:29:18-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 5000 filas, 17 columnas, 1242.86 KB
+2026-10-07T19:29:18-0500 | INFO     | agrostats.eda.profiler:temporal_coverage:137 | Cobertura temporal: de 2026-10-07 06:59:00 a 2026-10-07 12:57:00. Gaps detectados: False
+2026-10-07T19:29:18-0500 | INFO     | agrostats.eda.profiler:temporal_coverage:137 | Cobertura temporal: de 2004-11-19 01:45:00 a 2019-08-27 20:20:00. Gaps detectados: True
+2026-10-07T19:29:18-0500 | INFO     | agrostats.eda.profiler:temporal_coverage:137 | Cobertura temporal: de 2019-07-01 00:00:00 a 2019-07-01 23:59:00. Gaps detectados: False
+2026-10-07T19:29:18-0500 | INFO     | agrostats.eda.profiler:temporal_coverage:137 | Cobertura temporal: de 2001-02-19 15:08:03 a 2019-08-27 20:00:00. Gaps detectados: True
+2026-10-07T19:29:18-0500 | INFO     | agrostats.eda.profiler:temporal_coverage:137 | Cobertura temporal: de 2001-02-17 17:39:03 a 2019-08-27 14:00:00. Gaps detectados: True
+2026-10-07T19:29:18-0500 | INFO     | agrostats.eda.profiler:temporal_coverage:137 | Cobertura temporal: de 2018-12-01 00:00:00 a 2026-08-01 00:00:00. Gaps detectados: False
+2026-10-07T19:29:18-0500 | INFO     | agrostats.eda.profiler:temporal_coverage:137 | Cobertura temporal: de 2021-01-01 00:00:00 a 2026-08-01 00:00:00. Gaps detectados: False
+2026-10-07T19:29:18-0500 | INFO     | agrostats.eda.profiler:temporal_coverage:137 | Cobertura temporal: de 2021-12-03 00:00:00 a 2021-12-03 00:00:00. Gaps detectados: False
+2026-10-07T19:29:34-0500 | INFO     | agrostats.notebooks.02_eda:<module>:16 | Iniciando notebook de EDA y perfilado de datos...
+2026-10-07T19:29:34-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 5000 filas, 13 columnas, 1566.15 KB
+2026-10-07T19:29:34-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 5000 filas, 12 columnas, 1055.77 KB
+2026-10-07T19:29:34-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 5000 filas, 12 columnas, 1087.49 KB
+2026-10-07T19:29:34-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 5000 filas, 12 columnas, 1089.97 KB
+2026-10-07T19:29:34-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 5000 filas, 12 columnas, 1090.29 KB
+2026-10-07T19:29:34-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 169 filas, 20 columnas, 48.40 KB
+2026-10-07T19:29:34-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 5000 filas, 24 columnas, 1592.83 KB
+2026-10-07T19:29:34-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 93 filas, 58 columnas, 73.69 KB
+2026-10-07T19:29:34-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 68 filas, 6 columnas, 6.90 KB
+2026-10-07T19:29:34-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 5000 filas, 13 columnas, 1884.43 KB
+2026-10-07T19:29:34-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 5000 filas, 17 columnas, 1242.86 KB
+2026-10-07T19:29:34-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 5000 filas, 13 columnas, 1566.15 KB
+2026-10-07T19:29:34-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 5000 filas, 12 columnas, 1055.77 KB
+2026-10-07T19:29:34-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 5000 filas, 12 columnas, 1087.49 KB
+2026-10-07T19:29:34-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 5000 filas, 12 columnas, 1089.97 KB
+2026-10-07T19:29:34-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 5000 filas, 12 columnas, 1090.29 KB
+2026-10-07T19:29:34-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 169 filas, 20 columnas, 48.40 KB
+2026-10-07T19:29:34-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 5000 filas, 24 columnas, 1592.83 KB
+2026-10-07T19:29:34-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 93 filas, 58 columnas, 73.69 KB
+2026-10-07T19:29:34-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 68 filas, 6 columnas, 6.90 KB
+2026-10-07T19:29:34-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 5000 filas, 13 columnas, 1884.43 KB
+2026-10-07T19:29:34-0500 | INFO     | agrostats.eda.profiler:profile_dataframe:77 | Perfilado completado: 5000 filas, 17 columnas, 1242.86 KB
+2026-10-07T19:29:34-0500 | INFO     | agrostats.eda.profiler:temporal_coverage:137 | Cobertura temporal: de 2026-10-07 06:59:00 a 2026-10-07 12:57:00. Gaps detectados: False
+2026-10-07T19:29:34-0500 | INFO     | agrostats.eda.profiler:temporal_coverage:137 | Cobertura temporal: de 2004-11-19 01:45:00 a 2019-08-27 20:20:00. Gaps detectados: True
+2026-10-07T19:29:34-0500 | INFO     | agrostats.eda.profiler:temporal_coverage:137 | Cobertura temporal: de 2019-07-01 00:00:00 a 2019-07-01 23:59:00. Gaps detectados: False
+2026-10-07T19:29:34-0500 | INFO     | agrostats.eda.profiler:temporal_coverage:137 | Cobertura temporal: de 2001-02-19 15:08:03 a 2019-08-27 20:00:00. Gaps detectados: True
+2026-10-07T19:29:34-0500 | INFO     | agrostats.eda.profiler:temporal_coverage:137 | Cobertura temporal: de 2001-02-17 17:39:03 a 2019-08-27 14:00:00. Gaps detectados: True
+2026-10-07T19:29:34-0500 | INFO     | agrostats.eda.profiler:temporal_coverage:137 | Cobertura temporal: de 2018-12-01 00:00:00 a 2026-08-01 00:00:00. Gaps detectados: False
+2026-10-07T19:29:34-0500 | INFO     | agrostats.eda.profiler:temporal_coverage:137 | Cobertura temporal: de 2021-01-01 00:00:00 a 2026-08-01 00:00:00. Gaps detectados: False
+2026-10-07T19:29:34-0500 | INFO     | agrostats.eda.profiler:temporal_coverage:137 | Cobertura temporal: de 2021-12-03 00:00:00 a 2021-12-03 00:00:00. Gaps detectados: False
+2026-10-07T19:39:10-0500 | INFO     | agrostats.validation.quality_checker:validate_dataset:76 | Validación EVARecordContract completada: 5000/5000 conformes (100.00%)
+2026-10-07T19:39:11-0500 | INFO     | agrostats.validation.quality_checker:validate_dataset:76 | Validación IDEAMClimaContract completada: 0/5000 conformes (0.00%)
+2026-10-07T19:39:12-0500 | INFO     | agrostats.validation.quality_checker:validate_dataset:76 | Validación IDEAMClimaContract completada: 5000/5000 conformes (100.00%)
+2026-10-07T19:39:13-0500 | INFO     | agrostats.validation.quality_checker:validate_dataset:76 | Validación IDEAMClimaContract completada: 0/169 conformes (0.00%)
+2026-10-07T19:39:13-0500 | INFO     | agrostats.validation.quality_checker:validate_dataset:76 | Validación IDEAMClimaContract completada: 4994/5000 conformes (99.88%)
+2026-10-07T19:39:14-0500 | INFO     | agrostats.validation.quality_checker:validate_dataset:76 | Validación IDEAMClimaContract completada: 5000/5000 conformes (100.00%)
+2026-10-07T19:39:16-0500 | INFO     | agrostats.validation.quality_checker:validate_dataset:76 | Validación IDEAMClimaContract completada: 5000/5000 conformes (100.00%)
+2026-10-07T19:39:17-0500 | INFO     | agrostats.validation.quality_checker:validate_dataset:76 | Validación IDEAMClimaContract completada: 5000/5000 conformes (100.00%)
+2026-10-07T19:39:17-0500 | INFO     | agrostats.validation.quality_checker:validate_dataset:76 | Validación SIPSAPrecioContract completada: 0/68 conformes (0.00%)
+2026-10-07T19:39:17-0500 | INFO     | agrostats.validation.quality_checker:validate_dataset:76 | Validación SIPSAPrecioContract completada: 0/93 conformes (0.00%)
+2026-10-07T19:39:17-0500 | INFO     | agrostats.validation.quality_checker:check_composite_key_uniqueness:110 | Verificación de clave ['c_d_dep', 'c_d_mun', 'a_o', 'cultivo']: 5000 filas, 176 duplicados (Unicidad: False)
+2026-10-07T19:42:36-0500 | INFO     | agrostats.cleaning.transformers:deduplicate_dataset:139 | Deduplicación eliminó 1 registros duplicados sobre claves ['codigo', 'anio']
+2026-10-07T19:42:36-0500 | WARNING  | agrostats.cleaning.transformers:deduplicate_dataset:127 | deduplicate_dataset invocado sin claves válidas presentes en el DataFrame
+2026-10-07T19:42:36-0500 | INFO     | agrostats.cleaning.transformers:deduplicate_dataset:139 | Deduplicación eliminó 1 registros duplicados sobre claves ['codigo_estacion', 'fecha_observacion', 'sensor_descripcion']
+2026-10-07T19:42:36-0500 | INFO     | agrostats.cleaning.cleaner_pipeline:process_and_save:193 | Capa Silver generada para test_eva_silver: 1 filas (reducción: 0 duplicados)
+2026-10-07T19:43:08-0500 | INFO     | agrostats.cleaning.transformers:deduplicate_dataset:139 | Deduplicación eliminó 1 registros duplicados sobre claves ['codigo', 'anio']
+2026-10-07T19:43:08-0500 | WARNING  | agrostats.cleaning.transformers:deduplicate_dataset:127 | deduplicate_dataset invocado sin claves válidas presentes en el DataFrame
+2026-10-07T19:43:08-0500 | INFO     | agrostats.cleaning.transformers:deduplicate_dataset:139 | Deduplicación eliminó 1 registros duplicados sobre claves ['codigo_estacion', 'fecha_observacion', 'sensor_descripcion']
+2026-10-07T19:43:08-0500 | INFO     | agrostats.cleaning.cleaner_pipeline:process_and_save:193 | Capa Silver generada para test_eva_silver: 1 filas (reducción: 0 duplicados)
+2026-10-07T19:43:52-0500 | INFO     | agrostats.cleaning.transformers:deduplicate_dataset:139 | Deduplicación eliminó 1 registros duplicados sobre claves ['codigo', 'anio']
+2026-10-07T19:43:52-0500 | WARNING  | agrostats.cleaning.transformers:deduplicate_dataset:127 | deduplicate_dataset invocado sin claves válidas presentes en el DataFrame
+2026-10-07T19:43:52-0500 | INFO     | agrostats.cleaning.transformers:deduplicate_dataset:139 | Deduplicación eliminó 1 registros duplicados sobre claves ['codigo_estacion', 'fecha_observacion', 'sensor_descripcion']
+2026-10-07T19:43:52-0500 | INFO     | agrostats.cleaning.cleaner_pipeline:process_and_save:193 | Capa Silver generada para test_eva_silver: 1 filas (reducción: 0 duplicados)
+2026-10-07T19:46:18-0500 | WARNING  | agrostats.indicators.climate_indices:calculate_spi:48 | Muestra insuficiente para ajuste SPI-3 (registros válidos=1, mínimo=12)
+2026-10-07T19:46:18-0500 | INFO     | agrostats.indicators.indicator_store:save_indicator_dataset:59 | Indicadores guardados exitosamente: test_gold_indicators.parquet (2 filas, 5 columnas, SHA-256: f491f254ace9...)
+2026-10-07T19:47:07-0500 | INFO     | agrostats.cleaning.transformers:deduplicate_dataset:139 | Deduplicación eliminó 1 registros duplicados sobre claves ['codigo', 'anio']
+2026-10-07T19:47:07-0500 | WARNING  | agrostats.cleaning.transformers:deduplicate_dataset:127 | deduplicate_dataset invocado sin claves válidas presentes en el DataFrame
+2026-10-07T19:47:07-0500 | INFO     | agrostats.cleaning.transformers:deduplicate_dataset:139 | Deduplicación eliminó 1 registros duplicados sobre claves ['codigo_estacion', 'fecha_observacion', 'sensor_descripcion']
+2026-10-07T19:47:07-0500 | INFO     | agrostats.cleaning.cleaner_pipeline:process_and_save:193 | Capa Silver generada para test_eva_silver: 1 filas (reducción: 0 duplicados)
+2026-10-07T19:49:44-0500 | INFO     | agrostats.database.mdm_manager:register_canonical_municipios:129 | MDM: Registrados 2 municipios canónicos DIVIPOLA
+2026-10-07T19:49:44-0500 | INFO     | agrostats.database.db_manager:initialize_schema:68 | Esquema relacional inicializado exitosamente en SQLite: C:\Users\ADAN\AppData\Local\Temp\pytest-of-ADAN\pytest-20\test_schema_initialization0\test_agrostats.sqlite3
+2026-10-07T19:49:44-0500 | INFO     | agrostats.database.db_manager:initialize_schema:68 | Esquema relacional inicializado exitosamente en SQLite: C:\Users\ADAN\AppData\Local\Temp\pytest-of-ADAN\pytest-20\test_sql_loader_dimensions_and0\test_agrostats.sqlite3
+2026-10-07T19:49:44-0500 | INFO     | agrostats.database.sql_loader:load_dim_tiempo:44 | dim_tiempo poblada con 24 períodos mensuales
+2026-10-07T19:49:44-0500 | INFO     | agrostats.database.sql_loader:load_dim_municipio:72 | dim_municipio actualizada con 1 registros
+2026-10-07T19:49:44-0500 | INFO     | agrostats.database.sql_loader:load_fact_eva:168 | fact_produccion_eva cargada con 1 registros
+2026-10-07T19:49:44-0500 | INFO     | agrostats.database.db_manager:initialize_schema:68 | Esquema relacional inicializado exitosamente en SQLite: C:\Users\ADAN\AppData\Local\Temp\pytest-of-ADAN\pytest-20\test_analytical_view_query0\test_agrostats.sqlite3
+2026-10-07T19:49:44-0500 | INFO     | agrostats.database.sql_loader:load_dim_tiempo:44 | dim_tiempo poblada con 12 períodos mensuales
+2026-10-07T19:49:44-0500 | INFO     | agrostats.database.sql_loader:load_dim_municipio:72 | dim_municipio actualizada con 1 registros
+2026-10-07T19:49:44-0500 | INFO     | agrostats.database.sql_loader:load_fact_eva:168 | fact_produccion_eva cargada con 1 registros
+2026-10-07T19:51:09-0500 | INFO     | agrostats.cleaning.transformers:deduplicate_dataset:139 | Deduplicación eliminó 1 registros duplicados sobre claves ['codigo', 'anio']
+2026-10-07T19:51:09-0500 | WARNING  | agrostats.cleaning.transformers:deduplicate_dataset:127 | deduplicate_dataset invocado sin claves válidas presentes en el DataFrame
+2026-10-07T19:51:09-0500 | INFO     | agrostats.cleaning.transformers:deduplicate_dataset:139 | Deduplicación eliminó 1 registros duplicados sobre claves ['codigo_estacion', 'fecha_observacion', 'sensor_descripcion']
+2026-10-07T19:51:09-0500 | INFO     | agrostats.cleaning.cleaner_pipeline:process_and_save:193 | Capa Silver generada para test_eva_silver: 1 filas (reducción: 0 duplicados)
