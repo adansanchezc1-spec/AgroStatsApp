@@ -1,10 +1,10 @@
 {
   "project": "AgroStatsApp",
-  "version": "6.0.0",
-  "pdco_phase": "DEVELOPMENT",
-  "active_skill": "03-development",
-  "sdlc_stage": "implementation",
-  "last_updated": "2026-10-07",
+  "version": "9.0.0",
+  "pdco_phase": "CONTROL",
+  "active_skill": "04-testing",
+  "sdlc_stage": "testing",
+  "last_updated": "2026-10-09",
   "sprint_status": {
     "sprint_0": "COMPLETED",
     "sprint_1": "COMPLETED",
@@ -13,7 +13,10 @@
     "sprint_4": "COMPLETED",
     "sprint_5": "COMPLETED",
     "sprint_6": "COMPLETED",
-    "tests_passed": 55,
+    "sprint_7": "COMPLETED",
+    "sprint_8": "COMPLETED",
+    "sprint_9_statistical_inference": "COMPLETED",
+    "tests_passed": 71,
     "tests_failed": 0,
     "code_coverage": "86%"
   },
@@ -38,12 +41,18 @@
     "src/database/ddl_schema.sql",
     "src/database/db_manager.py",
     "src/database/sql_loader.py",
+    "src/visualization/plots.py",
+    "src/reports/generator.py",
+    "src/modeling/hypothesis_testing_engine.py",
     "notebooks/01_ingestion.ipynb",
     "notebooks/02_eda.ipynb",
     "notebooks/03_validation.ipynb",
     "notebooks/04_cleaning.ipynb",
     "notebooks/05_indicators.ipynb",
     "notebooks/06_database_mdm.ipynb",
+    "notebooks/07_visualization.ipynb",
+    "notebooks/08_reports.ipynb",
+    "notebooks/09_hypothesis_testing.ipynb",
     "tests/conftest.py",
     "tests/test_config.py",
     "tests/test_ingestion.py",
@@ -51,6 +60,9 @@
     "tests/test_validation.py",
     "tests/test_cleaning.py",
     "tests/test_indicators.py",
-    "tests/test_database.py"
+    "tests/test_database.py",
+    "tests/test_visualization.py",
+    "tests/test_reports.py",
+    "tests/test_hypothesis_testing.py"
   ]
 }

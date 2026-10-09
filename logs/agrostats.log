@@ -191,3 +191,97 @@
 2026-10-07T19:51:09-0500 | WARNING  | agrostats.cleaning.transformers:deduplicate_dataset:127 | deduplicate_dataset invocado sin claves válidas presentes en el DataFrame
 2026-10-07T19:51:09-0500 | INFO     | agrostats.cleaning.transformers:deduplicate_dataset:139 | Deduplicación eliminó 1 registros duplicados sobre claves ['codigo_estacion', 'fecha_observacion', 'sensor_descripcion']
 2026-10-07T19:51:09-0500 | INFO     | agrostats.cleaning.cleaner_pipeline:process_and_save:193 | Capa Silver generada para test_eva_silver: 1 filas (reducción: 0 duplicados)
+2026-10-07T19:55:39-0500 | WARNING  | agrostats.visualization.plots:plot_spi_timeline:30 | plot_spi_timeline invocado con DataFrame vacío o sin columna spi_3
+2026-10-07T19:56:27-0500 | WARNING  | agrostats.visualization.plots:plot_spi_timeline:30 | plot_spi_timeline invocado con DataFrame vacío o sin columna spi_3
+2026-10-07T19:57:40-0500 | INFO     | agrostats.reports.generator:generate_executive_report:167 | Reporte ejecutivo emitido: test_informe_ejecutivo (.md y .html)
+2026-10-07T19:58:35-0500 | INFO     | agrostats.cleaning.transformers:deduplicate_dataset:139 | Deduplicación eliminó 1 registros duplicados sobre claves ['codigo', 'anio']
+2026-10-07T19:58:35-0500 | WARNING  | agrostats.cleaning.transformers:deduplicate_dataset:127 | deduplicate_dataset invocado sin claves válidas presentes en el DataFrame
+2026-10-07T19:58:35-0500 | INFO     | agrostats.cleaning.transformers:deduplicate_dataset:139 | Deduplicación eliminó 1 registros duplicados sobre claves ['codigo_estacion', 'fecha_observacion', 'sensor_descripcion']
+2026-10-07T19:58:35-0500 | INFO     | agrostats.cleaning.cleaner_pipeline:process_and_save:193 | Capa Silver generada para test_eva_silver: 1 filas (reducción: 0 duplicados)
+2026-10-07T20:00:27-0500 | WARNING  | agrostats.cleaning.transformers:deduplicate_dataset:127 | deduplicate_dataset invocado sin claves válidas presentes en el DataFrame
+2026-10-07T20:00:27-0500 | INFO     | agrostats.cleaning.cleaner_pipeline:process_and_save:193 | Capa Silver generada para sipsa_alimentos_balanceados_silver: 68 filas (reducción: 0 duplicados)
+2026-10-07T20:00:27-0500 | WARNING  | agrostats.cleaning.transformers:deduplicate_dataset:127 | deduplicate_dataset invocado sin claves válidas presentes en el DataFrame
+2026-10-07T20:00:27-0500 | INFO     | agrostats.cleaning.cleaner_pipeline:process_and_save:193 | Capa Silver generada para sipsa_insumos_precios_silver: 93 filas (reducción: 0 duplicados)
+2026-10-07T20:00:27-0500 | WARNING  | agrostats.cleaning.transformers:deduplicate_dataset:127 | deduplicate_dataset invocado sin claves válidas presentes en el DataFrame
+2026-10-07T20:00:27-0500 | INFO     | agrostats.cleaning.cleaner_pipeline:process_and_save:193 | Capa Silver generada para normales_spi_silver: 5000 filas (reducción: 0 duplicados)
+2026-10-07T20:00:27-0500 | INFO     | agrostats.cleaning.cleaner_pipeline:process_and_save:193 | Capa Silver generada para pluviometria_estaciones_silver: 5000 filas (reducción: 0 duplicados)
+2026-10-07T20:00:27-0500 | WARNING  | agrostats.cleaning.transformers:deduplicate_dataset:127 | deduplicate_dataset invocado sin claves válidas presentes en el DataFrame
+2026-10-07T20:00:27-0500 | INFO     | agrostats.cleaning.cleaner_pipeline:process_and_save:193 | Capa Silver generada para radiacion_solar_silver: 169 filas (reducción: 0 duplicados)
+2026-10-07T20:00:27-0500 | INFO     | agrostats.cleaning.cleaner_pipeline:process_and_save:193 | Capa Silver generada para telemetria_sensores_silver: 5000 filas (reducción: 0 duplicados)
+2026-10-07T20:00:27-0500 | INFO     | agrostats.cleaning.cleaner_pipeline:process_and_save:193 | Capa Silver generada para temperatura_maxima_silver: 5000 filas (reducción: 0 duplicados)
+2026-10-07T20:00:27-0500 | INFO     | agrostats.cleaning.cleaner_pipeline:process_and_save:193 | Capa Silver generada para temperatura_media_silver: 5000 filas (reducción: 0 duplicados)
+2026-10-07T20:00:27-0500 | INFO     | agrostats.cleaning.cleaner_pipeline:process_and_save:193 | Capa Silver generada para temperatura_minima_silver: 5000 filas (reducción: 0 duplicados)
+2026-10-07T20:00:27-0500 | INFO     | agrostats.cleaning.transformers:deduplicate_dataset:139 | Deduplicación eliminó 88 registros duplicados sobre claves ['cod_municipio', 'anio', 'cultivo', 'variedad']
+2026-10-07T20:00:28-0500 | INFO     | agrostats.cleaning.cleaner_pipeline:process_and_save:193 | Capa Silver generada para upra_eva_historico_silver: 4912 filas (reducción: 88 duplicados)
+2026-10-07T20:00:28-0500 | INFO     | agrostats.cleaning.transformers:deduplicate_dataset:139 | Deduplicación eliminó 4999 registros duplicados sobre claves ['anio']
+2026-10-07T20:00:28-0500 | INFO     | agrostats.cleaning.cleaner_pipeline:process_and_save:193 | Capa Silver generada para upra_exportaciones_bioinsumos_silver: 1 filas (reducción: 4999 duplicados)
+2026-10-07T20:07:43-0500 | INFO     | agrostats.indicators.climate_indices:<module>:22 | Scipy no detectado; utilizando motor estadístico analítico puro para SPI
+2026-10-07T20:07:52-0500 | INFO     | agrostats.indicators.climate_indices:<module>:22 | Scipy no detectado; utilizando motor estadístico analítico puro para SPI
+2026-10-07T20:08:04-0500 | WARNING  | agrostats.indicators.climate_indices:calculate_spi:100 | Muestra insuficiente para ajuste SPI-3 (registros válidos=1, mínimo=12)
+2026-10-07T20:08:04-0500 | INFO     | agrostats.indicators.indicator_store:save_indicator_dataset:59 | Indicadores guardados exitosamente: test_gold_indicators.parquet (2 filas, 5 columnas, SHA-256: f491f254ace9...)
+2026-10-07T20:09:04-0500 | INFO     | agrostats.indicators.climate_indices:<module>:22 | Scipy no detectado; utilizando motor estadístico analítico puro para SPI
+2026-10-07T20:10:14-0500 | INFO     | agrostats.indicators.climate_indices:<module>:22 | Scipy no detectado; utilizando motor estadístico analítico puro para SPI
+2026-10-07T20:10:14-0500 | INFO     | agrostats.indicators.indicator_store:save_indicator_dataset:59 | Indicadores guardados exitosamente: indicadores_agroclimaticos_gold.parquet (36 filas, 21 columnas, SHA-256: 8d4db2f71221...)
+2026-10-07T20:11:06-0500 | INFO     | agrostats.database.mdm_manager:register_canonical_municipios:129 | MDM: Registrados 4 municipios canónicos DIVIPOLA
+2026-10-07T20:11:06-0500 | INFO     | agrostats.database.db_manager:initialize_schema:68 | Esquema relacional inicializado exitosamente en SQLite: C:\Users\ADAN\OneDrive\Documentos\App_agro\AgroStatsApp\data\DATABASE\agrostats_relational.sqlite3
+2026-10-07T20:11:06-0500 | INFO     | agrostats.database.sql_loader:load_dim_tiempo:44 | dim_tiempo poblada con 96 períodos mensuales
+2026-10-07T20:11:06-0500 | INFO     | agrostats.database.sql_loader:load_dim_municipio:72 | dim_municipio actualizada con 4 registros
+2026-10-07T20:28:39-0500 | INFO     | agrostats.database.db_manager:initialize_schema:70 | Esquema relacional inicializado exitosamente en SQLite: C:\Users\ADAN\OneDrive\Documentos\App_agro\AgroStatsApp\data\DATABASE\agrostats_relational.sqlite3
+2026-10-07T20:28:39-0500 | INFO     | agrostats.database.sql_loader:load_fact_eva:200 | fact_produccion_eva cargada con 2 registros
+2026-10-07T21:31:40-0500 | INFO     | agrostats.database.mdm_manager:register_canonical_municipios:129 | MDM: Registrados 2 municipios canónicos DIVIPOLA
+2026-10-07T21:31:40-0500 | INFO     | agrostats.database.db_manager:initialize_schema:70 | Esquema relacional inicializado exitosamente en SQLite: C:\Users\ADAN\AppData\Local\Temp\pytest-of-ADAN\pytest-25\test_schema_initialization0\test_agrostats.sqlite3
+2026-10-07T21:31:40-0500 | INFO     | agrostats.database.db_manager:initialize_schema:70 | Esquema relacional inicializado exitosamente en SQLite: C:\Users\ADAN\AppData\Local\Temp\pytest-of-ADAN\pytest-25\test_sql_loader_dimensions_and0\test_agrostats.sqlite3
+2026-10-07T21:31:40-0500 | INFO     | agrostats.database.sql_loader:load_dim_tiempo:45 | dim_tiempo poblada con 24 períodos mensuales
+2026-10-07T21:31:40-0500 | INFO     | agrostats.database.sql_loader:load_dim_municipio:74 | dim_municipio actualizada con 1 registros
+2026-10-07T21:31:40-0500 | INFO     | agrostats.database.sql_loader:load_fact_eva:200 | fact_produccion_eva cargada con 1 registros
+2026-10-07T21:31:40-0500 | INFO     | agrostats.database.db_manager:initialize_schema:70 | Esquema relacional inicializado exitosamente en SQLite: C:\Users\ADAN\AppData\Local\Temp\pytest-of-ADAN\pytest-25\test_analytical_view_query0\test_agrostats.sqlite3
+2026-10-07T21:31:40-0500 | INFO     | agrostats.database.sql_loader:load_dim_tiempo:45 | dim_tiempo poblada con 12 períodos mensuales
+2026-10-07T21:31:40-0500 | INFO     | agrostats.database.sql_loader:load_dim_municipio:74 | dim_municipio actualizada con 1 registros
+2026-10-07T21:31:40-0500 | INFO     | agrostats.database.sql_loader:load_fact_eva:200 | fact_produccion_eva cargada con 1 registros
+2026-10-07T21:33:21-0500 | INFO     | agrostats.cleaning.transformers:deduplicate_dataset:139 | Deduplicación eliminó 1 registros duplicados sobre claves ['codigo', 'anio']
+2026-10-07T21:33:21-0500 | WARNING  | agrostats.cleaning.transformers:deduplicate_dataset:127 | deduplicate_dataset invocado sin claves válidas presentes en el DataFrame
+2026-10-07T21:33:21-0500 | INFO     | agrostats.cleaning.transformers:deduplicate_dataset:139 | Deduplicación eliminó 1 registros duplicados sobre claves ['codigo_estacion', 'fecha_observacion', 'sensor_descripcion']
+2026-10-07T21:33:21-0500 | INFO     | agrostats.cleaning.cleaner_pipeline:process_and_save:193 | Capa Silver generada para test_eva_silver: 1 filas (reducción: 0 duplicados)
+2026-10-08T10:21:28-0500 | INFO     | agrostats.cleaning.transformers:deduplicate_dataset:139 | Deduplicación eliminó 1 registros duplicados sobre claves ['codigo', 'anio']
+2026-10-08T10:21:28-0500 | WARNING  | agrostats.cleaning.transformers:deduplicate_dataset:127 | deduplicate_dataset invocado sin claves válidas presentes en el DataFrame
+2026-10-08T10:21:28-0500 | INFO     | agrostats.cleaning.transformers:deduplicate_dataset:139 | Deduplicación eliminó 1 registros duplicados sobre claves ['codigo_estacion', 'fecha_observacion', 'sensor_descripcion']
+2026-10-08T10:21:29-0500 | INFO     | agrostats.cleaning.cleaner_pipeline:process_and_save:193 | Capa Silver generada para test_eva_silver: 1 filas (reducción: 0 duplicados)
+2026-10-08T10:22:45-0500 | INFO     | agrostats.cleaning.transformers:deduplicate_dataset:139 | Deduplicación eliminó 1 registros duplicados sobre claves ['codigo', 'anio']
+2026-10-08T10:22:45-0500 | WARNING  | agrostats.cleaning.transformers:deduplicate_dataset:127 | deduplicate_dataset invocado sin claves válidas presentes en el DataFrame
+2026-10-08T10:22:45-0500 | INFO     | agrostats.cleaning.transformers:deduplicate_dataset:139 | Deduplicación eliminó 1 registros duplicados sobre claves ['codigo_estacion', 'fecha_observacion', 'sensor_descripcion']
+2026-10-08T10:22:46-0500 | INFO     | agrostats.cleaning.cleaner_pipeline:process_and_save:193 | Capa Silver generada para test_eva_silver: 1 filas (reducción: 0 duplicados)
+2026-10-08T10:23:44-0500 | INFO     | agrostats.database.sql_loader:load_fact_eva:168 | fact_produccion_eva cargada con 2 registros
+2026-10-08T10:27:08-0500 | INFO     | agrostats.indicators.climate_indices:<module>:22 | Scipy no detectado; utilizando motor estadístico analítico puro para SPI
+2026-10-08T10:30:12-0500 | INFO     | agrostats.cleaning.cleaner_pipeline:process_and_save:232 | Capa Silver generada para upra_eva_historico_silver: 5000 filas (reducción: 0 duplicados)
+2026-10-08T10:30:12-0500 | INFO     | agrostats.cleaning.cleaner_pipeline:process_and_save:232 | Capa Silver generada para upra_exportaciones_bioinsumos_silver: 5000 filas (reducción: 0 duplicados)
+2026-10-08T10:50:39-0500 | INFO     | agrostats.database.db_manager:initialize_schema:70 | Esquema relacional inicializado exitosamente en SQLite: C:\Users\ADAN\OneDrive\Documentos\App_agro\AgroStatsApp\data\DATABASE\agrostats_relational.sqlite3
+2026-10-08T10:50:39-0500 | INFO     | agrostats.database.sql_loader:load_dim_tiempo:45 | dim_tiempo poblada con 324 períodos mensuales
+2026-10-08T10:50:40-0500 | INFO     | agrostats.database.sql_loader:load_dim_municipio:74 | dim_municipio actualizada con 599 registros
+2026-10-08T10:50:41-0500 | INFO     | agrostats.database.sql_loader:load_fact_eva:200 | fact_produccion_eva cargada con 5000 registros
+2026-10-08T10:59:45-0500 | INFO     | agrostats.indicators.climate_indices:<module>:22 | Scipy no detectado; utilizando motor estadístico analítico puro para SPI
+2026-10-08T10:59:46-0500 | INFO     | agrostats.reports.generator:generate_executive_report:167 | Reporte ejecutivo emitido: informe_ejecutivo_agrostats (.md y .html)
+2026-10-09T15:31:24-0500 | WARNING  | agrostats.modeling.hypothesis_testing:test_normality:64 | Muestra insuficiente para prueba de normalidad en corta (n=3)
+2026-10-09T15:31:24-0500 | INFO     | agrostats.modeling.hypothesis_testing:run_full_battery:435 | Batería de contrastes ejecutada exitosamente: 8 pruebas compiladas
+2026-10-09T15:31:25-0500 | INFO     | agrostats.modeling.hypothesis_testing:persist_hypothesis_mart:453 | Data Mart estadístico persistido en Gold: C:\Users\ADAN\OneDrive\Documentos\App_agro\AgroStatsApp\data\INDICATORS\test_mart_hypothesis.parquet (8 registros)
+2026-10-09T15:32:35-0500 | INFO     | agrostats.cleaning.transformers:deduplicate_dataset:139 | Deduplicación eliminó 1 registros duplicados sobre claves ['codigo', 'anio']
+2026-10-09T15:32:35-0500 | WARNING  | agrostats.cleaning.transformers:deduplicate_dataset:127 | deduplicate_dataset invocado sin claves válidas presentes en el DataFrame
+2026-10-09T15:32:35-0500 | INFO     | agrostats.cleaning.transformers:deduplicate_dataset:139 | Deduplicación eliminó 1 registros duplicados sobre claves ['codigo_estacion', 'fecha_observacion', 'sensor_descripcion']
+2026-10-09T15:32:35-0500 | INFO     | agrostats.cleaning.cleaner_pipeline:process_and_save:232 | Capa Silver generada para test_eva_silver: 1 filas (reducción: 0 duplicados)
+2026-10-09T17:46:28-0500 | INFO     | agrostats.database.db_manager:initialize_schema:70 | Esquema relacional inicializado exitosamente en SQLite: C:\Users\ADAN\OneDrive\Documentos\App_agro\AgroStatsApp\data\DATABASE\agrostats_relational.sqlite3
+2026-10-09T17:46:28-0500 | INFO     | agrostats.database.sql_loader:load_dim_tiempo:45 | dim_tiempo poblada con 324 períodos mensuales
+2026-10-09T17:46:28-0500 | INFO     | agrostats.database.sql_loader:load_dim_municipio:74 | dim_municipio actualizada con 599 registros
+2026-10-09T17:46:29-0500 | INFO     | agrostats.database.sql_loader:load_fact_eva:200 | fact_produccion_eva cargada con 5000 registros
+2026-10-09T17:46:29-0500 | INFO     | agrostats.database.sql_loader:load_fact_sipsa:248 | fact_precios_sipsa cargada con 5145 registros
+2026-10-09T17:46:29-0500 | INFO     | agrostats.database.sql_loader:load_fact_sipsa:248 | fact_precios_sipsa cargada con 340 registros
+2026-10-09T17:46:30-0500 | INFO     | agrostats.database.sql_loader:load_fact_clima:294 | fact_clima_ideam cargada con 5000 registros
+2026-10-09T17:46:31-0500 | INFO     | agrostats.database.sql_loader:load_fact_clima:294 | fact_clima_ideam cargada con 5000 registros
+2026-10-09T17:46:38-0500 | INFO     | agrostats.modeling.hypothesis_testing:run_full_battery:438 | Batería de contrastes ejecutada exitosamente: 12 pruebas compiladas
+2026-10-09T17:46:38-0500 | INFO     | agrostats.database.sql_loader:load_mart_hypothesis:332 | mart_hypothesis_tests cargado con 12 registros
+2026-10-09T17:50:30-0500 | INFO     | agrostats.cleaning.transformers:deduplicate_dataset:139 | Deduplicación eliminó 1 registros duplicados sobre claves ['codigo', 'anio']
+2026-10-09T17:50:30-0500 | WARNING  | agrostats.cleaning.transformers:deduplicate_dataset:127 | deduplicate_dataset invocado sin claves válidas presentes en el DataFrame
+2026-10-09T17:50:30-0500 | INFO     | agrostats.cleaning.transformers:deduplicate_dataset:139 | Deduplicación eliminó 1 registros duplicados sobre claves ['codigo_estacion', 'fecha_observacion', 'sensor_descripcion']
+2026-10-09T17:50:30-0500 | INFO     | agrostats.cleaning.cleaner_pipeline:process_and_save:232 | Capa Silver generada para test_eva_silver: 1 filas (reducción: 0 duplicados)
+2026-10-09T17:57:13-0500 | INFO     | agrostats.cleaning.transformers:deduplicate_dataset:139 | Deduplicación eliminó 1 registros duplicados sobre claves ['codigo', 'anio']
+2026-10-09T17:57:13-0500 | WARNING  | agrostats.cleaning.transformers:deduplicate_dataset:127 | deduplicate_dataset invocado sin claves válidas presentes en el DataFrame
+2026-10-09T17:57:13-0500 | INFO     | agrostats.cleaning.transformers:deduplicate_dataset:139 | Deduplicación eliminó 1 registros duplicados sobre claves ['codigo_estacion', 'fecha_observacion', 'sensor_descripcion']
+2026-10-09T17:57:14-0500 | INFO     | agrostats.cleaning.cleaner_pipeline:process_and_save:232 | Capa Silver generada para test_eva_silver: 1 filas (reducción: 0 duplicados)

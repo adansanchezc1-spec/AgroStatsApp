@@ -125,6 +125,20 @@ class TestDatabaseManagerAndLoader:
         assert len(df_prod) == 1
         assert df_prod["nombre_producto"].iloc[0] == "CAFE"
 
+        # 4. Insumo
+        id_insumo = loader.get_or_create_insumo("Urea 46%", "Fertilizante")
+        assert id_insumo >= 1
+        # Re-consulta de insumo existente retorna el mismo ID
+        id_insumo_existente = loader.get_or_create_insumo("Urea 46%")
+        assert id_insumo == id_insumo_existente
+
+        # 5. execute_statement
+        rows_affected = mgr.execute_statement(
+            "UPDATE dim_insumo SET categoria_insumo = ? WHERE id_insumo = ?",
+            ("Nitrogenados", id_insumo),
+        )
+        assert rows_affected == 1
+
     def test_analytical_view_query(self, db_env):
         """TC-604: Verifica consulta sobre view_indicadores_agroclimaticos."""
         mgr, loader = db_env
@@ -162,3 +176,50 @@ class TestDatabaseManagerAndLoader:
         assert row["nombre_municipio"] == "BOGOTA, D.C."
         assert row["nombre_producto"] == "PAPA"
         assert row["rendimiento_ton_ha"] == 15.0
+
+    def test_load_fact_clima_sipsa_and_mart(self, db_env):
+        """TC-605: Verifica carga de hechos meteorológicos, precios SIPSA y data mart estadístico."""
+        mgr, loader = db_env
+        loader.load_dim_tiempo(start_year=2022, end_year=2022)
+
+        # 1. Fact Clima
+        df_clima = pd.DataFrame({
+            "fecha": ["2022-05-15", "2022-06-15"],
+            "codigo_estacion": ["001", "001"],
+            "valor_observado": [120.5, 85.0],
+            "sensor_descripcion": ["PRECIPITACION", "PRECIPITACION"],
+            "cod_municipio": ["11001", "11001"],
+            "spi_3": [0.45, -0.2],
+            "anomalia_termica_z": [0.1, 0.3],
+        })
+        n_clima = loader.load_fact_clima(df_clima)
+        assert n_clima == 2
+        df_clima_db = mgr.execute_query("SELECT * FROM fact_clima_ideam;")
+        assert len(df_clima_db) == 2
+
+        # 2. Fact SIPSA
+        df_sipsa = pd.DataFrame({
+            "fecha": ["2022-05-01", "2022-06-01"],
+            "urea_46": [150000.0, 160000.0],
+            "dap_18_46": [180000.0, 190000.0],
+        })
+        n_sipsa = loader.load_fact_sipsa(df_sipsa, cod_municipio="11001")
+        assert n_sipsa == 4  # 2 meses * 2 insumos
+        df_sipsa_db = mgr.execute_query("SELECT * FROM fact_precios_sipsa;")
+        assert len(df_sipsa_db) == 4
+
+        # 3. Data Mart de Hipótesis
+        df_mart = pd.DataFrame({
+            "variable": ["precipitacion"],
+            "categoria_prueba": ["Normalidad"],
+            "prueba": ["JARQUE_BERA"],
+            "estadistico": [4.5],
+            "p_valor": [0.10],
+            "decision": ["NO_RECHAZA_H0"],
+            "interpretacion": ["Distribución normal"],
+        })
+        n_mart = loader.load_mart_hypothesis(df_mart)
+        assert n_mart == 1
+        df_mart_db = mgr.execute_query("SELECT * FROM mart_hypothesis_tests;")
+        assert len(df_mart_db) == 1
+        assert df_mart_db["prueba"].iloc[0] == "JARQUE_BERA"

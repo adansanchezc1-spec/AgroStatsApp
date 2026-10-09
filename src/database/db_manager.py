@@ -61,8 +61,10 @@ class DatabaseManager:
             finally:
                 con.close()
         else:
-            con = sqlite3.connect(str(self.db_file))
+            con = sqlite3.connect(str(self.db_file), timeout=30.0)
             try:
+                con.execute("PRAGMA journal_mode = WAL;")
+                con.execute("PRAGMA busy_timeout = 30000;")
                 con.executescript(ddl_sql)
                 con.commit()
                 logger.info("Esquema relacional inicializado exitosamente en SQLite: %s", self.db_file)
@@ -80,7 +82,7 @@ class DatabaseManager:
             finally:
                 con.close()
         else:
-            con = sqlite3.connect(str(self.db_file))
+            con = sqlite3.connect(str(self.db_file), timeout=30.0)
             try:
                 return pd.read_sql_query(query, con, params=params)
             finally:
@@ -88,7 +90,7 @@ class DatabaseManager:
 
     def execute_statement(self, statement: str, params: Optional[tuple] = None) -> int:
         """Ejecuta una sentencia de inserción, actualización o eliminación."""
-        con = sqlite3.connect(str(self.db_file))
+        con = sqlite3.connect(str(self.db_file), timeout=30.0)
         try:
             cur = con.cursor()
             if params:

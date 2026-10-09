@@ -1,17 +1,69 @@
 """Motor de Indicadores Agroclimáticos (Capa Gold).
 Fase PDCO: DEVELOPMENT | Estándar: WMO (World Meteorological Organization) / SWEBOK v4
 Cálculo riguroso del Índice de Precipitación Estandarizado (SPI) y Anomalías Térmicas Z-Score.
+Soporte dual: Scipy acelerado y fallback analítico puro (Thom MLE / Abramowitz & Stegun / Wilson-Hilferty).
 """
 
 from __future__ import annotations
+import math
 from typing import Optional, Tuple
 import numpy as np
 import pandas as pd
-from scipy import stats
 
 from src.utils.logger import get_logger
 
 logger = get_logger("indicators.climate_indices")
+
+try:
+    from scipy import stats
+    HAS_SCIPY = True
+except ImportError:
+    HAS_SCIPY = False
+    logger.info("Scipy no detectado; utilizando motor estadístico analítico puro para SPI")
+
+
+def _inv_norm_cdf(p: float) -> float:
+    """
+    Aproximación racional de Abramowitz & Stegun (1964, fórmula 26.2.23) para la función cuantil normal estándar.
+    Precisión absoluta < 4.5e-4, garantizando robustez sin dependencias binarias.
+    """
+    if p <= 0.0:
+        return -3.5
+    if p >= 1.0:
+        return 3.5
+
+    if p < 0.5:
+        t = math.sqrt(-2.0 * math.log(p))
+        c0, c1, c2 = 2.515517, 0.802853, 0.010328
+        d1, d2, d3 = 1.432788, 0.189269, 0.001308
+        num = c0 + c1 * t + c2 * (t ** 2)
+        den = 1.0 + d1 * t + d2 * (t ** 2) + d3 * (t ** 3)
+        return -(t - num / den)
+    else:
+        q = 1.0 - p
+        t = math.sqrt(-2.0 * math.log(q))
+        c0, c1, c2 = 2.515517, 0.802853, 0.010328
+        d1, d2, d3 = 1.432788, 0.189269, 0.001308
+        num = c0 + c1 * t + c2 * (t ** 2)
+        den = 1.0 + d1 * t + d2 * (t ** 2) + d3 * (t ** 3)
+        return t - num / den
+
+
+def _gamma_cdf_approx(x: float, alpha: float, beta: float) -> float:
+    """
+    Aproximación de Wilson-Hilferty (1931) para la CDF Gamma compuesta con math.erf.
+    """
+    if x <= 0:
+        return 0.0
+    mean_val = alpha * beta
+    if mean_val <= 0 or alpha <= 0:
+        return 0.5
+    cube_root = (x / mean_val) ** (1.0 / 3.0)
+    mu_wh = 1.0 - 1.0 / (9.0 * alpha)
+    sigma_wh = math.sqrt(1.0 / (9.0 * alpha))
+    z = (cube_root - mu_wh) / sigma_wh
+    cdf = 0.5 * (1.0 + math.erf(z / math.sqrt(2.0)))
+    return max(0.0, min(1.0, cdf))
 
 
 def calculate_spi(
@@ -59,17 +111,28 @@ def calculate_spi(
 
     positives = valid_accum[~zeros_mask]
 
-    # Ajuste de distribución Gamma a los datos positivos (floc=0 fija el origen en cero)
+    # Ajuste de distribución Gamma a los datos positivos
     if len(positives) < 3:
         logger.warning("Menos de 3 valores positivos para ajuste Gamma en SPI-%d", scale)
         return pd.Series(np.nan, index=precip_series.index, dtype="float64")
 
-    try:
-        # alpha = shape, beta = scale
-        alpha_param, loc_param, beta_param = stats.gamma.fit(positives, floc=0)
-    except Exception as exc:
-        logger.error("Error al ajustar distribución Gamma para SPI: %s", exc)
-        return pd.Series(np.nan, index=precip_series.index, dtype="float64")
+    if HAS_SCIPY:
+        try:
+            alpha_param, _, beta_param = stats.gamma.fit(positives, floc=0)
+        except Exception as exc:
+            logger.error("Error al ajustar distribución Gamma con scipy: %s", exc)
+            return pd.Series(np.nan, index=precip_series.index, dtype="float64")
+    else:
+        # Estimación por Máxima Verosimilitud de Thom (1958)
+        mean_x = float(positives.mean())
+        log_mean = math.log(max(mean_x, 1e-6))
+        mean_log = float(np.log(positives.clip(lower=1e-6)).mean())
+        diff_a = log_mean - mean_log
+        if diff_a <= 0:
+            alpha_param = 1.0
+        else:
+            alpha_param = (1.0 + math.sqrt(1.0 + (4.0 * diff_a) / 3.0)) / (4.0 * diff_a)
+        beta_param = mean_x / alpha_param
 
     # Cálculo de la probabilidad acumulada compuesta H(x) = q + (1 - q) * G(x)
     spi_results = pd.Series(np.nan, index=precip_series.index, dtype="float64")
@@ -80,15 +143,22 @@ def calculate_spi(
         if val <= 0.0:
             h_prob = prob_zero
         else:
-            g_prob = stats.gamma.cdf(val, a=alpha_param, scale=beta_param)
+            if HAS_SCIPY:
+                g_prob = stats.gamma.cdf(val, a=alpha_param, scale=beta_param)
+            else:
+                g_prob = _gamma_cdf_approx(val, alpha=alpha_param, beta=beta_param)
             h_prob = prob_zero + (1.0 - prob_zero) * g_prob
 
-        # Acotar probabilidades numéricamente para evitar inf / -inf en cuantiles normales
+        # Acotar probabilidades numéricamente para evitar inf / -inf
         h_prob = np.clip(h_prob, 1e-6, 1.0 - 1e-6)
 
         # Transformación a variable normal estándar Z ~ N(0, 1)
-        z_score = stats.norm.ppf(h_prob)
-        # Acotar dentro del rango meteorológico típico [-3.09, 3.09] (percentiles 0.1% a 99.9%)
+        if HAS_SCIPY:
+            z_score = stats.norm.ppf(h_prob)
+        else:
+            z_score = _inv_norm_cdf(h_prob)
+
+        # Acotar dentro del rango meteorológico típico [-3.5, 3.5]
         spi_results[idx] = float(np.clip(z_score, -3.5, 3.5))
 
     logger.debug("SPI-%d calculado exitosamente para %d registros", scale, len(precip_series))

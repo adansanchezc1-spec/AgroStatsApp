@@ -102,3 +102,21 @@ JOIN dim_tiempo t ON eva.id_tiempo = t.id_tiempo
 JOIN dim_municipio m ON eva.cod_municipio = m.cod_municipio
 JOIN dim_producto p ON eva.id_producto = p.id_producto
 LEFT JOIN fact_clima_ideam clima ON eva.id_tiempo = clima.id_tiempo AND eva.cod_municipio = clima.cod_municipio;
+
+-- 9. Data Mart de Contrastes Estadísticos e Inferencia (Gold)
+CREATE TABLE IF NOT EXISTS mart_hypothesis_tests (
+    id_test INTEGER PRIMARY KEY AUTOINCREMENT,
+    variable TEXT NOT NULL,
+    categoria_prueba TEXT NOT NULL,
+    prueba TEXT NOT NULL,
+    estadistico REAL,
+    p_valor REAL,
+    decision TEXT NOT NULL,
+    interpretacion TEXT
+);
+
+-- 10. Índices de Rendimiento para Consultas OLAP y Cruces Dimensionales
+CREATE INDEX IF NOT EXISTS idx_fact_eva_tiempo ON fact_produccion_eva(id_tiempo);
+CREATE INDEX IF NOT EXISTS idx_fact_eva_mun ON fact_produccion_eva(cod_municipio);
+CREATE INDEX IF NOT EXISTS idx_fact_clima_tiempo_mun ON fact_clima_ideam(id_tiempo, cod_municipio);
+CREATE INDEX IF NOT EXISTS idx_fact_sipsa_tiempo_mun ON fact_precios_sipsa(id_tiempo, cod_municipio);

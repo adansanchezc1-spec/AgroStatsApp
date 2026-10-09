@@ -65,6 +65,33 @@ class TestClimateIndices:
         assert anomalies.iloc[0] > 0
         assert anomalies.iloc[12] < 0
 
+    def test_analytical_functions_direct(self):
+        """Verifica las funciones analíticas puras _inv_norm_cdf y _gamma_cdf_approx."""
+        from src.indicators.climate_indices import _inv_norm_cdf, _gamma_cdf_approx
+        assert _inv_norm_cdf(0.0) == -3.5
+        assert _inv_norm_cdf(1.0) == 3.5
+        assert abs(_inv_norm_cdf(0.5)) < 1e-4
+        assert _inv_norm_cdf(0.025) < -1.9  # Z para percentil 2.5% es aprox -1.96
+        assert _inv_norm_cdf(0.975) > 1.9   # Z para percentil 97.5% es aprox +1.96
+
+        assert _gamma_cdf_approx(0.0, 2.0, 10.0) == 0.0
+        assert _gamma_cdf_approx(-5.0, 2.0, 10.0) == 0.0
+        assert 0.0 < _gamma_cdf_approx(20.0, 2.0, 10.0) < 1.0
+
+    def test_calculate_spi_pure_python_fallback(self, monkeypatch):
+        """Verifica que calculate_spi funcione de forma idéntica cuando scipy está deshabilitado."""
+        monkeypatch.setattr("src.indicators.climate_indices.HAS_SCIPY", False)
+        np.random.seed(42)
+        precip_vals = np.random.gamma(shape=2.0, scale=40.0, size=36)
+        precip_vals[3] = 0.0
+        series = pd.Series(precip_vals)
+
+        spi = calculate_spi(series, scale=3, min_periods=12)
+        valid_spi = spi.dropna()
+        assert len(valid_spi) > 0
+        assert (valid_spi >= -3.5).all()
+        assert (valid_spi <= 3.5).all()
+
 
 class TestMarketIndices:
     """TC-503 & TC-504: Pruebas unitarias para indicadores económicos y de mercado."""

@@ -73,6 +73,8 @@ class CleanerPipeline:
 
         # 5. Deduplicación temporal
         keys = ["cod_municipio", "anio", "cultivo", "variedad"]
+        if "periodo" in df_out.columns:
+            keys.append("periodo")
         df_out = deduplicate_dataset(df_out, subset_keys=keys)
 
         return df_out
@@ -144,6 +146,41 @@ class CleanerPipeline:
 
         return df_out
 
+    @staticmethod
+    def clean_trade_dataset(df: pd.DataFrame) -> pd.DataFrame:
+        """Sanea y normaliza series de exportaciones de bioinsumos y comercio agropecuario."""
+        if df.empty:
+            return df.copy()
+
+        df_out = df.copy()
+
+        rename_map = {
+            "a_o": "anio",
+            "cod_depto": "cod_departamento",
+            "exportaciones_en_valor_usd": "valor_usd",
+            "exportaciones_en_volumen": "volumen_kg",
+        }
+        df_out = df_out.rename(columns={k: v for k, v in rename_map.items() if k in df_out.columns})
+
+        text_cols = ["departamento", "producto", "descripcion_partida4_dig", "partida", "tradici_n_producto"]
+        for col in text_cols:
+            if col in df_out.columns:
+                df_out[col] = df_out[col].apply(sanitize_text)
+
+        type_schema = {
+            "anio": "int64",
+            "cod_departamento": "string",
+            "partida": "string",
+            "valor_usd": "float64",
+            "volumen_kg": "float64",
+        }
+        df_out = cast_datatypes(df_out, type_schema)
+
+        keys = ["anio", "mes", "cod_departamento", "producto", "partida"]
+        df_out = deduplicate_dataset(df_out, subset_keys=keys)
+
+        return df_out
+
     def process_and_save(
         self,
         df: pd.DataFrame,
@@ -156,6 +193,8 @@ class CleanerPipeline:
 
         if cleaner_type_lower == "eva":
             cleaned_df = self.clean_eva_dataset(df)
+        elif cleaner_type_lower in {"trade", "bioinsumos", "exportaciones"}:
+            cleaned_df = self.clean_trade_dataset(df)
         elif cleaner_type_lower == "ideam":
             cleaned_df = self.clean_ideam_dataset(df)
         elif cleaner_type_lower == "sipsa":
